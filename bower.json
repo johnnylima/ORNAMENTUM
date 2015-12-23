@@ -1,0 +1,29 @@
+{
+  "name": "ORNAMENTUM",
+  "authors": [
+    "JohnnyLima <rickbatera2012@gmail.com>"
+  ],
+  "description": "O ORNAMENTUM é um Aplicativo multi-plataforma com liguagem web desenvolvido para gestão de lojas do seguimento de locação de decorações festivas!]",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "ORNAMENTUM",
+    "DECORAÇÃO",
+    "DECORAÇÕES",
+    "ORNAMENTO",
+    "ORNAMENTOS",
+    "FESTA",
+    "CASAMENTO",
+    "ANIVERSÁRIO"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/lib/",
+    "test",
+    "tests"
+  ]
+}
