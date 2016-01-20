@@ -1,0 +1,745 @@
+<!--<!DOCTYPE html>
+<html ng-app="ornamentum">
+    <head>
+        <title>ORNAMENTUM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+         Importação da folha de estilo principal
+        <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.css">
+        <link rel="stylesheet" type="text/css" href="style/material-icons/material-icons.css">
+        <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.layouts.css">
+
+         Importação dos scripts principais
+        <script src="lib/angular/angular.js"></script>
+         Grupo de importações correnpondente ao ANGULAR-MATERIAL
+        <script src="lib/angular-animate/angular-animate.js"></script>
+        <script src="lib/angular-aria/angular-aria.js"></script>
+        <script src="lib/angular-material/angular-material.js"></script>
+        <script src="lib/angular-messages/angular-messages.js"></script>
+         Grupo de importações correnpondente ao ANGULAR-MATERIAL
+
+         Script inline
+        <script>
+            // Nomeando o Módulo e fazendo carregamento dos módulos dependentes
+            var ornamentum = angular.module("ornamentum", ["ngMaterial"]);
+            // Controles
+            ornamentum.controller('TituloCtrl', function ($scope) {
+                $scope.title = 'Clientes';
+            });
+            ornamentum.controller('AppCtrl', function ($scope) {
+                //Este trecho foi retirado de Toolbar
+                $scope.clientes = [
+                    {nome:"Pablo Mendoça", idade:25, funcao:"Estagiário"},
+                    {nome:"Ricardo Leite", idade:41, funcao:"Diretor"},
+                    {nome:"Francisco Motta", idade:35, funcao:"Gerente de Contas"}
+                ];
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div ng-controller="AppCtrl" ng-cloak>
+            <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
+                <div flex="50" flex-xs="100" layout="column">
+
+                    <md-card>
+                        Topo
+                        <md-toolbar md-scroll-shrink ng-if="true" ng-controller="TituloCtrl" class="md-card-image" >
+                            <div class="md-toolbar-tools">
+                                <h3>
+                                    <span>{{title}}</span>
+                                </h3>
+                                <span flex></span>
+                                <md-button class="md-icon-button">
+                                    <i class="material-icons md-light" >note_add</i>
+                                    <md-tooltip  md-direction="left">
+                                        Adicionar Usuário
+                                    </md-tooltip>
+                                </md-button>
+                            </div>
+                        </md-toolbar>
+                        Corpo
+                        <md-card-content>
+                            <table>
+                                <tr>
+                                    <th>Header</th>
+                                    <th>Header2</th>
+                                </tr>
+                                <tr>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                </tr>
+
+                            </table>
+                            <md-list>
+                                <md-list-item class="md-3-line" ng-repeat="item in todos">
+                                    <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
+                                    <div class="md-list-item-text">
+                                        <h3>{{item.what}}</h3>
+                                        <h4>{{item.who}}</h4>
+                                        <p>
+                                            {{item.notes}}
+                                        </p>
+                                    </div>
+                                    <md-divider inset></md-divider>
+                                </md-list-item>
+                            </md-list>
+                        </md-card-content>
+                        Botões de ação
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button class="md-raised md-primary">Adicionar</md-button>
+                        </md-card-actions>
+                    </md-card>
+
+                </div>
+            </md-content>
+        </div>
+
+    </body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html ng-app="ornamentum">
+    <head>
+        <title>ORNAMENTUM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+         Importação da folha de estilo principal
+        <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.css">
+        <link rel="stylesheet" type="text/css" href="style/material-icons/material-icons.css">
+        <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.layouts.css">
+
+         Importação dos scripts principais
+        <script src="lib/angular/angular.js"></script>
+         Grupo de importações correnpondente ao ANGULAR-MATERIAL
+        <script src="lib/angular-animate/angular-animate.js"></script>
+        <script src="lib/angular-aria/angular-aria.js"></script>
+        <script src="lib/angular-material/angular-material.js"></script>
+        <script src="lib/angular-messages/angular-messages.js"></script>
+         Grupo de importações correnpondente ao ANGULAR-MATERIAL
+
+         Script inline
+        <script>
+                    var app = angular.module('ornamentum', ['ngMaterial']);
+                    app.controller('AppCtrl', ['$scope', function($scope){
+                    $scope.titletable = "Clientes";
+                            $scope.toggleSearch = false;
+                            $scope.headers = [
+                            {
+                            name: 'Nome',
+                                    field: 'nome'
+                            }, {
+                            name:'Idade',
+                                    field: 'idade'
+                            }, {
+                            name: 'Função',
+                                    field: 'funcao'
+                            }
+                            ];
+                            $scope.content = [
+                            {nome:"Pablo Mendoça", idade:25, funcao:"Estagiário"},
+                            {nome:"Ricardo Leite", idade:41, funcao:"Diretor"},
+                            {nome:"Francisco Motta", idade:35, funcao:"Gerente de Contas"},
+                            {nome:"Daft Punk", idade:39, funcao:"Recursos Humano"},
+                            {nome:"Lady Gaga", idade:28, funcao:"Gerente de Marketing"},
+                            {nome:"Aguinaldo Sampaio", idade:55, funcao:"CEO"}
+                            ];
+                            $scope.custom = {nome: 'bold', idade:'grey', funcao:'grey'};
+                            $scope.sortable = ['nome', 'idade', 'funcao'];
+                            $scope.count = 3;
+                    }]);
+                    app.directive('mdTable', function () {
+                    return {
+                    restrict: 'E',
+                            scope: {
+                            headers: '=',
+                                    content: '=',
+                                    sortable: '=',
+                                    filters: '=',
+                                    customClass: '=customClass',
+                                    count: '='
+                            },
+                            controller: function ($scope, $filter, $window) {
+                            var orderBy = $filter('orderBy');
+                                    $scope.tablePage = 0;
+                                    $scope.nbOfPages = function () {
+                                    return Math.ceil($scope.content.length / $scope.count);
+                                    },
+                                    $scope.handleSort = function (field) {
+                                    if ($scope.sortable.indexOf(field) > - 2) { return true; } else { return false; }
+                                    };
+                                    $scope.order = function(predicate, reverse) {
+                                    $scope.content = orderBy($scope.content, predicate, reverse);
+                                            $scope.predicate = predicate;
+                                    };
+                                    $scope.order($scope.sortable[0], false);
+                                    $scope.getNumber = function (num) {
+                                    return new Array(num);
+                                    };
+                                    $scope.goToPage = function (page) {
+                                    $scope.tablePage = page;
+                                    };
+                            },
+                            template: angular.element(document.querySelector('#md-table-template')).html()
+                    }
+                    });
+                    app.directive('mdColresize', function ($timeout) {
+                    return {
+                    restrict: 'A',
+                            link: function (scope, element, attrs) {
+                            scope.$evalAsync(function () {
+                            $timeout(function(){ $(element).colResizable({
+                            liveDrag: true,
+                                    fixed: true
+
+                            }); }, 100);
+                            });
+                            }
+                    }
+                    });
+                    app.filter('startFrom', function (){
+                    return function (input, start) {
+                    start = + start;
+                            return input.slice(start);
+                    }
+                    });</script>
+
+        Styel inline
+        <style>
+            a {
+                text-decoration: none;
+            }
+
+            i {
+                vertical-align: middle;
+                font-size: 24px;
+            }
+
+            .main-fab {
+                position:absolute;
+                z-index:20;
+                font-size:30px;
+                top:100px;
+                left:24px;
+                transform:scale(.88,.88);
+            }
+
+            .md-breadcrumb {
+                padding-left:88px;
+            }
+
+            .JCLRgrip:first-child {
+                left:105px!important;
+                display: none!important;
+            }
+
+            .JColResizer th:first-child {
+                width: 105px!important;
+            }
+
+            .md-table {
+                min-width: 100%;
+                border-collapse: collapse;
+            }
+
+            .md-table tbody tr:hover, .md-table tbody tr:focus {
+                cursor:pointer;
+                background-color:rgba(63,81,181,0.2);
+            }
+
+            .md-table-header {
+                border-bottom: 1px solid rgb(230,230,230);
+                color: rgb(130,130,130);
+                text-align: left;
+                font-size: 0.75em;
+                font-weight: 700;
+                padding: 16px 16px 16px 0;
+            }
+
+            .md-table-header a{
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .md-table-content {
+                white-space: nowrap;
+                font-size: 0.8em;
+                padding: 16px 16px 16px 0;
+                height: 72px;
+            }
+
+            .md-table-td-more {
+                max-width:72px;
+                width:72px;
+                padding:16px;
+            }
+
+            .md-table-footer {
+                height:40px;
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+
+            .md-table-count-info {
+                line-height:40px;
+                font-size:.75em;
+            }
+
+            .md-table-footer-item {
+                width: 40px;
+                height: 40px;
+                vertical-align:middle;
+            }
+
+            .md-table-active-page {
+                font-weight: 700;
+            }
+
+            .bold {
+                font-weight: 700;
+            }
+
+            .grey {
+                color: grey;
+            }
+
+            md-input-container.md-default-theme .md-input {
+                color: white;
+                border-color: white;
+                margin-top: 24px;
+            }
+        </style>
+    </head>
+
+
+    <body layout="column" ng-controller="AppCtrl">
+
+    <md-toolbar layout="column" class="md-tall">
+        <span flex="flex"></span>
+        <div class="md-toolbar-tools">
+            <div layout="row" flex="flex" class="fill-height">
+                <div class="md-toolbar-item md-breadcrumb">
+                    <span>{{titletable}}</span>
+                </div>
+
+            </div>
+        </div>
+    </md-toolbar>
+
+    <md-content layout="column" flex="flex">
+
+        <md-table headers="headers" content="content" sortable="sortable" filters="search" custom-class="custom" count="count"></md-table>
+
+    </md-content>
+</body>
+</html>
+
+
+
+ md-table tirado de http://codepen.io/jbltx/pen/WbdRRb
+ md-table jade template
+<div id="md-table-template" ng-hide="true">
+    <table md-colresize="md-colresize" class="md-table">
+
+        <thead>
+            <tr class="md-table-headers-row">
+                <th ng-repeat="h in headers" class="md-table-header">
+                    <a href="#" ng-if="handleSort(h.field)" ng-click="reverse = !reverse; order(h.field, reverse)">
+                        {{h.name}}
+                        <i ng-show="reverse & amp; & amp; h.field == predicate" class="ion-android-arrow-dropup"></i>
+                        <i ng-show="!reverse & amp; & amp; h.field == predicate" class="ion-android-arrow-dropdown"></i>
+                    </a>
+                    <span ng-if="!handleSort(h.field)">{{h.name}}</span>
+                </th>
+                <th class="md-table-header"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="c in content| filter:filters | startFrom:tablePage * count | limitTo: count" class="md-table-content-row">
+                <td class="md-table-td-more">
+        <md-button aria-label="Info">
+            <i class="ion-android-more-vertical">
+            </i>
+        </md-button>
+        </td>
+        </tr>
+        </tbody>
+
+    </table>
+    <div layout="row" class="md-table-footer">
+        <span flex="flex"></span>
+        <span ng-show="nbOfPages() & gt; 1">
+            <md-button ng-disabled="tablePage == 0" ng-click="tablePage = tablePage - 1" aria-label="Previous Page" class="md-primary md-hue-2">
+                <i style="font-size:16px;" class="ion-chevron-left"></i>
+            </md-button><a href="#" ng-repeat="i in getNumber(nbOfPages()) track by $index">
+                <md-button ng-click="goToPage($index)" class="md-primary md-hue-2 md-table-footer-item">
+                    <span ng-class="{ 'md-table-active-page': tablePage == $index}">{{$index + 1}}</span>
+                </md-button></a>
+            <md-button ng-disabled="tablePage == nbOfPages() - 1" ng-click="tablePage = tablePage + 1" aria-label="Next Page" class="md-primary md-hue-2">
+                <i style="font-size:16px;" class="ion-chevron-right"></i>
+            </md-button>
+        </span>
+    </div>
+</div>-->
+
+<!--
+<!DOCTYPE html>
+<html ng-app="ornamentum">
+    <head>
+        <title>ORNAMENTUM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+         Importação da folha de estilo principal 
+        <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.css">
+        <link rel="stylesheet" type="text/css" href="style/material-icons/material-icons.css">
+        <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.layouts.css">
+         Importação da folha de estilo secundário e personalizados 
+        <link rel="stylesheet" type="text/css" href="style/my-table.css">
+
+
+         Importação dos scripts principais 
+        <script src="lib/angular/angular.js"></script>
+         Grupo de importações correnpondente ao ANGULAR-MATERIAL 
+        <script src="lib/angular-animate/angular-animate.js"></script>
+        <script src="lib/angular-aria/angular-aria.js"></script>
+        <script src="lib/angular-material/angular-material.js"></script>
+        <script src="lib/angular-messages/angular-messages.js"></script>
+         Grupo de importações correnpondente ao ANGULAR-MATERIAL 
+
+         Script inline 
+        <script>
+            // Nomeando o Módulo e fazendo carregamento dos módulos dependentes
+            var ornamentum = angular.module("ornamentum", ["ngMaterial"]);
+            // Controles
+            ornamentum.controller('TituloCtrl', function ($scope) {
+                $scope.title = 'Clientes';
+            });
+            ornamentum.controller('TabelaCtrl', function ($scope) {
+                //Este trecho foi retirado de Toolbar
+
+                /* CONFIGURAÇÃO DO FORM */
+                $scope.cfgForm = {
+                    item: {
+                        field: ["nome", "idade", "funcao"],
+                        headers: ["Nome", "Idade", "Função"],
+                        icon: ["person", "date_range", "business_center"]
+                    }
+                };
+                /* DADOS */
+                $scope.clientes = [
+                    {nome: "Pablo Mendoça", idade: 25, funcao: "Estagiário"},
+                    {nome: "Ricardo Leite", idade: 41, funcao: "Diretor"},
+                    {nome: "Francisco Motta", idade: 35, funcao: "Gerente de Contas"}
+                ];
+
+                /* FUNÇÕES */
+                /* ADICIONAR CLIENTE */
+                $scope.addCliente = function (field) {
+                    console.log(field);
+                };
+            });
+        </script>
+
+    </head>
+
+    <body>
+
+        <div ng-cloak>
+            <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
+                <div flex="50" flex-xs="100" layout="column">
+
+                    <md-card>
+                        Topo
+                        <md-toolbar md-scroll-shrink ng-if="true" ng-controller="TituloCtrl" class="md-card-image" >
+                            <div class="md-toolbar-tools">
+                                <h3>
+                                    <span>{{title}}</span>
+                                </h3>
+                                <span flex></span>
+                                Botões de ação
+                                <md-card-actions layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button">
+                                        <i class="material-icons md-light" >add_box</i>
+                                        <md-tooltip  md-direction="left">
+                                            Adicionar Usuário
+                                        </md-tooltip>
+                                    </md-button>
+                                </md-card-actions>
+                            </div>
+                        </md-toolbar>
+
+                        Corpo do Card
+                        <md-card-content ng-controller="TabelaCtrl">
+                            Tabela
+                            <table class="md-table">
+
+
+                                <thead>
+                                    <tr>
+                                        <th class="md-table-header" ng-repeat="i in cfgForm.item.headers">
+                                            <a href="">{{i}}</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+                                    <tr ng-repeat="c in clientes">
+                                        <td class="md-table-content" ng-repeat="(k, v) in c">{{v}}</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                            <br />
+                            <hr />
+
+                            
+                            
+                            <div>
+                                {{cfgForm.item.field[k]}}
+                                <md-input-container md-no-float class="md-block" ng-repeat="field in cfgForm.item.field">
+                                    <label>{{cfgForm.item.headers[$index]}}</label>
+                                    <md-icon><i class="material-icons" >{{cfgForm.item.icon[$index]}}</i></md-icon>
+                                    <input ng-model="cliente[field]" type="text">
+                                    {{cliente}}
+                                </md-input-container>
+                                </div>
+                                Botões de ação do Card
+                                <pre>{{cliente}}</pre>                           
+                                <md-card-actions layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button" ng-click="addCliente(cliente[field])">
+                                        <i class="material-icons" >add_box</i>
+                                        <md-tooltip  md-direction="left">
+                                            Adicionar
+                                        </md-tooltip>
+                                    </md-button>
+                                </md-card-actions>
+
+                            
+                        </md-card-content>
+                    </md-card>
+
+                </div>
+            </md-content>
+        </div>
+
+    </body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html ng-app="ornamentum">
+    <head>
+        <title>ORNAMENTUM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Importação da folha de estilo principal -->
+        <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.css">
+        <link rel="stylesheet" type="text/css" href="style/material-icons/material-icons.css">
+        <!--<link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.layouts.css">-->
+        <!-- Importação da folha de estilo secundário e personalizados -->
+        <link rel="stylesheet" type="text/css" href="style/my-table.css">
+
+
+        <!-- Importação dos scripts principais -->
+        <script src="lib/angular/angular.js"></script>
+        <!-- Grupo de importações correnpondente ao ANGULAR-MATERIAL -->
+        <script src="lib/angular-animate/angular-animate.js"></script>
+        <script src="lib/angular-aria/angular-aria.js"></script>
+        <script src="lib/angular-material/angular-material.js"></script>
+        <script src="lib/angular-messages/angular-messages.js"></script>
+        <!-- Grupo de importações correnpondente ao ANGULAR-MATERIAL -->
+
+        <!-- Script inline -->
+        <script>
+            // Nomeando o Módulo e fazendo carregamento dos módulos dependentes
+            var ornamentum = angular.module("ornamentum", ["ngMaterial"]);
+            // Controles
+            ornamentum.controller('TituloCtrl', function ($scope) {
+                $scope.title = 'Clientes';
+            });
+            ornamentum.controller('TabelaCtrl', function ($scope) {
+                //Este trecho foi retirado de Toolbar
+
+                /* CONFIGURAÇÃO DO FORM */
+                $scope.cfgForm = {
+                    item: {
+                        headers: ["Nome", "Idade", "Função"],
+                        icon: ["person", "date_range", "business_center"]
+                    }
+                };
+                /* DADOS */
+                $scope.clientes = [
+                    {nome: "Pablo Mendoça", idade: 25, funcao: "Estagiário"},
+                    {nome: "Ricardo Leite", idade: 41, funcao: "Diretor"},
+                    {nome: "Francisco Motta", idade: 35, funcao: "Gerente de Contas"}
+                ];
+
+                /* FUNÇÕES */
+                /* ADICIONAR CLIENTE */
+                $scope.addCliente = function (dado) {
+                    $scope.clientes.push(dado);
+                    delete $scope.cliente;
+                    $scope.formCliente.$setPristine();
+//                    $scope.cons(dado);
+                };
+
+                /* DELETAR CLIENTE */
+                $scope.delCliente = function (dados) {
+                    $scope.clientes = dados.filter(function (dado) {
+                        if (!dado.sel)
+                            return dado;
+                    });
+//                    $scope.cons(dadosSel);
+                };
+
+                /* SELECT CLIENTE */
+                $scope.clienteSel = function (dados) {
+                    return dados.some(function (dado) {
+                        return dado.sel;
+                    });
+//                    $scope.cons(dadoSel);
+//                    console.log("clienteSel \n");
+                };
+
+                $scope.cons = function (csle) {
+                    console.clear();
+                    console.log(csle);
+                };
+            });
+        </script>
+
+    </head>
+
+    <body>
+
+        <div ng-cloak>
+            <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
+                <div flex="50" flex-xs="100" layout="column">
+
+                    <md-card>
+                        <!--Topo-->
+                        <md-toolbar md-scroll-shrink ng-if="true" ng-controller="TituloCtrl" class="md-card-image" >
+                            <div class="md-toolbar-tools">
+                                <h3>
+                                    <span>{{title}}</span>
+                                </h3>
+                                <span flex></span>
+                                <!--Botões de ação-->
+                                <md-card-actions layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button">
+                                        <i class="material-icons md-light" >add_box</i>
+                                        <md-tooltip  md-direction="left">
+                                            Adicionar Usuário
+                                        </md-tooltip>
+                                    </md-button>
+                                </md-card-actions>
+                            </div>
+                        </md-toolbar>
+
+                        <!--Corpo do Card-->
+                        <md-card-content ng-controller="TabelaCtrl">
+                            <!--Tabela-->
+                            <table ng-show="clientes.length > 0" class="md-table">
+
+
+                                <thead>
+                                    <tr>
+                                        <th>
+
+                                <md-button class="md-icon-button" style="color:#FF5252;" ng-show="clienteSel(clientes)" ng-click="delCliente(clientes)">
+                                    <i class="material-icons" >delete</i>
+                                    <md-tooltip  md-direction="right">
+                                        Apagar
+                                    </md-tooltip>
+                                </md-button>
+                                </th>
+                                <th class="md-table-header" ng-repeat="i in cfgForm.item.headers">
+                                    <a href="">{{i}}</a>
+                                </th>
+                                </tr>
+                                </thead>
+
+
+                                <tbody>
+                                    <tr ng-class="{sel: c.sel}" ng-repeat="c in clientes">
+                                        <td>
+                                            <md-checkbox class="md-primary" ng-model="c.sel" ng-click="seltAll(this)" aria-label="{c}">
+                                            </md-checkbox>
+                                        </td>
+                                        <td class="md-table-content" ng-repeat="(k, v) in c" ng-if="v!=true && v!=false">{{v}}</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                            <br />
+                            <hr />
+
+                            {{formCliente.$pristine}}
+                            <!--Botões de ação do Card-->
+                            <!--<pre>{{cons(cliente)}}</pre>-->                           
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button class="md-icon-button md-primary" ng-disabled="formCliente.$invalid" ng-click="addCliente(cliente)">
+                                    <i class="material-icons" >add_box</i>
+                                    <md-tooltip  md-direction="buttom">
+                                        Adicionar
+                                    </md-tooltip>
+                                </md-button>
+                            </md-card-actions>
+
+                            <div>
+                                <form name="formCliente">
+
+                                    <md-input-container md-no-float class="md-block">
+                                        <label>{{cfgForm.item.headers[0]}}</label>
+                                        <md-icon><i class="material-icons" >{{cfgForm.item.icon[0]}}</i></md-icon>
+                                        <input ng-model="cliente.nome" name="nome" type="text" required>
+                                        <div ng-messages="formCliente.nome.$invalid">
+                                            <div ng-message="required">Favor preencher o nome.</div>
+                                        </div>
+                                    </md-input-container>
+
+                                    <md-input-container md-no-float class="md-block">
+                                        <label>{{cfgForm.item.headers[1]}}</label>
+                                        <md-icon><i class="material-icons" >{{cfgForm.item.icon[1]}}</i></md-icon>
+                                        <input ng-model="cliente.idade" name="idade" type="text" >
+                                        <div ng-messages="formCliente.idade.$error && formCliente.idade.$pristine">
+                                            <div ng-message="required">Favor preencher a idade.</div>
+                                        </div>
+                                    </md-input-container>
+
+                                    <md-input-container md-no-float class="md-block">
+                                        <label>{{cfgForm.item.headers[2]}}</label>
+                                        <md-icon><i class="material-icons" >{{cfgForm.item.icon[2]}}</i></md-icon>
+                                        <input ng-model="cliente.funcao" name="funcao" type="text" >
+                                        <div ng-messages="formCliente.funcao.$invalid && formCliente.funcao.$pristine">
+                                            <div ng-message="required">Favor preencher a função.</div>
+                                        </div>
+                                    </md-input-container>
+
+                                </form>
+                            </div>
+
+
+                        </md-card-content>
+                    </md-card>
+
+                </div>
+            </md-content>
+        </div>
+
+    </body>
+</html
