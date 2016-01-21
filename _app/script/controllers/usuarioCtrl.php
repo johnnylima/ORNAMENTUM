@@ -1,17 +1,17 @@
 <?php
 
 require('../../../_backend/_config/config.inc.php');
-//var_dump($_POST);
+//var_dump($_GET);
 //        //$Query = "SELECT COLUMN_NAME FROM information_schema.columns WHERE table_name = 'onmt_usuario' AND ORDINAL_POSITION > 1";
 //
 //        $Tb = 'onmt_usuario';
 //        $nCT = new read;
 //
-//        
+//
 ////        $nCT->FullRead($Query);
 //        $nCT->ExeRead($Tb);
 //        $result = $nCT->getResult();
-//        
+//
 //        //$r = serialize($result);print_r("<pre>".$r."</pre>");
 //        //var_dump($result);
 //        print_r(json_encode($result));
@@ -52,7 +52,7 @@ switch ($acao):
             $nCT->ExeReadColumn($tabela, $colunaQString);
             $result = $nCT->getResult();
             print_r(json_encode($result));
-            
+
         else:
 
             echo "<b>Erro na variável \$Colunas:</b> @ Esta variável deve ser<br>"
