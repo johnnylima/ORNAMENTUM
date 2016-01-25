@@ -3,20 +3,52 @@
   width: 100%;
   height: 100%;
   overflow: auto;
+  /*no text select*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
 }
+
 /*SIDE-NAV*/
-.side-nav-md-perfil{
-  background-image:url("img/bg/bg-perfil.png");
-  background-size:cover;
+
+.side-nav-md-perfil {
+  background-image: url("img/bg/bg-perfil.png");
+  background-size: cover;
   min-height: 100px;
   /*padding: 16px;*/
 }
-.side-nav-md-avatar{
+.side-nav-md-avatar {
   width: 64px;
   height: 64px;
   border-radius: 50%;
 }
+
 /*ORIGINAL ALTERADO*/
-.md-sidenav-left{
+
+.md-sidenav-left {
   width: 240px;
+}
+
+/*LINK-MENU*/
+
+md-list.menu-link md-list-item {
+  min-height: 40px;
+}
+md-list.menu-link md-list-item button {
+  height: 40px !important;
+}
+md-list.menu-link md-list-item button span md-icon {
+  width: 40px;
+  padding-right: 8px;
+}
+md-list.menu-link md-list-item button span md-icon i.material-icons {
+  font-size: 20px;
+}
+md-list.menu-link md-list-item button span.font-normal {
+  font-weight: normal;
+  text-align: left;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 13px;
 }
