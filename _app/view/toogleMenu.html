@@ -1,0 +1,38 @@
+<!-- MENU -->
+<md-list-item>
+  <md-button class="md-no-style">
+    <div layout="row">
+      <div flex="25" class="icon">
+          <md-icon>
+            <i class="material-icons">{{icone}}</i>
+          </md-icon>
+      </div>
+      <div flex="auto" class="font-normal">
+          {{link}}
+      </div>
+      <div flex="10" class="font-bold" ng-if="filhosview==='true'">
+          {{filhos}}
+      </div>
+      <div flex="10"  ng-if="filhos">
+        <md-icon>
+          <i class="material-icons">arrow_drop_down</i>
+        </md-icon>
+      </div>
+    </div>
+  </md-button>
+</md-list-item>
+
+<!-- SUBMENU -->
+<!--
+<md-list-item>
+  <md-button class="md-no-style">
+    <div layout="row">
+      <div flex="25">
+      </div>
+      <div flex="auto" class="font-normal">
+        Sub Menu 1
+      </div>
+    </div>
+  </md-button>
+</md-list-item>
+-->
