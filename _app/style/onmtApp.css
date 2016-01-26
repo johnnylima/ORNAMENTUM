@@ -43,12 +43,19 @@ md-list.menu-link md-list-item button span md-icon {
   width: 40px;
   padding-right: 8px;
 }
-md-list.menu-link md-list-item button span md-icon i.material-icons {
+md-list.menu-link md-list-item button div div.icon md-icon i.material-icons {
   font-size: 20px;
 }
-md-list.menu-link md-list-item button span.font-normal {
+md-list.menu-link md-list-item button div div.font-normal {
   font-weight: normal;
   text-align: left;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 13px;
+}
+md-list.menu-link md-list-item button div div.font-bold {
+  font-weight: bold;
+  text-align: left;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  padding-top: 3px;
+  font-size: 12px;
 }
