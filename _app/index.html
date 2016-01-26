@@ -38,38 +38,24 @@
             <md-list ng-cloak class="menu-link">
               <md-subheader class="md-no-sticky">Menu</md-subheader>
 
-              <!-- DASHBOARD -->
-              <md-list-item>
-                <md-button class="md-no-style">
-                  <div layout="row">
-                    <div flex="25" class="icon">
-                        <md-icon>
-                          <i class="material-icons">settings_input_svideo</i>
-                        </md-icon>
-                    </div>
-                    <div flex="auto" class="font-normal">
-                        Dashboard
-                    </div>
-                    <div flex="10">
-                      <md-icon>
-                        <i class="material-icons">arrow_drop_down</i>
-                      </md-icon>
-                    </div>
-                  </div>
-                </md-button>
-              </md-list-item>
+              <onmt-toogle-menu
+              icone="settings_input_svideo"
+              link="Dashboard"
+              filhos={{"Item 1","Item2"}}
+              filhosview=true
+              ></onmt-toogle-menu>
 
               <!-- CLIENTE -->
               <md-list-item>
                 <md-button class="md-no-style">
                   <div layout="row">
                     <div flex="25" class="icon">
-                        <md-icon>
-                          <i class="material-icons">people</i>
-                        </md-icon>
+                      <md-icon>
+                        <i class="material-icons">people</i>
+                      </md-icon>
                     </div>
                     <div flex="auto" class="font-normal">
-                        Clientes
+                      Clientes
                     </div>
                     <div flex="10">
                       <md-icon>
@@ -85,15 +71,15 @@
                 <md-button class="md-no-style">
                   <div layout="row">
                     <div flex="25" class="icon">
-                        <md-icon>
-                          <i class="material-icons">apps</i>
-                        </md-icon>
+                      <md-icon>
+                        <i class="material-icons">apps</i>
+                      </md-icon>
                     </div>
                     <div flex="auto" class="font-normal">
-                        Apps
+                      Apps
                     </div>
                     <div flex="10" class="font-bold">
-                        3
+                      3
                     </div>
                     <div flex="10">
                       <md-icon>
@@ -103,6 +89,49 @@
                   </div>
                 </md-button>
               </md-list-item>
+
+              <!-- ---------------------- MENU ---------------------- -->
+
+              <!-- MENU -->
+              <md-list-item>
+                <md-button class="md-no-style">
+                  <div layout="row">
+                    <div flex="25" class="icon">
+                      <md-icon>
+                        <i class="material-icons">add_box</i>
+                      </md-icon>
+                    </div>
+                    <div flex="auto" class="font-normal">
+                      Menu
+                    </div>
+                    <div flex="10">
+                      <md-icon>
+                        <i class="material-icons">arrow_drop_down</i>
+                      </md-icon>
+                    </div>
+                  </div>
+                </md-button>
+              </md-list-item>
+
+              <!-- SUBMENU -->
+
+              <md-list-item>
+                <md-button class="md-no-style">
+                  <div layout="row">
+
+                    <div flex="25">
+                    </div>
+
+                    <div flex="auto" class="font-normal">
+                      Sub Menu 1
+                    </div>
+
+
+                  </div>
+                </md-button>
+              </md-list-item>
+
+              <!-- ---------------------- MENU ---------------------- -->
 
             </md-list>
           </md-content>
@@ -133,8 +162,10 @@
 
     <!--Importação do app.js <nomeando o app>-->
     <script src="script/app.js"></script>
-    <!--Importação da Controller-->
+    <!--Importação das Controllers-->
     <script src="script/controllers/sideNavCtrl.js" charset="utf-8"></script>
+    <!--Importação das Diretivas-->
+    <script src="script/directives/onmtToogleMenuDirective.js" charset="utf-8"></script>
 
   </script>
   <!-- ----------------------------------------------------------------------- -->
