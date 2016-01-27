@@ -11,13 +11,11 @@
       scope:{
         icone:  "@",
         link:   "@",
-        filhos: "@",
         filhosview: "@"
       },
-      link: function(attrs){
-        console.log("ok");
-        console.log(attrs);
-      }
+      link: function (scope, elm, attrs, ctrl) {
+            scope.filhos = scope.$eval(attrs.filhos);
+        }
     };
   });
 
