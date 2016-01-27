@@ -1,3 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:900,400);
+html, body, button, input, select, textarea {
+    font-family: font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
 .app {
   position: relative;
   width: 100%;
@@ -14,6 +19,7 @@
 /*SIDE-NAV*/
 
 .side-nav-md-perfil {
+  background-color: #e8eaf6;
   background-image: url("img/bg/bg-perfil.png");
   background-size: cover;
   min-height: 100px;
@@ -24,15 +30,22 @@
   height: 64px;
   border-radius: 50%;
 }
-
+md-sidenav md-content div div div.side-nav-md-perfil-name{
+  margin-bottom: 5px;
+  font-weight: 700;
+}
 /*ORIGINAL ALTERADO*/
-
 .md-sidenav-left {
-  width: 240px;
+  width: 240px !important;
 }
 
 /*LINK-MENU*/
 
+md-list.menu-link {
+  text-align: left;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
 md-list.menu-link md-list-item {
   min-height: 40px;
 }
@@ -41,21 +54,29 @@ md-list.menu-link md-list-item button {
 }
 md-list.menu-link md-list-item button span md-icon {
   width: 40px;
+  line-height: 0.8;
   padding-right: 8px;
 }
 md-list.menu-link md-list-item button div div.icon md-icon i.material-icons {
   font-size: 20px;
+  vertical-align: top;
 }
 md-list.menu-link md-list-item button div div.font-normal {
   font-weight: normal;
-  text-align: left;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-size: 13px;
+  letter-spacing: inherit;
 }
 md-list.menu-link md-list-item button div div.font-bold {
   font-weight: bold;
-  text-align: left;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  padding-top: 3px;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: inherit;
+}
+/*SUB MENU*/
+md-list.menu-link md-list-item button.toogleOpen {
+  background-color: #F3F3F3;
+  font-weight: normal;
+  letter-spacing: inherit;
+}
+/*ATIVADO*/
+md-list.menu-link md-list-item:hover {
+  background-color: rgba(158, 158, 158, 0.2);
 }
