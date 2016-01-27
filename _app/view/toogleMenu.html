@@ -1,5 +1,6 @@
 <!-- MENU -->
 <md-list-item>
+  {{$id}}
   <md-button class="md-no-style">
     <div layout="row">
       <div flex="25" class="icon">
@@ -11,7 +12,7 @@
           {{link}}
       </div>
       <div flex="10" class="font-bold" ng-if="filhosview==='true'">
-          {{filhos}}
+          {{filhos.length}}
       </div>
       <div flex="10"  ng-if="filhos">
         <md-icon>
@@ -23,16 +24,15 @@
 </md-list-item>
 
 <!-- SUBMENU -->
-<!--
-<md-list-item>
-  <md-button class="md-no-style">
+
+<md-list-item ng-repeat="filho in filhos">
+  <md-button class="md-no-style toogleOpen">
     <div layout="row">
       <div flex="25">
       </div>
-      <div flex="auto" class="font-normal">
-        Sub Menu 1
+      <div flex="auto">
+        {{filho}}
       </div>
     </div>
   </md-button>
 </md-list-item>
--->
