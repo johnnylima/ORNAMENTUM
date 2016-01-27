@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Importação da folha de estilo principal -->
-    <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="style/material-icons/material-icons.css">
     <!-- Importação da folha de estilo secundário e personalizados -->
     <link rel="stylesheet" type="text/css" href="style/onmtApp.css">
@@ -30,8 +30,8 @@
                 <div flex>
                   <img ng-src="style/img/perfil/johnny.jpg" class="side-nav-md-avatar"/>
                 </div>
-                <div flex style="font-weight:700;" class="md-body-2">Johnny Lima</div>
-                <div flex class="md-body-1">rickbatera2012@gmail.com</div>
+                <div flex  class="side-nav-md-perfil-name">Johnnny Lima</div>
+                <div flex class="side-nav-md-perfil-email md-body-1">rickbatera2012@gmail.com</div>
               </div>
             </div>
 
@@ -41,9 +41,9 @@
               <onmt-toogle-menu
               icone="settings_input_svideo"
               link="Dashboard"
-              filhos={{"Item 1","Item2"}}
+              filhos="['Note', 'Todo', 'Inbox']"
               filhosview=true
-              ></onmt-toogle-menu>
+               ></onmt-toogle-menu>
 
               <!-- CLIENTE -->
               <md-list-item>
