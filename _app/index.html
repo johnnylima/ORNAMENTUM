@@ -38,12 +38,26 @@
             <md-list ng-cloak class="menu-link">
               <md-subheader class="md-no-sticky">Menu</md-subheader>
 
-              <onmt-toogle-menu
-              icone="settings_input_svideo"
-              link="Dashboard"
-              filhos="['Note', 'Todo', 'Inbox']"
-              filhosview=true
-               ></onmt-toogle-menu>
+              <onmt-toogle-menu-pai>
+                <onmt-toogle-menu-filhos
+                icone="settings_input_svideo"
+                link="Dashboard"
+                filhos="['Note', 'Todo', 'Inbox']"
+                filhosview=true
+                 ></onmt-toogle-menu-filhos>
+
+                 <onmt-toogle-menu-filhos
+                 icone="add_box"
+                 link="Menu"
+                  ></onmt-toogle-menu-filhos>
+
+                  <onmt-toogle-menu-filhos
+                  icone="people"
+                  link="Clientes"
+                  filhos="['Listar', 'Cadastrar', 'Manter']"
+                  filhosview=true
+                   ></onmt-toogle-menu-filhos>
+              </onmt-toogle-menu-pai>
 
               <!-- CLIENTE -->
               <md-list-item>

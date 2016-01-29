@@ -1,21 +1,20 @@
 <!-- MENU -->
-<md-list-item>
-  {{$id}}
-  <md-button class="md-no-style">
+<md-list-item class="nav" ng-class="{click: isOpened && filhos}">
+  <md-button class="md-no-style" ng-click="open();">
     <div layout="row">
       <div flex="25" class="icon">
-          <md-icon>
-            <i class="material-icons">{{icone}}</i>
-          </md-icon>
+        <md-icon>
+          <i class="material-icons">{{icone}}</i>
+        </md-icon>
       </div>
       <div flex="auto" class="font-normal">
-          {{link}}
+        {{link}}
       </div>
       <div flex="10" class="font-bold" ng-if="filhosview==='true'">
-          {{filhos.length}}
+        {{filhos.length}}
       </div>
-      <div flex="10"  ng-if="filhos">
-        <md-icon>
+      <div flex="10" ng-if="filhos;">
+        <md-icon class="arrowToogle" ng-class="{rotate: isOpened}">
           <i class="material-icons">arrow_drop_down</i>
         </md-icon>
       </div>
@@ -24,15 +23,15 @@
 </md-list-item>
 
 <!-- SUBMENU -->
-
-<md-list-item ng-repeat="filho in filhos">
-  <md-button class="md-no-style toogleOpen">
-    <div layout="row">
-      <div flex="25">
+<div  ng-show="isOpened" class="sub-nav">
+  <md-list-item ng-repeat="filho in filhos">
+    <md-button class="md-no-style toogleOpen">
+      <div layout="row">
+        <div flex="25"></div>
+        <div flex="auto">
+          {{filho}}
+        </div>
       </div>
-      <div flex="auto">
-        {{filho}}
-      </div>
-    </div>
-  </md-button>
-</md-list-item>
+    </md-button>
+  </md-list-item>
+</div>

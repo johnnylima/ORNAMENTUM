@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:900,400);
 html, body, button, input, select, textarea {
-    font-family: font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+  font-family: font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
 .app {
   position: relative;
@@ -30,53 +30,89 @@ html, body, button, input, select, textarea {
   height: 64px;
   border-radius: 50%;
 }
-md-sidenav md-content div div div.side-nav-md-perfil-name{
+md-sidenav md-content div div div.side-nav-md-perfil-name {
   margin-bottom: 5px;
   font-weight: 700;
 }
+
 /*ORIGINAL ALTERADO*/
+
 .md-sidenav-left {
   width: 240px !important;
 }
 
 /*LINK-MENU*/
 
-md-list.menu-link {
+md-list.menu-link onmt-toogle-menu-pai {
   text-align: left;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
 }
-md-list.menu-link md-list-item {
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item {
   min-height: 40px;
 }
-md-list.menu-link md-list-item button {
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item button {
   height: 40px !important;
 }
-md-list.menu-link md-list-item button span md-icon {
-  width: 40px;
-  line-height: 0.8;
-  padding-right: 8px;
-}
-md-list.menu-link md-list-item button div div.icon md-icon i.material-icons {
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item button div div.icon md-icon i.material-icons {
+  /*ESQUERDO*/
   font-size: 20px;
   vertical-align: top;
 }
-md-list.menu-link md-list-item button div div.font-normal {
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item button div div.font-normal {
   font-weight: normal;
   letter-spacing: inherit;
 }
-md-list.menu-link md-list-item button div div.font-bold {
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item button div div.font-bold {
   font-weight: bold;
   font-size: 11px;
   letter-spacing: inherit;
 }
+
 /*SUB MENU*/
-md-list.menu-link md-list-item button.toogleOpen {
+
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos div md-list-item button.toogleOpen {
   background-color: #F3F3F3;
   font-weight: normal;
   letter-spacing: inherit;
 }
+
 /*ATIVADO*/
-md-list.menu-link md-list-item:hover {
+
+
+/*link:hover*/
+
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item:hover {
   background-color: rgba(158, 158, 158, 0.2);
+}
+
+/*link pai*/
+
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item.nav {
+  background-color: none;
+}
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item.nav.click {
+  background-color: #F3F3F3;
+}
+
+/*link pai (giro seta)*/
+
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item button div div md-icon.arrowToogle {
+  transition: transform .3s ease-in-out;
+  transform: rotate(0deg);
+}
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos md-list-item button div div md-icon.arrowToogle.rotate {
+  transform: rotate(-180deg);
+}
+
+/*link filho*/
+
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos div.sub-nav {
+  -webkit-transition: max-height .5s cubic-bezier(1, 0.0, 0.0, 1);
+  transition: max-height .5s cubic-bezier(1, 0.0, 0.0, 1);
+  max-height: 500px;
+  overflow: hidden;
+}
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filhos div.sub-nav.ng-hide {
+  max-height: 0;
 }

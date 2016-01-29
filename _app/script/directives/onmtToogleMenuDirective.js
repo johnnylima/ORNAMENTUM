@@ -4,18 +4,44 @@
 (function() {
   'use strict';
 
-  // Nomeando o Módulo e fazendo carregamento dos módulos dependentes
-  angular.module("ornamentumApp").directive("onmtToogleMenu", function() {
+  //diretiva onmtToogleMenuPai
+  angular.module("ornamentumApp").directive("onmtToogleMenuPai", function() {
+    return {
+      controller: function($scope, $element, $attrs) {
+        var toogleMenuFilhos = [];
+
+        this.registrosMenuFilhos = function(menuFilho) {
+          toogleMenuFilhos.push(menuFilho);
+        };
+        this.closeAll = function() {
+          toogleMenuFilhos.forEach(function(menuFilho) {
+            menuFilho.isOpened = false;
+          })
+        }
+      }
+    };
+  });
+  // diretiva filha de ontmToogleMenuPai
+  angular.module("ornamentumApp").directive("onmtToogleMenuFilhos", function() {
     return {
       templateUrl: "view/toogleMenu.html",
-      scope:{
-        icone:  "@",
-        link:   "@",
+      scope: {
+        icone: "@",
+        link: "@",
         filhosview: "@"
       },
-      link: function (scope, elm, attrs, ctrl) {
-            scope.filhos = scope.$eval(attrs.filhos);
+      require: "^onmtToogleMenuPai",
+      link: function(scope, element, attrs, ctrl) {
+        scope.filhos = scope.$eval(attrs.filhos);
+        ctrl.registrosMenuFilhos(scope);
+        var registroFilho;
+
+        scope.open = function() {
+          ctrl.closeAll();
+
+          scope.isOpened = true;
         }
+      }
     };
   });
 
