@@ -1,0 +1,126 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('min-width: 333px')">
+
+  <md-toolbar class="md-theme-indigo">
+    <div layout="row" class="side-nav-md-head" layout-padding>
+      <div flex="20">
+        <img ng-src="style/img/onmtApp/logo.png" class="side-nav-md-logo"/>
+      </div>
+      <div flex="auto">
+        <span>Ornamentum</span>
+      </div>
+    </div>
+  </md-toolbar>
+
+  <md-content>
+
+    <div class="side-nav-md-perfil" layout-padding>
+      <div layout="column">
+        <div flex>
+          <img ng-src="style/img/perfil/johnny.jpg" class="side-nav-md-avatar"/>
+        </div>
+        <div flex class="side-nav-md-perfil-name">Johnny Lima</div>
+        <div flex class="side-nav-md-perfil-email md-body-1">rickbatera2012@gmail.com</div>
+      </div>
+    </div>
+
+    <md-list ng-cloak class="menu-link">
+      <md-subheader class="md-no-sticky">Menu</md-subheader>
+
+      <onmt-toogle-menu-pai>
+        <onmt-toogle-menu-filho icone="settings_input_svideo" link="Dashboard" filhos="['Note', 'Todo', 'Inbox']" filhosview=true></onmt-toogle-menu-filho>
+
+        <onmt-toogle-menu-filho icone="add_box" link="Menu"></onmt-toogle-menu-filho>
+
+        <onmt-toogle-menu-filho icone="people" link="Clientes" filhos="['Listar', 'Cadastrar', 'Manter']" filhosview=true></onmt-toogle-menu-filho>
+      </onmt-toogle-menu-pai>
+
+      <!-- CLIENTE -->
+      <md-list-item>
+        <md-button class="md-no-style">
+          <div layout="row">
+            <div flex="25" class="icon">
+              <md-icon>
+                <i class="material-icons">people</i>
+              </md-icon>
+            </div>
+            <div flex="auto" class="font-normal">
+              Clientes
+            </div>
+            <div flex="10">
+              <md-icon>
+                <i class="material-icons">arrow_drop_down</i>
+              </md-icon>
+            </div>
+          </div>
+        </md-button>
+      </md-list-item>
+
+      <!-- APPS -->
+      <md-list-item>
+        <md-button class="md-no-style">
+          <div layout="row">
+            <div flex="25" class="icon">
+              <md-icon>
+                <i class="material-icons">apps</i>
+              </md-icon>
+            </div>
+            <div flex="auto" class="font-normal">
+              Apps
+            </div>
+            <div flex="10" class="font-bold">
+              3
+            </div>
+            <div flex="10" layout-align="end center">
+              <md-icon>
+                <i class="material-icons">arrow_drop_down</i>
+              </md-icon>
+            </div>
+          </div>
+        </md-button>
+      </md-list-item>
+
+      <!-- ---------------------- MENU ---------------------- -->
+
+      <!-- MENU -->
+      <md-list-item>
+        <md-button class="md-no-style">
+          <div layout="row">
+            <div flex="25" class="icon">
+              <md-icon>
+                <i class="material-icons">add_box</i>
+              </md-icon>
+            </div>
+            <div flex="auto" class="font-normal">
+              Menu
+            </div>
+            <div flex="10">
+              <md-icon>
+                <i class="material-icons">arrow_drop_down</i>
+              </md-icon>
+            </div>
+          </div>
+        </md-button>
+      </md-list-item>
+
+      <!-- SUBMENU -->
+
+      <md-list-item>
+        <md-button class="md-no-style">
+          <div layout="row">
+
+            <div flex="25"></div>
+
+            <div flex="auto" class="font-normal">
+              Sub Menu 1
+            </div>
+
+          </div>
+        </md-button>
+      </md-list-item>
+
+      <!-- ---------------------- MENU ---------------------- -->
+
+    </md-list>
+  </md-content>
+
+</md-sidenav>
