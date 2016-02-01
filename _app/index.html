@@ -17,144 +17,15 @@
     <div ng-controller="sideNavCtrl" layout="column" style="height:100%;" ng-cloak>
       <section layout="row" flex>
 
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('min-width: 333px')">
-
-          <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools" style="font-weight:bold;">Ornamentum</h1>
-          </md-toolbar>
-
-          <md-content>
-
-            <div show-gt-md class="side-nav-md-perfil" layout-padding>
-              <div layout="column">
-                <div flex>
-                  <img ng-src="style/img/perfil/johnny.jpg" class="side-nav-md-avatar"/>
-                </div>
-                <div flex  class="side-nav-md-perfil-name">Johnnny Lima</div>
-                <div flex class="side-nav-md-perfil-email md-body-1">rickbatera2012@gmail.com</div>
-              </div>
-            </div>
-
-            <md-list ng-cloak class="menu-link">
-              <md-subheader class="md-no-sticky">Menu</md-subheader>
-
-              <onmt-toogle-menu-pai>
-                <onmt-toogle-menu-filhos
-                icone="settings_input_svideo"
-                link="Dashboard"
-                filhos="['Note', 'Todo', 'Inbox']"
-                filhosview=true
-                 ></onmt-toogle-menu-filhos>
-
-                 <onmt-toogle-menu-filhos
-                 icone="add_box"
-                 link="Menu"
-                  ></onmt-toogle-menu-filhos>
-
-                  <onmt-toogle-menu-filhos
-                  icone="people"
-                  link="Clientes"
-                  filhos="['Listar', 'Cadastrar', 'Manter']"
-                  filhosview=true
-                   ></onmt-toogle-menu-filhos>
-              </onmt-toogle-menu-pai>
-
-              <!-- CLIENTE -->
-              <md-list-item>
-                <md-button class="md-no-style">
-                  <div layout="row">
-                    <div flex="25" class="icon">
-                      <md-icon>
-                        <i class="material-icons">people</i>
-                      </md-icon>
-                    </div>
-                    <div flex="auto" class="font-normal">
-                      Clientes
-                    </div>
-                    <div flex="10">
-                      <md-icon>
-                        <i class="material-icons">arrow_drop_down</i>
-                      </md-icon>
-                    </div>
-                  </div>
-                </md-button>
-              </md-list-item>
-
-              <!-- APPS -->
-              <md-list-item>
-                <md-button class="md-no-style">
-                  <div layout="row">
-                    <div flex="25" class="icon">
-                      <md-icon>
-                        <i class="material-icons">apps</i>
-                      </md-icon>
-                    </div>
-                    <div flex="auto" class="font-normal">
-                      Apps
-                    </div>
-                    <div flex="10" class="font-bold">
-                      3
-                    </div>
-                    <div flex="10">
-                      <md-icon>
-                        <i class="material-icons">arrow_drop_down</i>
-                      </md-icon>
-                    </div>
-                  </div>
-                </md-button>
-              </md-list-item>
-
-              <!-- ---------------------- MENU ---------------------- -->
-
-              <!-- MENU -->
-              <md-list-item>
-                <md-button class="md-no-style">
-                  <div layout="row">
-                    <div flex="25" class="icon">
-                      <md-icon>
-                        <i class="material-icons">add_box</i>
-                      </md-icon>
-                    </div>
-                    <div flex="auto" class="font-normal">
-                      Menu
-                    </div>
-                    <div flex="10">
-                      <md-icon>
-                        <i class="material-icons">arrow_drop_down</i>
-                      </md-icon>
-                    </div>
-                  </div>
-                </md-button>
-              </md-list-item>
-
-              <!-- SUBMENU -->
-
-              <md-list-item>
-                <md-button class="md-no-style">
-                  <div layout="row">
-
-                    <div flex="25">
-                    </div>
-
-                    <div flex="auto" class="font-normal">
-                      Sub Menu 1
-                    </div>
-
-
-                  </div>
-                </md-button>
-              </md-list-item>
-
-              <!-- ---------------------- MENU ---------------------- -->
-
-            </md-list>
-          </md-content>
-
-        </md-sidenav>
+        <!-- ONMT SIDENAV MENU -->
+        <onmt-sidenav-menu></onmt-sidenav-menu>
+        <!-- ONMT SIDENAV MENU -->
 
         <md-content flex layout-padding>
           <div layout="column" layout-fill layout-align="top center">
             <p>
+              count:
+              {{count}}
               The left sidenav will 'lock open' on a medium (>=960px wide) device.
             </p>
           </div>
@@ -179,6 +50,7 @@
     <!--Importação das Controllers-->
     <script src="script/controllers/sideNavCtrl.js" charset="utf-8"></script>
     <!--Importação das Diretivas-->
+    <script src="script/directives/onmtSidenavMenuDirective.js" charset="utf-8"></script>
     <script src="script/directives/onmtToogleMenuDirective.js" charset="utf-8"></script>
 
   </script>
