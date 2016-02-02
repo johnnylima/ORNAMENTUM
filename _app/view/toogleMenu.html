@@ -1,5 +1,5 @@
 <!-- MENU -->
-<md-list-item class="nav" ng-class="{click: isOpened && filhos}">
+<md-list-item class="nav" ng-class="{click: isOpened && filhos , 'md-sidenav-min-icon': !side}">
   <md-button class="md-no-style" ng-click="open();">
     <div layout="row">
       <div flex="25" class="icon">
@@ -7,13 +7,13 @@
           <i class="material-icons">{{icone}}</i>
         </md-icon>
       </div>
-      <div flex="auto" class="font-normal">
+      <div flex="auto" class="font-normal" ng-show="side">
         {{link}}
       </div>
-      <div flex="10" class="font-bold" ng-if="filhosview==='true'">
+      <div flex="10" ng-class="{'md-sidenav-min-lenghtFilhos': !side}" class="font-bold" ng-if="filhosview==='true'">
         {{filhos.length}}
       </div>
-      <div flex="10" ng-if="filhos;">
+      <div flex="10" ng-if="filhos" ng-show="side">
         <md-icon class="arrowToogle" ng-class="{rotate: isOpened}">
           <i class="material-icons">arrow_drop_down</i>
         </md-icon>
@@ -23,7 +23,7 @@
 </md-list-item>
 
 <!-- SUBMENU -->
-<div  ng-show="isOpened" class="sub-nav">
+<div  ng-show="isOpened && side" class="sub-nav">
   <md-list-item ng-repeat="filho in filhos">
     <md-button class="md-no-style toogleOpen">
       <div layout="row">

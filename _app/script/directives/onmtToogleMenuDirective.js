@@ -12,6 +12,10 @@
         var uLink;
         var vLink = false;
 
+        // $element.bind("mousemove",function(){
+        //   console.log($scope.side);
+        // });
+
         //registro dos scope's dos links detro de <onmt-toogle-menu-pai>
         this.registrosMenuFilhos = function(menuFilho) {
           toogleMenuFilhos.push(menuFilho);
@@ -69,6 +73,7 @@
     return {
       templateUrl: "view/toogleMenu.html",
       scope: {
+        side: "=",
         icone: "@",
         link: "@",
         filhosview: "@"
@@ -78,6 +83,10 @@
         scope.isOpened = false;
         scope.filhos = scope.$eval(attrs.filhos);
         ctrl.registrosMenuFilhos(scope);
+
+        element.bind("mousemove",function(){
+          //console.log(icone);
+        });
 
         scope.open = function() {
           ctrl.closeAll(scope);

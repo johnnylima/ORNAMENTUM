@@ -7,8 +7,13 @@
   //diretiva onmtToogleMenuPai
   angular.module("ornamentumApp").directive("onmtSidenavMenu", function() {
     return {
-      templateUrl:'view/onmtSidenavMenu.html',
-      replace: true
+      controller: function($scope, $mdSidenav) {
+      },
+      templateUrl: 'view/onmtSidenavMenu.html',
+      replace: true,
+      link: function(scope) {
+        scope.sidenavMin = false;
+      }
     };
   });
 

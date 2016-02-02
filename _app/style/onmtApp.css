@@ -15,16 +15,23 @@ html, body, button, input, select, textarea {
   user-select: none;
   cursor: default;
 }
+.app div section md-content.corpo{
+  position: absolute;
+  left: 80px;
+  height: 100%;
+}
+
 
 /*SIDE-NAV*/
-.side-nav-md-head{
+
+.side-nav-md-head {
   vertical-align: middle;
 }
-md-sidenav md-toolbar div.side-nav-md-head div span{
+md-sidenav md-toolbar div.side-nav-md-head div span {
   font-size: 20px;
-  font-weight:700;
+  font-weight: 700;
 }
-.side-nav-md-logo{
+.side-nav-md-logo {
   width: 26px;
   height: auto;
 }
@@ -48,7 +55,9 @@ md-sidenav md-content div div div.side-nav-md-perfil-name {
 /*ORIGINAL ALTERADO*/
 
 md-sidenav.md-sidenav-left {
+  transition: width .6s cubic-bezier(0.4, 0, 0.2, 1);
   width: 240px !important;
+  position: absolute !important;
 }
 
 /*LINK-MENU*/
@@ -73,6 +82,9 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item butto
   font-weight: normal;
   letter-spacing: inherit;
 }
+
+/*numero*/
+
 md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item button div div.font-bold {
   font-weight: bold;
   font-size: 11px;
@@ -125,4 +137,67 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho div.sub-nav {
 }
 md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho div.sub-nav.ng-hide {
   max-height: 0;
+}
+
+/*SIDENAV-MIN ANTES DA ANIMAÇÃO*/
+md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div.side-nav-md-head div.side-nav-md-name-app{
+  background-color: yellow;
+  opacity:1;
+}
+/*SIDENAV-MIN DEPOIS DA ANIMAÇÃO*/
+md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div.side-nav-md-head div.side-nav-md-name-app.ng-hide-add,
+md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div.side-nav-md-head div.side-nav-md-name-app.ng-hide-remove{
+transition: all .3s cubic-bezier(0, 0, 0, 0)
+}
+md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div.side-nav-md-head div.side-nav-md-name-app.ng-hide{
+  background-color: red;
+  opacity: 0;
+}
+
+/*SIDENAV-MIN*/
+md-sidenav.md-sidenav-left.md-sidenav-min {
+  width: 80px !important;
+  position: relative !important;
+}
+md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-sidenav-min-icon {
+  /*ESQUERDO*/
+  width: inherit;
+  height: 80px;
+  /*background-color: red;*/
+}
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-sidenav-min-icon button {
+  /*ESQUERDO*/
+  min-width: inherit;
+  /*background-color: blue;*/
+
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-sidenav-min-icon button div {
+  /*ESQUERDO*/
+  margin-top: 3px;
+  width: 28px;
+  /*background-color: orange;*/
+}
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-sidenav-min-icon  button div div md-icon i.material-icons {
+  /*ESQUERDO*/
+  font-size: 20px;
+  vertical-align: top;
+  /*background-color: purple;*/
+}
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item button div div.md-sidenav-min-lenghtFilhos {
+  margin-top: -10px;
+  margin-left: 14px;
+  font-weight: bold;
+  font-size: 14px;
 }
