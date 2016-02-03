@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);
 html, body, button, input, select, textarea {
   font-family: font-family: 'Roboto', sans-serif;
+  color: #333333 !important;
   font-size: 14px;
 }
 .app {
@@ -15,13 +16,31 @@ html, body, button, input, select, textarea {
   user-select: none;
   cursor: default;
 }
-.app div section md-content.corpo{
+.app div section md-content.corpo {
   position: absolute;
   left: 80px;
   height: 100%;
+  background-color: #EFEFEF;
 }
-
-
+.corpo {
+  width: 100%;
+}
+.toolbar-corpo {
+  height: 63px;
+}
+/*contet*/
+.corpo md-content {
+  margin-top: 10px;
+  background-color: transparent;
+}
+md-content.content-index span.md-headline{
+  margin-top: -20px;
+  color: #3F3F3F;
+  font-size: 18px;
+}
+md-datepicker{
+  padding-top: 13px;
+}
 /*SIDE-NAV*/
 
 .side-nav-md-head {
@@ -58,6 +77,7 @@ md-sidenav.md-sidenav-left {
   transition: width .6s cubic-bezier(0.4, 0, 0.2, 1);
   width: 240px !important;
   position: absolute !important;
+  overflow: hidden;
 }
 
 /*LINK-MENU*/
@@ -139,27 +159,42 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho div.sub-nav.ng-hid
   max-height: 0;
 }
 
-/*SIDENAV-MIN ANTES DA ANIMAÇÃO*/
-md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div.side-nav-md-head div.side-nav-md-name-app{
-  background-color: yellow;
-  opacity:1;
+/*SIDENAV-MIN ANTES DA ANIMAÇÃO -------------------------------------------- */
+div.side-nav-md-name-app {
+  transition: all .8s linear;
+  opacity: 1;
 }
-/*SIDENAV-MIN DEPOIS DA ANIMAÇÃO*/
-md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div.side-nav-md-head div.side-nav-md-name-app.ng-hide-add,
-md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div.side-nav-md-head div.side-nav-md-name-app.ng-hide-remove{
-transition: all .3s cubic-bezier(0, 0, 0, 0)
+div.side-nav-md-perfil {
+  transition: all .3s linear;
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  /*background-color: yellow;*/
 }
-md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div.side-nav-md-head div.side-nav-md-name-app.ng-hide{
-  background-color: red;
+.md-sidenav-min-link{
+  transition: all .8s linear;
+  opacity: 1;
+}
+/*SIDENAV-MIN DEPOIS DA ANIMAÇÃO -------------------------------------------- */
+div.side-nav-md-name-app.ng-hide {
+  transition: all .3s linear;
   opacity: 0;
 }
+div.side-nav-md-perfil.ng-hide {
+  transform: translate3d(-142px, 0, 0);
+  opacity: 0;
+  /*background-color: purple;*/
+}
+.md-sidenav-min-link.ng-hide{
+  transition: all 0s linear;
+  opacity: 0;
+}
+/*SIDENAV-MIN* -------------------------------------------------------------- */
 
-/*SIDENAV-MIN*/
 md-sidenav.md-sidenav-left.md-sidenav-min {
   width: 80px !important;
   position: relative !important;
 }
-md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar{
+md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -176,7 +211,6 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-si
   /*ESQUERDO*/
   min-width: inherit;
   /*background-color: blue;*/
-
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -189,7 +223,7 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-si
   width: 28px;
   /*background-color: orange;*/
 }
-md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-sidenav-min-icon  button div div md-icon i.material-icons {
+md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-sidenav-min-icon button div div md-icon i.material-icons {
   /*ESQUERDO*/
   font-size: 20px;
   vertical-align: top;
