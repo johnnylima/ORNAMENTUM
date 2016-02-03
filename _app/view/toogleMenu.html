@@ -1,5 +1,5 @@
 <!-- MENU -->
-<md-list-item class="nav" ng-class="{click: isOpened && filhos , 'md-sidenav-min-icon': !side}">
+<md-list-item class="nav" ng-class="{click: isOpened && filhos && side, 'md-sidenav-min-icon': !side}">
   <md-button class="md-no-style" ng-click="open();">
     <div layout="row">
       <div flex="25" class="icon">
@@ -7,7 +7,7 @@
           <i class="material-icons">{{icone}}</i>
         </md-icon>
       </div>
-      <div flex="auto" class="font-normal" ng-show="side">
+      <div flex="auto" class="font-normal md-sidenav-min-link" ng-show="side">
         {{link}}
       </div>
       <div flex="10" ng-class="{'md-sidenav-min-lenghtFilhos': !side}" class="font-bold" ng-if="filhosview==='true'">

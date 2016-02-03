@@ -24,18 +24,18 @@
         <div flex class="side-nav-md-perfil-email md-body-1">rickbatera2012@gmail.com</div>
       </div>
     </div>
-    <md-list ng-cloak class="menu-link">
+    <md-list ng-cloak ng-class="{active:sidenavMin}" class="menu-link">
 
       <onmt-toogle-menu-pai>
 
-        <md-subheader ng-show="sidenavMin" class="md-no-sticky">Menu</md-subheader>
+        <md-subheader ng-show="sidenavMin" class="md-no-sticky subheader">Menu</md-subheader>
 
         <onmt-toogle-menu-filho side="sidenavMin" icone="settings_input_svideo" link="Dashboard" filhos="['Note', 'Todo', 'Inbox']" filhosview=true></onmt-toogle-menu-filho>
 
         <onmt-toogle-menu-filho side="sidenavMin" icone="add_box" link="Menu"></onmt-toogle-menu-filho>
 
 
-        <md-subheader ng-show="sidenavMin" class="md-no-sticky">Outros</md-subheader>
+        <md-subheader ng-show="sidenavMin" class="md-no-sticky subheader">Outros</md-subheader>
 
         <onmt-toogle-menu-filho side="sidenavMin" icone="face" link="Usuários" filhos="['Listar', 'Alterar Senha']" filhosview=false></onmt-toogle-menu-filho>
 
