@@ -21,16 +21,79 @@
         <onmt-sidenav-menu></onmt-sidenav-menu>
         <!-- ONMT SIDENAV MENU -->
 
-        <md-content flex layout-padding class="corpo">
-          <div layout="column" layout-fill layout-align="top center">
-            <p>
-              count:
-              {{count}}
-              The left sidenav will 'lock open' on a medium (>=960px wide) device.
-            </p>
-          </div>
-          <div flex></div>
-        </md-content>
+        <md-content class="corpo">
+
+          <md-toolbar class="md-theme-indigo toolbar-corpo">
+            <div layout="row" class="side-nav-md-head" layout-padding>
+              <div flex="auto" class="side-nav-md-name-app">
+                <span>Ornamentum</span>
+              </div>
+            </div>
+          </md-toolbar>
+
+          <md-content class="md-padding content-index" layout="row" layout-align="start center">
+            <div layout="column" flex="70" layout-padding>
+
+              <md-card>
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">Informações Pessoais</span>
+                    <!-- <span class="md-subhead">Large</span> -->
+                  </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content >
+                  <div>
+                    <form name="userForm">
+
+                      <div layout="row">
+                        <md-input-container class="md-block" flex="15">
+                          <label>Código</label>
+                          <input disabled>
+                        </md-input-container>
+                        <div flex></div>
+                        <md-input-container class="md-block" flex="30">
+                          <label>Pessoa</label>
+                          <md-select ng-model="ctrl.userState">
+                            <md-option value="fisica">
+                              Física
+                            </md-option>
+                            <md-option value="juridica">
+                              Juridica
+                            </md-option>
+                          </md-select>
+                        </md-input-container>
+                      </div>
+
+                      <div layout="row">
+                        <md-input-container class="md-block" flex>
+                          <label>Nome Completo</label>
+                          <input >
+                        </md-input-container>
+                      </div>
+
+                      <div layout="row">
+                        <md-input-container class="md-block" flex>
+                          <label>Sobrenome</label>
+                          <input>
+                        </md-input-container>
+                        <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
+                      </div>
+
+                    </form>
+                  </div>
+                </md-card-content>
+
+                <md-card-actions layout="row" layout-align="end center">
+                  <md-button>Action 1</md-button>
+                  <md-button>Action 2</md-button>
+                </md-card-actions>
+              </md-card>
+
+            </div>
+          </md-content>
+
+        </md-content 'CORPO'>
 
       </section>
     </div>
