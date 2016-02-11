@@ -14,98 +14,242 @@
   </head>
   <body ng-app="ornamentumApp" class="app" ng-cloak>
 
-    <div ng-controller="sideNavCtrl" layout="column" style="height:100%;" ng-cloak>
-      <section layout="row" flex>
+    <div ng-controller="sideNavCtrl" layout="row" style="height:100%;" ng-cloak>
+      <section layout="row">
 
         <!-- ONMT SIDENAV MENU -->
         <onmt-sidenav-menu></onmt-sidenav-menu>
         <!-- ONMT SIDENAV MENU -->
 
-        <md-content class="corpo">
-
-          <md-toolbar class="md-theme-indigo toolbar-corpo">
-            <div layout="row" class="side-nav-md-head" layout-padding>
-              <div flex="auto" class="side-nav-md-name-app">
-                <span>Ornamentum</span>
-              </div>
-            </div>
-          </md-toolbar>
-
-          <md-content class="md-padding content-panel" layout="row" layout-align="start center">
-            <div layout="column" flex-gt-sm="30" flex-gt-xs="100" flex-sm="50" layout-padding>
-
-              <md-card>
-
-                <md-card-title>
-                  <md-card-title-text>
-                    <span class="md-headline">Informações Pessoais</span>
-                    <!-- <span class="md-subhead">Large</span> -->
-                  </md-card-title-text>
-                </md-card-title>
-
-                <md-card-content >
-                  <div>
-                    <form name="userForm">
-
-                      <div layout-gt-xs="row" flex-sm>
-                        <md-input-container class="md-block" flex-gt-sm="30" flex-sm="25">
-                          <label>Código</label>
-                          <input disabled>
-                        </md-input-container>
-                        <div flex></div>
-                        <md-input-container class="md-block" flex-gt-sm="40" flex-sm="40">
-                          <label>Pessoa</label>
-                          <md-select ng-model="ctrl.userState">
-                            <md-option value="fisica">
-                              Física
-                            </md-option>
-                            <md-option value="juridica">
-                              Juridica
-                            </md-option>
-                          </md-select>
-                          <div class="md-errors-spacer"></div>
-                        </md-input-container>
-                      </div>
-
-                      <div layout="row">
-                        <md-input-container class="md-block" flex>
-                          <label>Nome Completo</label>
-                          <input >
-                        </md-input-container>
-                      </div>
-
-                      <div layout-gt-xs="row">
-                        <md-input-container class="md-block" flex>
-                          <label>Sobrenome</label>
-                          <input>
-                        </md-input-container>
-                        <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
-                      </div>
-
-                      <div layout="row">
-                        <md-input-container class="md-block" flex>
-                          <label>CPF</label>
-                          <input >
-                        </md-input-container>
-                        <div flex="10"></div>
-                        <md-input-container class="md-block" flex>
-                          <label>RG</label>
-                          <input >
-                        </md-input-container>
-                      </div>
-
-                    </form>
-                  </div>
-                </md-card-content>
-
-              </md-card>
-
-            </div>
-          </md-content>
-
-        </md-content 'CORPO'>
-
       </section>
+
+      <div layout="column" flex class="content">
+
+        <md-toolbar class="md-theme-indigo md-whiteframe-z1 toolbar-corpo">
+          <div layout="row" class="side-nav-md-head" layout-padding>
+            <div flex="auto" class="side-nav-md-name-app">
+              <span>Ornamentum</span>
+            </div>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding content-panel" layout-xs="column" layout="row" layout-align="start start">
+          <div layout="column" flex-gt-sm="30" flex-gt-xs="100" flex-sm="50" layout-padding layout-margin>
+
+            <!-- INFORMAÇÕES PESSOAIS -->
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">Informações Pessoais</span>
+                  <!-- <span class="md-subhead">Large</span> -->
+                </md-card-title-text>
+              </md-card-title>
+
+              <md-card-content >
+                <div>
+
+                  <div layout-gt-xs="row" flex-sm>
+                    <md-input-container class="md-block" flex-gt-sm="30" flex-sm="25">
+                      <label>Código</label>
+                      <input disabled>
+                    </md-input-container>
+                    <div flex></div>
+                    <md-input-container class="md-block" flex-gt-sm="40" flex-sm="40">
+                      <label>Pessoa</label>
+                      <md-select ng-model="ctrl.userState">
+                        <md-option value="fisica">
+                          Física
+                        </md-option>
+                        <md-option value="juridica">
+                          Juridica
+                        </md-option>
+                      </md-select>
+                      <div class="md-errors-spacer"></div>
+                    </md-input-container>
+                  </div>
+
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Nome Completo</label>
+                      <input >
+                    </md-input-container>
+                  </div>
+
+                  <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Sobrenome</label>
+                      <input>
+                    </md-input-container>
+                    <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
+                  </div>
+
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>CPF</label>
+                      <input >
+                    </md-input-container>
+                    <div flex="10"></div>
+                    <md-input-container class="md-block" flex>
+                      <label>RG</label>
+                      <input >
+                    </md-input-container>
+                  </div>
+
+                </div>
+              </md-card-content>
+            </md-card>
+            <!-- INFORMAÇÕES PESSOAIS -->
+
+            <!-- INFORMAÇÕES PESSOAIS -->
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">Informações Pessoais</span>
+                  <!-- <span class="md-subhead">Large</span> -->
+                </md-card-title-text>
+              </md-card-title>
+
+              <md-card-content >
+                <div>
+
+                  <div layout-gt-xs="row" flex-sm>
+                    <md-input-container class="md-block" flex-gt-sm="30" flex-sm="25">
+                      <label>Código</label>
+                      <input disabled>
+                    </md-input-container>
+                    <div flex></div>
+                    <md-input-container class="md-block" flex-gt-sm="40" flex-sm="40">
+                      <label>Pessoa</label>
+                      <md-select ng-model="ctrl.userState">
+                        <md-option value="fisica">
+                          Física
+                        </md-option>
+                        <md-option value="juridica">
+                          Juridica
+                        </md-option>
+                      </md-select>
+                      <div class="md-errors-spacer"></div>
+                    </md-input-container>
+                  </div>
+
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Nome Completo</label>
+                      <input >
+                    </md-input-container>
+                  </div>
+
+                  <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Sobrenome</label>
+                      <input>
+                    </md-input-container>
+                    <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
+                  </div>
+
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>CPF</label>
+                      <input >
+                    </md-input-container>
+                    <div flex="10"></div>
+                    <md-input-container class="md-block" flex>
+                      <label>RG</label>
+                      <input >
+                    </md-input-container>
+                  </div>
+
+                </div>
+              </md-card-content>
+            </md-card>
+            <!-- INFORMAÇÕES PESSOAIS -->
+
+            <!-- ENDEREÇO -->
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">Endereço</span>
+                  <!-- <span class="md-subhead">Large</span> -->
+                </md-card-title-text>
+              </md-card-title>
+
+              <md-card-content >
+                <div>
+
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Endereço Pessoal</label>
+                      <input >
+                    </md-input-container>
+                  </div>
+
+                  <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex="30">
+                      <label>Número</label>
+                      <input>
+                    </md-input-container>
+                    <div flex="10"></div>
+                    <md-input-container class="md-block" flex>
+                      <label>Complemento</label>
+                      <input>
+                    </md-input-container>
+                  </div>
+
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Bairro</label>
+                      <input >
+                    </md-input-container>
+                  </div>
+
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Município</label>
+                      <input >
+                    </md-input-container>
+                  </div>
+
+                  <div layout-gt-xs="row" flex-sm>
+                    <md-input-container class="md-block" flex>
+                      <label>UF</label>
+                      <md-select ng-model="ctrl.UF">
+                        <md-option value="df">
+                          DF
+                        </md-option>
+                        <md-option value="sp">
+                          SP
+                        </md-option>
+                        <md-option value="mt">
+                          MT
+                        </md-option>
+                        <md-option value="rj">
+                          RJ
+                        </md-option>
+                        <md-option value="al">
+                          AL
+                        </md-option>
+                      </md-select>
+                      <div class="md-errors-spacer"></div>
+                    </md-input-container>
+
+                    <div flex="10"></div>
+
+                    <md-input-container class="md-block" flex>
+                      <label>Cep</label>
+                      <input>
+                    </md-input-container>
+                  </div>
+
+                </div>
+              </md-card-content>
+            </md-card>
+            <!-- ENDEREÇO -->
+
+          </div>
+        </md-content>
+
+      </div>
+
     </div>
 
     <!-----------------------  CARREGAMENTO DE SCRIPT'S  ----------------------- -->
@@ -130,4 +274,4 @@
   <!-- ----------------------------------------------------------------------- -->
 
 </body>
-</html
+</html>

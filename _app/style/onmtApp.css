@@ -5,7 +5,6 @@ html, body, button, input, select, textarea {
   font-size: 14px;
 }
 .app {
-  position: relative;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -15,24 +14,19 @@ html, body, button, input, select, textarea {
   -ms-user-select: none;
   user-select: none;
   cursor: default;
-}
-.app div section md-content.corpo {
-  position: fixed;
-  left: 80px;
-  width: 100%;
-  height: 100%;
   background-color: #EFEFEF;
 }
-
-.toolbar-corpo {
-  height: 63px;
+div.content{
+  /*width: 100%;
+  overflow: auto;*/
 }
-/*contet*/
-.corpo md-content.content-panel {
-  margin: 10px 90px 10px 10px; /*(90px referente ao lado direito da tela)*/
-  padding: 0;
+md-content.content-panel{
   background-color: transparent;
 }
+.toolbar-corpo {
+  min-height: 63px;
+}
+
 /*SIDE-NAV*/
 
 .side-nav-md-head {
@@ -70,6 +64,7 @@ md-sidenav.md-sidenav-left {
   width: 240px !important;
   position: absolute !important;
   overflow: hidden;
+  z-index: 100;
 }
 
 /*LINK-MENU*/
