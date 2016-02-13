@@ -1,14 +1,14 @@
 
-<md-sidenav ng-class="{'md-sidenav-min': !sidenavMin}" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="true"
- ng-mouseenter="sidenavMin=true;" ng-mouseleave="sidenavMin=false;">
-
+<md-sidenav ng-class="{'md-sidenav-min': !sidenavMin}" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
+ ng-mouseenter="sidenavMin=true;toggleLeft();" ng-mouseleave="sidenavMin=false;toggleLeft();">
+ <!-- md-is-locked-open="true"-->
   <md-toolbar class="md-theme-indigo">
     <div layout="row" class="side-nav-md-head" layout-padding>
-      <div flex="20">
-        <img ng-src="style/img/onmtApp/logo.png" class="side-nav-md-logo"/>
+      <div flex="20" class="side-nav-md-logo"  ng-class="{'md-sidenav-min-logo': sidenavMin}">
+        <img ng-src="style/img/onmtApp/logo.png" class="side-nav-md-logo"  />
       </div>
       <div flex="auto" ng-show="sidenavMin" class="side-nav-md-name-app">
-        <span>Ornamentum</span>
+        <span>ORNAMENTUM</span>
       </div>
     </div>
   </md-toolbar>
