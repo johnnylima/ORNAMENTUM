@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,400,700,900);
 html, body, button, input, select, textarea {
   font-family: font-family: 'Roboto', sans-serif;
   color: #333333 !important;
@@ -16,15 +16,17 @@ html, body, button, input, select, textarea {
   cursor: default;
   background-color: #EFEFEF;
 }
-div.content{
-  /*width: 100%;
-  overflow: auto;*/
-}
 md-content.content-panel{
   background-color: transparent;
 }
+.content{
+  margin-left: 80px;
+}
 .toolbar-corpo {
-  min-height: 63px;
+  min-height: 64px;
+}
+.content-md-head{
+  font-weight: 100;
 }
 
 /*SIDE-NAV*/
@@ -33,8 +35,8 @@ md-content.content-panel{
   vertical-align: middle;
 }
 md-sidenav md-toolbar div.side-nav-md-head div span {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 100;
 }
 .side-nav-md-logo {
   width: 26px;
@@ -59,15 +61,15 @@ md-sidenav md-content div div div.side-nav-md-perfil-name {
 
 /*ORIGINAL ALTERADO*/
 
-md-sidenav.md-sidenav-left {
-  transition: width .6s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 240px !important;
-  position: absolute !important;
-  overflow: hidden;
-  z-index: 100;
-}
+/*md-sidenav.md-sidenav-left {
+transition: width .6s cubic-bezier(0.4, 0, 0.2, 1);
+width: 240px !important;
+position: absolute !important;
+overflow: hidden;
+z-index: 100;
+}*/
 
-/*LINK-MENU*/
+/*LINK-MENU > TOOGLE-MENU*/
 
 md-list.menu-link onmt-toogle-menu-pai {
   text-align: left;
@@ -89,10 +91,8 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item butto
   font-weight: normal;
   letter-spacing: inherit;
 }
-
-/*numero*/
-
 md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item button div div.font-bold {
+  /*numero*/
   font-weight: bold;
   font-size: 11px;
   letter-spacing: inherit;
@@ -175,18 +175,22 @@ div.side-nav-md-perfil.ng-hide {
   transition: all 0s linear;
   opacity: 0;
 }
-/*SIDENAV-MIN* -------------------------------------------------------------- */
 
-md-sidenav.md-sidenav-left.md-sidenav-min {
-  width: 80px !important;
-  position: relative !important;
+/*SIDENAV ORIGINAL COM DEVIDAS ALTERAÇÕES PARA SIDENAV MIN*/
+md-sidenav{
+  width:240px;
 }
-md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar {
-  align-items: center;
+md-sidenav.md-closed{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+}
+.md-sidenav-left.md-closed, md-sidenav.md-closed{
+  left:80px;
+}
+/*SIDENAV-MIN* -------------------------------------------------------------- */
+md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div div.side-nav-md-logo{
+  transition: margin-left .3s linear;
+  margin-left: 76%;
+  /*background-color: red;*/
 }
 md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-sidenav-min-icon {
   /*ESQUERDO*/
@@ -208,6 +212,7 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-si
   /*ESQUERDO*/
   margin-top: 3px;
   width: 28px;
+  margin-right: -80%;
   /*background-color: orange;*/
 }
 md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-sidenav-min-icon button div div md-icon i.material-icons {
@@ -218,7 +223,7 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item.md-si
 }
 md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item button div div.md-sidenav-min-lenghtFilhos {
   margin-top: -10px;
-  margin-left: 14px;
+  margin-left: 40px;
   font-weight: bold;
   font-size: 14px;
 }
