@@ -1,13 +1,27 @@
 /*
- * Projetado por Johnny Lima
- */
+* Projetado por Johnny Lima
+*/
 (function() {
   'use strict';
 
   //diretiva onmtToogleMenuPai
-  angular.module("ornamentumApp").directive("onmtSidenavMenu", function() {
+  angular.module("ornamentumApp")
+  .directive("onmtSidenavMenu", function() {
     return {
       controller: function($scope, $mdSidenav) {
+
+        $scope.close = function () {
+          $mdSidenav('left').close();
+        };
+        $scope.toggleLeft = buildToggler('left');
+
+        function buildToggler(navID) {
+          return function() {
+            $mdSidenav(navID)
+            .toggle();
+          }
+        };
+
       },
       templateUrl: 'view/onmtSidenavMenu.html',
       replace: true,
