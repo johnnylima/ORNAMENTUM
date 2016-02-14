@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,400,700,900);
 html, body, button, input, select, textarea {
   font-family: font-family: 'Roboto', sans-serif;
-  color: #333333 !important;
+  color: #333333;
   font-size: 14px;
 }
 .app {
@@ -229,14 +229,31 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item butto
 }
 
 /*CONTROLE DO FORM*/
-
-md-content.content-panel span.md-headline{
-  margin-top: -20px;
-  color: #3F3F3F;
-  font-size: 18px;
+md-content md-tabs h1{
+  padding: 16px;
+  margin: 0;
+  background: #F7F7F7;
+  border-bottom: 1px solid #e1e1e1;
+}
+.tab-div-label span{
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.tab-icon{
+  font-weight: 900;
+  color: white !important;
+  background-color: rgb(63,81,181);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+}
+md-whiteframe md-content.footer{
+  background-color: #F7F7F7;
 }
 md-datepicker{
   margin-top: -4px;
+  padding-right: 0px;
+  margin-right: 0px;
 }
 md-input-container{
   padding: 0px;
