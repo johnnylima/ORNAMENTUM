@@ -59,16 +59,6 @@ md-sidenav md-content div div div.side-nav-md-perfil-name {
   font-weight: 900;
 }
 
-/*ORIGINAL ALTERADO*/
-
-/*md-sidenav.md-sidenav-left {
-transition: width .6s cubic-bezier(0.4, 0, 0.2, 1);
-width: 240px !important;
-position: absolute !important;
-overflow: hidden;
-z-index: 100;
-}*/
-
 /*LINK-MENU > TOOGLE-MENU*/
 
 md-list.menu-link onmt-toogle-menu-pai {
@@ -240,12 +230,12 @@ md-content md-tabs h1{
   margin-right: 4px;
 }
 .tab-icon{
+  height: 22px;
+  width: 22px;
   font-weight: 900;
   color: white !important;
   background-color: rgb(63,81,181);
   border-radius: 50%;
-  width: 22px;
-  height: 22px;
 }
 md-whiteframe md-content.footer{
   background-color: #F7F7F7;
