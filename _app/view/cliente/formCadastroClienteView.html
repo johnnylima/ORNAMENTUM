@@ -1,0 +1,239 @@
+<md-content class="content-panel md-padding" layout="column" >
+  <md-whiteframe class="md-whiteframe-z1" style="background-color:#ffffff;">
+
+    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedTab">
+
+      <!-- INFORMAÇÕES PESSOAIS -->
+      <md-tab label="Informacees">
+        <md-tab-label >
+
+          <div flex layout="row" class="tab-div-label" layout-align="start start">
+            <span flex class="tab-icon">
+              1
+            </span>
+            <span flex>Informações</span>
+
+          </div>
+
+        </md-tab-label>
+        <md-tab-body>
+          <h1 class="md-display-2">Informações Pessoais</h1>
+
+          <md-content class="md-padding  md-margin">
+            <div>
+
+              <div layout-gt-xs="row" flex-sm>
+                <md-input-container class="md-block" flex-gt-sm="30" flex-sm="25">
+                  <label>Código</label>
+                  <input disabled>
+                </md-input-container>
+                <div flex></div>
+                <md-input-container class="md-block" flex-gt-sm="40" flex-sm="40">
+                  <label>Pessoa</label>
+                  <md-select ng-model="ctrl.userState">
+                    <md-option value="fisica">
+                      Física
+                    </md-option>
+                    <md-option value="juridica">
+                      Juridica
+                    </md-option>
+                  </md-select>
+                  <div class="md-errors-spacer"></div>
+                </md-input-container>
+              </div>
+
+              <div layout="row">
+                <md-input-container class="md-block" flex>
+                  <label>Nome Completo</label>
+                  <input >
+                </md-input-container>
+              </div>
+
+              <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex>
+                  <label>Chamar por</label>
+                  <input>
+                </md-input-container>
+                <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
+              </div>
+
+              <div layout="row">
+                <md-input-container class="md-block" flex>
+                  <label>CPF</label>
+                  <input >
+                </md-input-container>
+                <div flex="10"></div>
+                <md-input-container class="md-block" flex>
+                  <label>RG</label>
+                  <input >
+                </md-input-container>
+              </div>
+
+            </div>
+          </md-content>
+
+        </md-tab-body>
+      </md-tab>
+      <!-- ENDEREÇO -->
+      <md-tab label="Endereco" ng-disabled="false">
+        <md-tab-label>
+          <div flex layout="row" class="tab-div-label" layout-align="start start">
+            <span flex class="tab-icon">
+              2
+            </span>
+            <span flex>Endereço</span>
+
+          </div>
+        </md-tab-label>
+        <md-tab-body>
+          <h1 class="md-display-2">Endereço Residencial</h1>
+
+          <md-content class="md-padding">
+            <div>
+
+              <div layout="row">
+                <md-input-container class="md-block" flex>
+                  <label>Endereço</label>
+                  <input >
+                </md-input-container>
+              </div>
+
+              <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex="30">
+                  <label>Número</label>
+                  <input>
+                </md-input-container>
+                <div flex="10"></div>
+                <md-input-container class="md-block" flex>
+                  <label>Complemento</label>
+                  <input>
+                </md-input-container>
+              </div>
+
+              <div layout="row">
+                <md-input-container class="md-block" flex>
+                  <label>Bairro</label>
+                  <input >
+                </md-input-container>
+              </div>
+
+              <div layout="row">
+                <md-input-container class="md-block" flex>
+                  <label>Município</label>
+                  <input >
+                </md-input-container>
+              </div>
+
+              <div layout-gt-xs="row" flex-sm>
+                <md-input-container class="md-block" flex>
+                  <label>UF</label>
+                  <md-select ng-model="ctrl.UF">
+                    <md-option value="df">
+                      DF
+                    </md-option>
+                    <md-option value="sp">
+                      SP
+                    </md-option>
+                    <md-option value="mt">
+                      MT
+                    </md-option>
+                    <md-option value="rj">
+                      RJ
+                    </md-option>
+                    <md-option value="al">
+                      AL
+                    </md-option>
+                  </md-select>
+                  <div class="md-errors-spacer"></div>
+                </md-input-container>
+
+                <div flex="10"></div>
+
+                <md-input-container class="md-block" flex>
+                  <label>Cep</label>
+                  <input>
+                </md-input-container>
+              </div>
+
+            </div>
+          </md-content>
+
+        </md-tab-body>
+      </md-tab>
+      <!--CONTATO -->
+      <md-tab label="Contato">
+        <md-tab-label>
+          <div flex layout="row" class="tab-div-label" layout-align="start start">
+            <span flex class="tab-icon">
+              3
+            </span>
+            <span flex>Contato</span>
+
+          </div>
+        </md-tab-label>
+        <md-tab-body>
+          <h1 class="md-display-1">Contato Pessoal</h1>
+
+          <md-content class="md-padding">
+
+            <div>
+
+              <div layout-gt-xs="row" flex-sm>
+                <md-input-container class="md-block" flex-gt-sm="30" flex-sm="25">
+                  <label>Código</label>
+                  <input disabled>
+                </md-input-container>
+                <div flex></div>
+                <md-input-container class="md-block" flex-gt-sm="40" flex-sm="40">
+                  <label>Pessoa</label>
+                  <md-select ng-model="ctrl.userState">
+                    <md-option value="fisica">
+                      Física
+                    </md-option>
+                    <md-option value="juridica">
+                      Juridica
+                    </md-option>
+                  </md-select>
+                  <div class="md-errors-spacer"></div>
+                </md-input-container>
+              </div>
+
+              <div layout="row">
+                <md-input-container class="md-block" flex>
+                  <label>Nome Completo</label>
+                  <input >
+                </md-input-container>
+              </div>
+
+              <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex>
+                  <label>Sobrenome</label>
+                  <input>
+                </md-input-container>
+                <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
+              </div>
+
+              <div layout="row">
+                <md-input-container class="md-block" flex>
+                  <label>CPF</label>
+                  <input >
+                </md-input-container>
+                <div flex="10"></div>
+                <md-input-container class="md-block" flex>
+                  <label>RG</label>
+                  <input >
+                </md-input-container>
+              </div>
+
+            </div>
+          </md-content>
+
+        </md-tab-body>
+      </md-tab>
+
+    </md-tabs>
+
+    <onmt-tabs-buttom/>
+
+  </md-whiteframe>
+</md-content>

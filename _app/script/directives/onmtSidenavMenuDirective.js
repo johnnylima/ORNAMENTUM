@@ -23,7 +23,7 @@
         };
 
       },
-      templateUrl: 'view/onmtSidenavMenuView.html',
+      templateUrl: 'view/directives/onmtSidenavMenuView.html',
       replace: true,
       link: function(scope) {
         scope.sidenavMin = false;
