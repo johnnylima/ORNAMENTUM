@@ -14,11 +14,11 @@
   </head>
   <body ng-app="ornamentumApp" class="app" ng-cloak>
 
-    <div ng-controller="sideNavCtrl" layout="row" style="height:100%;" ng-cloak>
+    <div layout="row" style="height:100%;" ng-cloak>
 
       <section layout="row">
         <!-- ONMT SIDENAV MENU -->
-        <onmt-sidenav-menu />
+        <onmt-sidenav-menu/>
         <!-- ONMT SIDENAV MENU -->
       </section>
 
@@ -34,10 +34,8 @@
         </md-toolbar>
         <!-- BARRA SUPERIOR -->
 
-        <md-content class="md-padding content-panel" layout="column" flex layout-margin>
-
-          <onmt-form-wizard/>
-
+        <md-content class="content-panel mg-padding" flex layout-margin>
+          <div ng-view></div>
         </md-content>
 
       </div>
@@ -46,8 +44,9 @@
 
     <!-----------------------  CARREGAMENTO DE SCRIPT'S  ----------------------- -->
     <!-- Importação dos scripts principais -->
-    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
     <!-- Grupo de importações correnpondente ao ANGULAR-MATERIAL -->
+    <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/angular-animate/angular-animate.min.js"></script>
     <script src="lib/angular-aria/angular-aria.min.js"></script>
     <script src="lib/angular-material/angular-material.min.js"></script>
@@ -57,11 +56,13 @@
     <!--Importação do app.js <nomeando o app>-->
     <script src="script/app.js"></script>
     <!--Importação das Controllers-->
-    <script src="script/controllers/sideNavCtrl.js" charset="utf-8"></script>
+    <script src="script/controllers/formCadastroClienteCtrl.js" charset="utf-8"></script>
+    <!--Importação das Configs-->
+    <script src="script/configs/routeConfig.js" charset="utf-8"></script>
     <!--Importação das Diretivas-->
     <script src="script/directives/onmtSidenavMenuDirective.js" charset="utf-8"></script>
     <script src="script/directives/onmtToogleMenuDirective.js" charset="utf-8"></script>
-    <script src="script/directives/onmtFormWizardDirective.js" charset="utf-8"></script>
+    <script src="script/directives/onmtTabsButtomDirective.js" charset="utf-8"></script>
   </script>
   <!-- ----------------------------------------------------------------------- -->
 

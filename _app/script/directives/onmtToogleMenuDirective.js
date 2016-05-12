@@ -71,7 +71,7 @@
   // diretiva filha de ontmToogleMenuPai
   angular.module("ornamentumApp").directive("onmtToogleMenuFilho", function() {
     return {
-      templateUrl: "view/onmtToogleMenuView.html",
+      templateUrl: "view/directives/onmtToogleMenuView.html",
       scope: {
         side: "=",
         icone: "@",

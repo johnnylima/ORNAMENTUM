@@ -1,10 +1,15 @@
 /*
  * Projetado por Johnny Lima
  */
-(function(){
+(function() {
   'use strict';
 
   // Nomeando o Módulo e fazendo carregamento dos módulos dependentes
-  angular.module("ornamentumApp", ["ngMaterial", "ngMessages", "ngAnimate"]);
+  angular.module("ornamentumApp", [
+    "ngMaterial",
+    "ngMessages",
+    "ngAnimate",
+    "ngRoute"
+  ]);
 
 })();
