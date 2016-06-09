@@ -253,6 +253,6 @@ md-input-container{
 .md-margin-bottom{
   margin-bottom: 20px;
 }
-md-content.content-panel md-card h2{
-
+.md-padding-lr{
+  padding: 0 16px;
 }
