@@ -16,17 +16,107 @@ html, body, button, input, select, textarea {
   cursor: default;
   background-color: #EFEFEF;
 }
-md-content.content-panel{
+md-content.content-panel {
   background-color: transparent;
 }
-.content{
+.content {
   margin-left: 80px;
 }
 .toolbar-corpo {
   min-height: 64px;
 }
-.content-md-head{
+.content-md-head {
   font-weight: 100;
+}
+
+/*ICON*/
+md-icon.i48{
+  font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 48px !important;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+i.i48 {
+  font-size: 48px !important;
+}
+md-icon.i36{
+  font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 36px !important;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+i.i36 {
+  font-size: 36px !important;
+}
+md-icon.i36{
+  font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 36px !important;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+i.i36 {
+  font-size: 24px !important;
+}
+md-icon.i28{
+  font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 28px !important;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+i.i28 {
+  font-size: 28px !important;
 }
 
 /*SIDE-NAV*/
@@ -137,6 +227,7 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho div.sub-nav.ng-hid
 }
 
 /*SIDENAV-MIN ANTES DA ANIMAÇÃO -------------------------------------------- */
+
 div.side-nav-md-name-app {
   transition: all .8s linear;
   opacity: 1;
@@ -147,11 +238,13 @@ div.side-nav-md-perfil {
   opacity: 1;
   /*background-color: yellow;*/
 }
-.md-sidenav-min-link{
+.md-sidenav-min-link {
   transition: all .8s linear;
   opacity: 1;
 }
+
 /*SIDENAV-MIN DEPOIS DA ANIMAÇÃO -------------------------------------------- */
+
 div.side-nav-md-name-app.ng-hide {
   transition: all .3s linear;
   opacity: 0;
@@ -161,23 +254,26 @@ div.side-nav-md-perfil.ng-hide {
   opacity: 0;
   /*background-color: purple;*/
 }
-.md-sidenav-min-link.ng-hide{
+.md-sidenav-min-link.ng-hide {
   transition: all 0s linear;
   opacity: 0;
 }
 
 /*SIDENAV ORIGINAL COM DEVIDAS ALTERAÇÕES PARA SIDENAV MIN*/
-md-sidenav{
-  width:240px;
+
+md-sidenav {
+  width: 240px;
 }
-md-sidenav.md-closed{
+md-sidenav.md-closed {
   display: flex;
 }
-.md-sidenav-left.md-closed, md-sidenav.md-closed{
-  left:80px;
+.md-sidenav-left.md-closed, md-sidenav.md-closed {
+  left: 80px;
 }
+
 /*SIDENAV-MIN* -------------------------------------------------------------- */
-md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div div.side-nav-md-logo{
+
+md-sidenav.md-sidenav-left.md-sidenav-min md-toolbar div div.side-nav-md-logo {
   transition: margin-left .3s linear;
   margin-left: 76%;
   /*background-color: red;*/
@@ -219,40 +315,57 @@ md-list.menu-link onmt-toogle-menu-pai onmt-toogle-menu-filho md-list-item butto
 }
 
 /*CONTROLE DO FORM*/
-md-content md-tabs h1{
+
+md-content md-tabs h1 {
   padding: 16px;
   margin: 0;
   background: #F7F7F7;
   border-bottom: 1px solid #e1e1e1;
 }
-.tab-div-label span{
+.tab-div-label span {
   margin-left: 4px;
   margin-right: 4px;
 }
-.tab-icon{
+.tab-icon {
   height: 22px;
   width: 22px;
   font-weight: 900;
   color: white !important;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
   border-radius: 50%;
 }
-md-whiteframe md-content.footer{
+md-whiteframe md-content.footer {
   background-color: #F7F7F7;
 }
-md-datepicker{
+md-datepicker {
   margin-top: -4px;
   padding-right: 0px;
   margin-right: 0px;
 }
-md-input-container{
+md-input-container {
   padding: 0px;
   margin: 2px 0;
 }
+
 /*FORMULÁRIO CARD CLIENTE*/
-.md-margin-bottom{
+
+.md-margin-bottom {
   margin-bottom: 20px;
 }
-.md-padding-lr{
+.md-padding-lr {
   padding: 0 16px;
+}
+md-content.md-content-form {
+  padding: 32px;
+}
+md-dialog.fullscreen-dialog {
+  max-width: 80%;
+  max-height: 80%;
+  width: 100%;
+}
+md-card.no-pm-lr{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
