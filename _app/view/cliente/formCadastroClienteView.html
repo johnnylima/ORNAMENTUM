@@ -1,8 +1,7 @@
-<md-content class="content-panel md-padding" layout="column">
+<md-content class="content-panel md-padding" layout="column" ng-controller="formCadastroClienteCtrl">
   <md-card>
 
     <!-- INFORMAÇÕES PESSOAIS -->
-
     <md-toolbar class="md-padding-lr md-hue-1">
       <div class="md-toolbar-tools">
         <h2>Informações Pessoais</h2>
@@ -18,99 +17,98 @@
       </div>
     </md-toolbar>
 
-    <md-content class="md-padding">
-      <md-content class="md-padding">
+    <md-content class="md-content-form">
 
-        <div>
+      <div>
 
-          <div layout="row">
-            <md-input-container class="md-block" flex>
-              <label>Nome Completo</label>
-              <input >
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Chamar por</label>
-              <input>
-            </md-input-container>
-          </div>
-
-          <div layout="row">
-            <md-input-container class="md-block" flex>
-              <label>CPF</label>
-              <input >
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>RG</label>
-              <input >
-            </md-input-container>
-          </div>
-
-          <div layout="row" class="md-margin-bottom">
-
-            <md-input-container class="md-block" flex>
-              <label>Sexo</label>
-              <md-select ng-model="ctrl.sexo">
-                <md-option value="m">
-                  Masculino
-                </md-option>
-                <md-option value="f">
-                  Feminino
-                </md-option>
-              </md-select>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Estado Civil</label>
-              <md-select ng-model="ctrl.estadocivil">
-                <md-option value="solteiro">
-                  Solteiro(a)
-                </md-option>
-                <md-option value="casado">
-                  Casado(a)
-                </md-option>
-                <md-option value="divorciado">
-                  Divorciado(a)
-                </md-option>
-                <md-option value="viuvo">
-                  Viúvo(a)
-                </md-option>
-                <md-option value="separado">
-                  Separado(a)
-                </md-option>
-              </md-select>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
-          </div>
-
-          <div layout="row">
-            <md-input-container class="md-block" flex>
-              <label>Pai</label>
-              <input >
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Mãe</label>
-              <input>
-            </md-input-container>
-          </div>
-
-          <div layout="row">
-            <md-input-container class="md-block" flex>
-              <label>Escolaridade</label>
-              <input >
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Profissão</label>
-              <input >
-            </md-input-container>
-          </div>
-
+        <div layout="row">
+          <md-input-container class="md-block" flex>
+            <label>Nome Completo</label>
+            <input >
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>Chamar por</label>
+            <input>
+          </md-input-container>
         </div>
-      </md-content>
+
+        <div layout="row">
+          <md-input-container class="md-block" flex>
+            <label>CPF</label>
+            <input >
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>RG</label>
+            <input >
+          </md-input-container>
+        </div>
+
+        <div layout="row" class="md-margin-bottom">
+
+          <md-input-container class="md-block" flex>
+            <label>Sexo</label>
+            <md-select ng-model="ctrl.sexo">
+              <md-option value="m">
+                Masculino
+              </md-option>
+              <md-option value="f">
+                Feminino
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>Estado Civil</label>
+            <md-select ng-model="ctrl.estadocivil">
+              <md-option value="solteiro">
+                Solteiro(a)
+              </md-option>
+              <md-option value="casado">
+                Casado(a)
+              </md-option>
+              <md-option value="divorciado">
+                Divorciado(a)
+              </md-option>
+              <md-option value="viuvo">
+                Viúvo(a)
+              </md-option>
+              <md-option value="separado">
+                Separado(a)
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <div flex="5"></div>
+          <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
+        </div>
+
+        <div layout="row">
+          <md-input-container class="md-block" flex>
+            <label>Pai</label>
+            <input >
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>Mãe</label>
+            <input>
+          </md-input-container>
+        </div>
+
+        <div layout="row">
+          <md-input-container class="md-block" flex>
+            <label>Escolaridade</label>
+            <input >
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>Profissão</label>
+            <input >
+          </md-input-container>
+        </div>
+
+      </div>
+
     </md-content>
 
     <!-- ENDEREÇO -->
@@ -118,9 +116,9 @@
       <div class="md-toolbar-tools">
         <h2>Endereços</h2>
         <span flex></span>
-        <md-button class="md-fab md-mini" aria-label="Inserir Endereço">
+        <md-button class="md-fab md-mini" aria-label="Inserir Endereço" ng-click="showAddEnderecoDialog($event)">
           <md-icon>
-            <i class="material-icons">playlist_add</i>
+            <i class="material-icons">add</i>
           </md-icon>
           <md-tooltip>
             Inserir Endereço
@@ -129,197 +127,35 @@
       </div>
     </md-toolbar>
 
-    <md-content class="md-padding">
-      <md-content class="md-padding">
-
-        <div>
-
-          <div layout="row">
-            <md-input-container class="md-block" flex>
-              <label>Endereço</label>
-              <md-select ng-model="ctrl.tipoendereco">
-                <md-option value="residencial">Residencial</md-option>
-                <md-option value="comercial">Comercial</md-option>
-                <md-option value="faturamento">Faturamento</md-option>
-                <md-option value="evento">Evento</md-option>
-                <md-option value="entrega">Entrega</md-option>
-                <md-option value="instalacao">Instalação</md-option>
-                <md-option value="recebimento">Recebimento</md-option>
-              </md-select>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Tipo de Logradouro</label>
-              <md-select ng-model="ctrl.tipologradouro">
-                <md-option value="aeroporto">Aeroporto</md-option>
-                <md-option value="alameda">Alameda</md-option>
-                <md-option value="area">Área</md-option>
-                <md-option value="avenida">Avenida</md-option>
-                <md-option value="campo">Campo</md-option>
-                <md-option value="chacara">Chácara</md-option>
-                <md-option value="colonia">Colônia</md-option>
-                <md-option value="condominio">Condomínio</md-option>
-                <md-option value="conjunto">Conjunto</md-option>
-                <md-option value="distrito">Distrito</md-option>
-                <md-option value="esplanada">Esplanada</md-option>
-                <md-option value="estacao">Estação</md-option>
-                <md-option value="estrada">Estrada</md-option>
-                <md-option value="favela">Favela</md-option>
-                <md-option value="fazenda">Fazenda</md-option>
-                <md-option value="feira">Feira</md-option>
-                <md-option value="jardim">Jardim</md-option>
-                <md-option value="ladeira">Ladeira</md-option>
-                <md-option value="lago">Lago</md-option>
-                <md-option value="lagoa">Lagoa</md-option>
-                <md-option value="largo">Largo</md-option>
-                <md-option value="loteamento">Loteamento</md-option>
-                <md-option value="morro">Morro</md-option>
-                <md-option value="nucleo">Núcleo</md-option>
-                <md-option value="parque">Parque</md-option>
-                <md-option value="passarela">Passarela</md-option>
-                <md-option value="patio">Pátio</md-option>
-                <md-option value="praça">Praça</md-option>
-                <md-option value="quadra">Quadra</md-option>
-                <md-option value="recanto">Recanto</md-option>
-                <md-option value="residencial">Residencial</md-option>
-                <md-option value="rodovia">Rodovia</md-option>
-                <md-option value="rua">Rua</md-option>
-                <md-option value="setor">Setor</md-option>
-                <md-option value="sitio">Sítio</md-option>
-                <md-option value="travessa">Travessa</md-option>
-                <md-option value="trecho">Trecho</md-option>
-                <md-option value="trevo">Trevo</md-option>
-                <md-option value="vale">Vale</md-option>
-                <md-option value="vereda">Vereda</md-option>
-                <md-option value="via">Via</md-option>
-                <md-option value="viaduto">Viaduto</md-option>
-                <md-option value="viela">Viela</md-option>
-                <md-option value="vila">Vila</md-option>
-              </md-select>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex=50>
-              <label>Logradouro</label>
-              <input >
-            </md-input-container>
-          </div>
-
-          <div layout-gt-xs="row">
-            <md-input-container class="md-block" flex="20">
-              <label>Número</label>
-              <input>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Complemento</label>
-              <input>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Bairro</label>
-              <input >
-            </md-input-container>
-          </div>
-
-          <div layout-gt-xs="row" flex-sm>
-            <md-input-container class="md-block" flex=50>
-              <label>Localidade</label>
-              <input >
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>UF</label>
-              <md-select ng-model="ctrl.uf">
-                <md-option value="AC">Acre</md-option>
-                <md-option value="AL">Alagoas</md-option>
-                <md-option value="AP">Amapá</md-option>
-                <md-option value="AM">Amazonas</md-option>
-                <md-option value="BA">Bahia</md-option>
-                <md-option value="CE">Ceará</md-option>
-                <md-option value="DF">Distrito Federal</md-option>
-                <md-option value="ES">Espírito Santo</md-option>
-                <md-option value="GO">Goiás</md-option>
-                <md-option value="MA">Maranhão</md-option>
-                <md-option value="MT">Mato Grosso</md-option>
-                <md-option value="MS">Mato Grosso do Sul</md-option>
-                <md-option value="MG">Minas Gerais</md-option>
-                <md-option value="PA">Pará</md-option>
-                <md-option value="PB">Paraíba</md-option>
-                <md-option value="PR">Paraná</md-option>
-                <md-option value="PE">Pernambuco</md-option>
-                <md-option value="PI">Piauí</md-option>
-                <md-option value="RJ">Rio de Janeiro</md-option>
-                <md-option value="RN">Rio Grande do Norte</md-option>
-                <md-option value="RS">Rio Grande do Sul</md-option>
-                <md-option value="RO">Rondônia</md-option>
-                <md-option value="RR">Roraima</md-option>
-                <md-option value="SC">Santa Catarina</md-option>
-                <md-option value="SP">São Paulo</md-option>
-                <md-option value="SE">Sergipe</md-option>
-                <md-option value="TO">Tocantins</md-option>
-              </md-select>
-              <div class="md-errors-spacer"></div>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Cep</label>
-              <input>
-            </md-input-container>
-          </div>
-
-          <div layout="row">
-            <md-input-container class="md-block" flex>
-              <label>Observações</label>
-              <textarea ng-model="ctrl.enderecoobservacao" md-maxlength="300" rows="2" md-select-on-focus></textarea>
-            </md-input-container>
-          </div>
-
-        </div>
-      </md-content>
+    <md-content class="md-content-form">
+      <onmt-regular-card icon="info_outline" title="Lista de Endereços" message="Adicione pelo menos 1 endereço."></onmt-regular-card>
     </md-content>
 
     <!--CONTATO -->
-    <md-content class="md-padding">
-      <h2>Contato Pessoal</h2>
-      <div>
-
-        <div layout="row">
-          <div flex>
-            <img ng-src="style/img/perfil/johnny.jpg" class="side-nav-md-avatar"/>
-          </div>
-
-          <md-input-container class="md-block" flex="70">
-            <label>Nome Completo</label>
-            <input >
-          </md-input-container>
-
-        </div>
-
-        <div layout-gt-xs="row">
-          <md-input-container class="md-block" flex>
-            <label>Sobrenome</label>
-            <input>
-          </md-input-container>
-          <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
-        </div>
-
-        <div layout="row">
-          <md-input-container class="md-block" flex>
-            <label>CPF</label>
-            <input >
-          </md-input-container>
-          <div flex="10"></div>
-          <md-input-container class="md-block" flex>
-            <label>RG</label>
-            <input >
-          </md-input-container>
-        </div>
-
+    <md-toolbar class="md-padding-lr  md-hue-1">
+      <div class="md-toolbar-tools">
+        <h2>Contatos</h2>
+        <span flex></span>
+        <md-button class="md-fab md-mini" aria-label="Inserir Contato" ng-click="showAddContatoDialog($event)">
+          <md-icon>
+            <i class="material-icons">add</i>
+          </md-icon>
+          <md-tooltip>
+            Inserir Contato
+          </md-tooltip>
+        </md-button>
       </div>
+    </md-toolbar>
+
+    <md-content class="md-content-form">
+      <onmt-regular-card icon="info_outline" title="Lista de Contato" message="Adicione pelo menos 1 contato."></onmt-regular-card>
     </md-content>
 
-    <div class="md-actions" layout="row|column" layout-align="start|end|center start|end|center">
-      <md-button>content</md-button>
+    <div class="md-actions md-padding-lr" layout="row" layout-align="center start">
+      <md-button class="md-hue-3 md-raised">Cancelar</md-button>
+      <span flex></span>
+      <md-button class="md-accent md-hue-3 md-raised">Limpar</md-button>
+      <md-button class="md-primary md-hue-2 md-raised">Enviar</md-button>
     </div>
   </md-card>
 </md-content>
