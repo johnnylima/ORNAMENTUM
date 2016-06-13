@@ -14,22 +14,16 @@
         ''+
         '<md-content class="footer" layout="row" layout-align="space-between center" layout-padding>'+
         ''+
-<<<<<<< HEAD
           '<div ng-hide="hidePrev();">'+
-=======
           '<div>'+
->>>>>>> origin/master
             '<md-button class="md-hue-1 md-primary" ng-click="prevTab()">'+
               '<md-icon md-font-icon="material-icons">keyboard_arrow_left</md-icon>'+
                'anterior'+
             '</md-button>'+
           '</div>'+
           '<div></div>'+
-<<<<<<< HEAD
           '<div ng-hide="hideNext();">'+
-=======
           '<div>'+
->>>>>>> origin/master
             '<md-button class="md-hue-1 md-primary" ng-click="nextTab();">'+
               'Próximo'+
               '<md-icon md-font-icon="material-icons">keyboard_arrow_right</md-icon>'+
@@ -44,7 +38,7 @@
           scope.selectedTab = scope.selectedTab-1;
           scope.ctTabs = scope.$$childHead.$mdTabsCtrl.tabs.length;
 
-<<<<<<< HEAD
+
           scope.hidePrev = function () {
             if(scope.selectedTab == 0) return true;
           };
@@ -53,8 +47,6 @@
           };
           console.log(scope.ctTabs);
 
-=======
->>>>>>> origin/master
           scope.nextTab = function(){
             // console.log(scope.$$childHead.$mdTabsCtrl.tabs.length);
             if (scope.selectedTab === (scope.ctTabs - 1)) {
