@@ -1,0 +1,148 @@
+<md-dialog aria-label="Novo Edereço" ng-cloak class="fullscreen-dialog">
+
+  <md-toolbar class="md-padding-lr md-hue-1">
+    <div class="md-toolbar-tools">
+      <h2>Novo Contato</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="closeDialog()">
+        <md-icon>
+          <i class="material-icons">close</i>
+        </md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+
+    <md-content class="md-content-form">
+
+      <div layout="row">
+        <md-input-container class="md-block" flex>
+          <label>Nome Completo</label>
+          <input >
+        </md-input-container>
+        <span flex="5"></span>
+        <md-input-container class="md-block" flex>
+          <label>Chamar por</label>
+          <input >
+        </md-input-container>
+      </div>
+
+      <div layout="row">
+        <md-input-container class="md-block" flex>
+          <label>Empresa</label>
+          <input >
+        </md-input-container>
+        <span flex="5"></span>
+        <md-input-container class="md-block" flex>
+          <label>Site</label>
+          <input >
+        </md-input-container>
+        <span flex="5"></span>
+        <md-input-container class="md-block" flex>
+          <label>Cargo</label>
+          <input >
+        </md-input-container>
+      </div>
+
+      <div layout="row">
+        <md-input-container class="md-block" flex>
+          <label>Email</label>
+          <input >
+        </md-input-container>
+        <span flex="5"></span>
+        <md-input-container class="md-block" flex>
+          <label>De quem é?</label>
+          <md-select ng-model="ctrl.estadocivil">
+
+            <md-option value="eu">Próprio</md-option>
+            <md-option value="conjugue">Cônjugue</md-option>
+            <md-option value="filho(a)">Filho(a)</md-option>
+            <md-option value="mae">Mãe</md-option>
+            <md-option value="pai">Pai</md-option>
+            <md-option value="irmao(a)">Irmão(ã)</md-option>
+            <md-option value="parente">Parente</md-option>
+            <md-option value="amigo(a)">Amigo(a)</md-option>
+            <md-option value="gerente">Gerente</md-option>
+            <md-option value="assistente">Assistente</md-option>
+            <md-option value="parceiro">Parceiro</md-option>
+
+          </md-select>
+        </md-input-container>
+      </div>
+
+      <md-card layout="column" flex style="background-color:#EFEFEF;" class="no-pm-lr">
+        <md-card-contet class="md-padding">
+          <div layout="row">
+
+              <md-input-container class="md-block" flex>
+                <label>Telefone</label>
+                <md-select ng-model="ctrl.estadocivil">
+
+                  <md-option value="residencial">Residencial</md-option>
+                  <md-option value="comercial">Comercial</md-option>
+                  <md-option value="outro">Outro</md-option>
+                  <md-option value="celular">Celular</md-option>
+                  <md-option value="principal">Principal</md-option>
+                  <md-option value="fax_residencial">Fax residencial</md-option>
+                  <md-option value="fax_comercial">Fax comercial</md-option>
+
+                </md-select>
+              </md-input-container>
+              <span flex="5"></span>
+              <md-input-container class="md-block" flex>
+                <label>Número</label>
+                <input >
+              </md-input-container>
+              <span flex="1"></span>
+              <md-button class="md-icon-button md-primary md-hue-1" aria-label="Inserir Telefone">
+                <md-icon ><i class="material-icons">add_box</i></md-icon>
+                <md-tooltip>
+                  Inserir Telefone
+                </md-tooltip>
+              </md-button>
+
+            </div>
+        </md-card-contet>
+      </md-card>
+
+      <md-card layout="column" flex style="background-color:#EFEFEF;" class="no-pm-lr">
+
+        <md-card-content>
+
+          <md-list flex>
+            <span class="md-headline">Lista de Telefones</span>
+            <md-divider ></md-divider>
+            <md-list-item class="md-2-line" >
+                <md-icon ><i class="material-icons">phone</i></md-icon>
+              <div class="md-list-item-text">
+                <h3>
+                  (61) 98447.8057
+                </h3>
+                <p>
+                  Celular
+                </p>
+              </div>
+              <md-button class="md-secondary md-icon-button md-accent md-hue-1" ng-click="doSecondaryAction($event)" aria-label="call">
+                <md-icon><i class="material-icons">remove_circle</i></md-icon>
+              </md-button>
+            </md-list-item>
+
+          </md-list>
+
+        </md-card-content>
+
+      </md-content>
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="limparForm()">
+        Limpar
+      </md-button>
+      <md-button ng-click="AddContato()">
+        Adicionar
+      </md-button>
+    </md-dialog-actions>
+
+  </md-dialog>
