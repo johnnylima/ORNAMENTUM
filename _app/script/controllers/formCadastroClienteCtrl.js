@@ -7,11 +7,6 @@
   angular.module("ornamentumApp")
     .controller("formCadastroClienteCtrl", formDialogClientCtrl);
 
-  function formDadosClienteCtrl($scope) {
-    $scope.so = "hello";
-    console.log(so);
-  }
-
 
 
 
@@ -59,28 +54,28 @@
 
     function showAddEnderecoDialog(ev) {
       $mdDialog.show({
-        controller: DialogController,
-        templateUrl: 'view/cliente/endereco.dialog.tmpl.html',
-        parent: angular.element(document.body),
-        targetEvent: ev,
-        clickOutsideToClose: true,
-        locals: {
-          items: $scope.items
-        }
-      })
+          controller: DialogController,
+          templateUrl: 'view/cliente/endereco.dialog.tmpl.html',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose: true,
+          locals: {
+            items: $scope.items
+          }
+        })
     }
 
     function showAddContatoDialog(ev) {
       $mdDialog.show({
-        controller: DialogController,
-        templateUrl: 'view/cliente/contato.dialog.tmpl.html',
-        parent: angular.element(document.body),
-        targetEvent: ev,
-        clickOutsideToClose: true,
-        locals: {
-          items: $scope.items
-        }
-      })
+          controller: DialogController,
+          templateUrl: 'view/cliente/contato.dialog.tmpl.html',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose: true,
+          locals: {
+            items: $scope.items
+          }
+        })
     }
 
     function DialogController($scope, $mdDialog, items) {
