@@ -369,3 +369,6 @@ md-card.no-pm-lr{
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+md-toolbar.topo{
+  border-radius: 2px 2px 0 0;
+}
