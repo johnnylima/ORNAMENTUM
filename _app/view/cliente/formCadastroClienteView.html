@@ -1,162 +1,172 @@
-<md-content class="content-panel md-padding" layout="column" ng-controller="formCadastroClienteCtrl">
-  <md-card>
-    {{o}}
+<form name="clienteForm">
+  <md-content class="content-panel md-padding" layout="column">
+    <md-card>
+      <p>
+        {{dados}}
+      </p>
+      <p>
+        {{dadoEndereco}}
+      </p>
+      <p>
+        {{dadoContato}}
+      </p>
 
-    <!-- INFORMAÇÕES PESSOAIS -->
-    <md-toolbar class="md-padding-lr md-hue-1 topo">
-      <div class="md-toolbar-tools">
-        <h2>Informações Pessoais</h2>
-        <span flex></span>
-        <div class="md-block">
-          <md-switch aria-label="Pessoa Jurídica">
-            <span style="font-size:14px;">Empresa</span>
-          </md-switch>
-          <md-tooltip>
-            Pessoa Jurídica
-          </md-tooltip>
+      <!-- INFORMAÇÕES PESSOAIS -->
+      <md-toolbar class="md-padding-lr md-hue-1 topo">
+        <div class="md-toolbar-tools">
+          <h2>Informações Pessoais</h2>
+          <span flex></span>
+          <div class="md-block">
+            <md-switch aria-label="Pessoa Jurídica">
+              <span style="font-size:14px;">Empresa</span>
+            </md-switch>
+            <md-tooltip>
+              Pessoa Jurídica
+            </md-tooltip>
+          </div>
         </div>
-      </div>
-    </md-toolbar>
+      </md-toolbar>
 
-    <md-content class="md-content-form">
+      <md-content class="md-content-form">
 
-      <div>
+        <div>
 
-        <div layout="row">
-          <md-input-container class="md-block" flex>
-            <label>Nome Completo</label>
-            <input >
-          </md-input-container>
-          <div flex="5"></div>
-          <md-input-container class="md-block" flex>
-            <label>Chamar por</label>
-            <input>
-          </md-input-container>
+          <div layout="row">
+            <md-input-container class="md-block" flex>
+              <label>Nome Completo</label>
+              <input ng-model="dados.nome">
+            </md-input-container>
+            <div flex="5"></div>
+            <md-input-container class="md-block" flex>
+              <label>Chamar por</label>
+              <input ng-model="dados.nometratamento">
+            </md-input-container>
+          </div>
+
+          <div layout="row">
+            <md-input-container class="md-block" flex>
+              <label>CPF</label>
+              <input ng-model="dados.cpf">
+            </md-input-container>
+            <div flex="5"></div>
+            <md-input-container class="md-block" flex>
+              <label>RG</label>
+              <input ng-model="dados.rg">
+            </md-input-container>
+          </div>
+
+          <div layout="row" class="md-margin-bottom">
+
+            <md-input-container class="md-block" flex>
+              <label>Sexo</label>
+              <md-select ng-model="dados.sexo">
+                <md-option value="m">
+                  Masculino
+                </md-option>
+                <md-option value="f">
+                  Feminino
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <div flex="5"></div>
+            <md-input-container class="md-block" flex>
+              <label>Estado Civil</label>
+              <md-select ng-model="dados.estadocivil">
+                <md-option value="solteiro">
+                  Solteiro(a)
+                </md-option>
+                <md-option value="casado">
+                  Casado(a)
+                </md-option>
+                <md-option value="divorciado">
+                  Divorciado(a)
+                </md-option>
+                <md-option value="viuvo">
+                  Viúvo(a)
+                </md-option>
+                <md-option value="separado">
+                  Separado(a)
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <div flex="5"></div>
+            <md-datepicker ng-model="dados.datanascimento" md-placeholder="Nascimento"></md-datepicker>
+          </div>
+
+          <div layout="row">
+            <md-input-container class="md-block" flex>
+              <label>Pai</label>
+              <input ng-model="dados.pai">
+            </md-input-container>
+            <div flex="5"></div>
+            <md-input-container class="md-block" flex>
+              <label>Mãe</label>
+              <input ng-model="dados.mae">
+            </md-input-container>
+          </div>
+
+          <div layout="row">
+            <md-input-container class="md-block" flex>
+              <label>Escolaridade</label>
+              <input ng-model="dados.escolaridade">
+            </md-input-container>
+            <div flex="5"></div>
+            <md-input-container class="md-block" flex>
+              <label>Profissão</label>
+              <input ng-model="dados.profissao">
+            </md-input-container>
+          </div>
+
         </div>
 
-        <div layout="row">
-          <md-input-container class="md-block" flex>
-            <label>CPF</label>
-            <input >
-          </md-input-container>
-          <div flex="5"></div>
-          <md-input-container class="md-block" flex>
-            <label>RG</label>
-            <input >
-          </md-input-container>
+      </md-content>
+
+      <!-- ENDEREÇO -->
+      <md-toolbar class="md-padding-lr  md-hue-1">
+        <div class="md-toolbar-tools">
+          <h2>Endereços</h2>
+          <span flex></span>
+          <md-button class="md-fab md-mini" aria-label="Inserir Endereço" ng-click="showAddEnderecoDialog($event)">
+            <md-icon>
+              <i class="material-icons">add</i>
+            </md-icon>
+            <md-tooltip>
+              Inserir Endereço
+            </md-tooltip>
+          </md-button>
         </div>
+      </md-toolbar>
 
-        <div layout="row" class="md-margin-bottom">
+      <md-content class="md-content-form">
+        <onmt-regular-card icon="info_outline" title="Lista de Endereços" message="Adicione pelo menos 1 endereço."></onmt-regular-card>
+      </md-content>
 
-          <md-input-container class="md-block" flex>
-            <label>Sexo</label>
-            <md-select ng-model="ctrl.sexo">
-              <md-option value="m">
-                Masculino
-              </md-option>
-              <md-option value="f">
-                Feminino
-              </md-option>
-            </md-select>
-          </md-input-container>
-          <div flex="5"></div>
-          <md-input-container class="md-block" flex>
-            <label>Estado Civil</label>
-            <md-select ng-model="ctrl.estadocivil">
-              <md-option value="solteiro">
-                Solteiro(a)
-              </md-option>
-              <md-option value="casado">
-                Casado(a)
-              </md-option>
-              <md-option value="divorciado">
-                Divorciado(a)
-              </md-option>
-              <md-option value="viuvo">
-                Viúvo(a)
-              </md-option>
-              <md-option value="separado">
-                Separado(a)
-              </md-option>
-            </md-select>
-          </md-input-container>
-          <div flex="5"></div>
-          <md-datepicker ng-model="user.submissionDate" md-placeholder="Nascimento"></md-datepicker>
+      <!--CONTATO -->
+      <md-toolbar class="md-padding-lr  md-hue-1">
+        <div class="md-toolbar-tools">
+          <h2>Contatos</h2>
+          <span flex></span>
+          <md-button class="md-fab md-mini" aria-label="Inserir Contato" ng-click="showAddContatoDialog($event)">
+            <md-icon>
+              <i class="material-icons">add</i>
+            </md-icon>
+            <md-tooltip>
+              Inserir Contato
+            </md-tooltip>
+          </md-button>
         </div>
+      </md-toolbar>
 
-        <div layout="row">
-          <md-input-container class="md-block" flex>
-            <label>Pai</label>
-            <input >
-          </md-input-container>
-          <div flex="5"></div>
-          <md-input-container class="md-block" flex>
-            <label>Mãe</label>
-            <input>
-          </md-input-container>
-        </div>
+      <md-content class="md-content-form">
+        <onmt-regular-card icon="info_outline" title="Lista de Contato" message="Adicione pelo menos 1 contato."></onmt-regular-card>
+      </md-content>
 
-        <div layout="row">
-          <md-input-container class="md-block" flex>
-            <label>Escolaridade</label>
-            <input >
-          </md-input-container>
-          <div flex="5"></div>
-          <md-input-container class="md-block" flex>
-            <label>Profissão</label>
-            <input >
-          </md-input-container>
-        </div>
-
-      </div>
-
-    </md-content>
-
-    <!-- ENDEREÇO -->
-    <md-toolbar class="md-padding-lr  md-hue-1">
-      <div class="md-toolbar-tools">
-        <h2>Endereços</h2>
-        <span flex></span>
-        <md-button class="md-fab md-mini" aria-label="Inserir Endereço" ng-click="showAddEnderecoDialog($event)">
-          <md-icon>
-            <i class="material-icons">add</i>
-          </md-icon>
-          <md-tooltip>
-            Inserir Endereço
-          </md-tooltip>
-        </md-button>
-      </div>
-    </md-toolbar>
-
-    <md-content class="md-content-form">
-      <onmt-regular-card icon="info_outline" title="Lista de Endereços" message="Adicione pelo menos 1 endereço."></onmt-regular-card>
-    </md-content>
-
-    <!--CONTATO -->
-    <md-toolbar class="md-padding-lr  md-hue-1">
-      <div class="md-toolbar-tools">
-        <h2>Contatos</h2>
-        <span flex></span>
-        <md-button class="md-fab md-mini" aria-label="Inserir Contato" ng-click="showAddContatoDialog($event)">
-          <md-icon>
-            <i class="material-icons">add</i>
-          </md-icon>
-          <md-tooltip>
-            Inserir Contato
-          </md-tooltip>
-        </md-button>
-      </div>
-    </md-toolbar>
-
-    <md-content class="md-content-form">
-      <onmt-regular-card icon="info_outline" title="Lista de Contato" message="Adicione pelo menos 1 contato."></onmt-regular-card>
-    </md-content>
-
-    <div class="md-actions md-padding-lr" layout="row" layout-align="center start">
+      <div class="md-actions md-padding-lr" layout="row" layout-align="center start">
         <md-button class="md-hue-3 md-raised">Cancelar</md-button>
-      <span flex></span>
-      <md-button class="md-accent md-hue-3 md-raised">Limpar</md-button>
-      <md-button class="md-primary md-hue-2 md-raised">Enviar</md-button>
-    </div>
-  </md-card>
-</md-content>
+        <span flex></span>
+        <md-button class="md-accent md-hue-3 md-raised">Limpar</md-button>
+        <md-button class="md-primary md-hue-2 md-raised">Enviar</md-button>
+      </div>
+    </md-card>
+  </md-content>
+</form>
