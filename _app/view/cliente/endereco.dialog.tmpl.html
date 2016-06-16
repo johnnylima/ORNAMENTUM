@@ -1,5 +1,6 @@
-<md-dialog aria-label="Novo Edereço"  ng-cloak class="fullscreen-dialog">
-
+<md-dialog aria-label="Novo Edereço" ng-cloak class="fullscreen-dialog">
+  <form name="clienteEnderecoForm">
+    {{endereco}}
     <md-toolbar class="md-padding-lr md-hue-1 topo">
       <div class="md-toolbar-tools">
         <h2>Novo Endereço</h2>
@@ -14,157 +15,158 @@
     <md-dialog-content>
 
       <md-content class="md-content-form">
-          <div layout="row">
-            <md-input-container class="md-block" flex>
-              <label>Endereço</label>
-              <md-select ng-model="ctrl.tipoendereco">
-                <md-option value="residencial">Residencial</md-option>
-                <md-option value="comercial">Comercial</md-option>
-                <md-option value="faturamento">Faturamento</md-option>
-                <md-option value="evento">Evento</md-option>
-                <md-option value="entrega">Entrega</md-option>
-                <md-option value="instalacao">Instalação</md-option>
-                <md-option value="recebimento">Recebimento</md-option>
-              </md-select>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Tipo de Logradouro</label>
-              <md-select ng-model="ctrl.tipologradouro">
-                <md-option value="aeroporto">Aeroporto</md-option>
-                <md-option value="alameda">Alameda</md-option>
-                <md-option value="area">Área</md-option>
-                <md-option value="avenida">Avenida</md-option>
-                <md-option value="campo">Campo</md-option>
-                <md-option value="chacara">Chácara</md-option>
-                <md-option value="colonia">Colônia</md-option>
-                <md-option value="condominio">Condomínio</md-option>
-                <md-option value="conjunto">Conjunto</md-option>
-                <md-option value="distrito">Distrito</md-option>
-                <md-option value="esplanada">Esplanada</md-option>
-                <md-option value="estacao">Estação</md-option>
-                <md-option value="estrada">Estrada</md-option>
-                <md-option value="favela">Favela</md-option>
-                <md-option value="fazenda">Fazenda</md-option>
-                <md-option value="feira">Feira</md-option>
-                <md-option value="jardim">Jardim</md-option>
-                <md-option value="ladeira">Ladeira</md-option>
-                <md-option value="lago">Lago</md-option>
-                <md-option value="lagoa">Lagoa</md-option>
-                <md-option value="largo">Largo</md-option>
-                <md-option value="loteamento">Loteamento</md-option>
-                <md-option value="morro">Morro</md-option>
-                <md-option value="nucleo">Núcleo</md-option>
-                <md-option value="parque">Parque</md-option>
-                <md-option value="passarela">Passarela</md-option>
-                <md-option value="patio">Pátio</md-option>
-                <md-option value="praça">Praça</md-option>
-                <md-option value="quadra">Quadra</md-option>
-                <md-option value="recanto">Recanto</md-option>
-                <md-option value="residencial">Residencial</md-option>
-                <md-option value="rodovia">Rodovia</md-option>
-                <md-option value="rua">Rua</md-option>
-                <md-option value="setor">Setor</md-option>
-                <md-option value="sitio">Sítio</md-option>
-                <md-option value="travessa">Travessa</md-option>
-                <md-option value="trecho">Trecho</md-option>
-                <md-option value="trevo">Trevo</md-option>
-                <md-option value="vale">Vale</md-option>
-                <md-option value="vereda">Vereda</md-option>
-                <md-option value="via">Via</md-option>
-                <md-option value="viaduto">Viaduto</md-option>
-                <md-option value="viela">Viela</md-option>
-                <md-option value="vila">Vila</md-option>
-              </md-select>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex=50>
-              <label>Logradouro</label>
-              <input >
-            </md-input-container>
-          </div>
+        <div layout="row">
+          <md-input-container class="md-block" flex>
+            <label>Endereço</label>
+            <md-select ng-model="endereco.tipoendereco">
+              <md-option value="residencial">Residencial</md-option>
+              <md-option value="comercial">Comercial</md-option>
+              <md-option value="faturamento">Faturamento</md-option>
+              <md-option value="evento">Evento</md-option>
+              <md-option value="entrega">Entrega</md-option>
+              <md-option value="instalacao">Instalação</md-option>
+              <md-option value="recebimento">Recebimento</md-option>
+            </md-select>
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>Tipo de Logradouro</label>
+            <md-select ng-model="endereco.tipologradouro">
+              <md-option value="aeroporto">Aeroporto</md-option>
+              <md-option value="alameda">Alameda</md-option>
+              <md-option value="area">Área</md-option>
+              <md-option value="avenida">Avenida</md-option>
+              <md-option value="campo">Campo</md-option>
+              <md-option value="chacara">Chácara</md-option>
+              <md-option value="colonia">Colônia</md-option>
+              <md-option value="condominio">Condomínio</md-option>
+              <md-option value="conjunto">Conjunto</md-option>
+              <md-option value="distrito">Distrito</md-option>
+              <md-option value="esplanada">Esplanada</md-option>
+              <md-option value="estacao">Estação</md-option>
+              <md-option value="estrada">Estrada</md-option>
+              <md-option value="favela">Favela</md-option>
+              <md-option value="fazenda">Fazenda</md-option>
+              <md-option value="feira">Feira</md-option>
+              <md-option value="jardim">Jardim</md-option>
+              <md-option value="ladeira">Ladeira</md-option>
+              <md-option value="lago">Lago</md-option>
+              <md-option value="lagoa">Lagoa</md-option>
+              <md-option value="largo">Largo</md-option>
+              <md-option value="loteamento">Loteamento</md-option>
+              <md-option value="morro">Morro</md-option>
+              <md-option value="nucleo">Núcleo</md-option>
+              <md-option value="parque">Parque</md-option>
+              <md-option value="passarela">Passarela</md-option>
+              <md-option value="patio">Pátio</md-option>
+              <md-option value="praça">Praça</md-option>
+              <md-option value="quadra">Quadra</md-option>
+              <md-option value="recanto">Recanto</md-option>
+              <md-option value="residencial">Residencial</md-option>
+              <md-option value="rodovia">Rodovia</md-option>
+              <md-option value="rua">Rua</md-option>
+              <md-option value="setor">Setor</md-option>
+              <md-option value="sitio">Sítio</md-option>
+              <md-option value="travessa">Travessa</md-option>
+              <md-option value="trecho">Trecho</md-option>
+              <md-option value="trevo">Trevo</md-option>
+              <md-option value="vale">Vale</md-option>
+              <md-option value="vereda">Vereda</md-option>
+              <md-option value="via">Via</md-option>
+              <md-option value="viaduto">Viaduto</md-option>
+              <md-option value="viela">Viela</md-option>
+              <md-option value="vila">Vila</md-option>
+            </md-select>
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex=50>
+            <label>Logradouro</label>
+            <input ng-model="endereco.logradouro">
+          </md-input-container>
+        </div>
 
-          <div layout-gt-xs="row">
-            <md-input-container class="md-block" flex="20">
-              <label>Número</label>
-              <input>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Complemento</label>
-              <input>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Bairro</label>
-              <input >
-            </md-input-container>
-          </div>
+        <div layout-gt-xs="row">
+          <md-input-container class="md-block" flex="20">
+            <label>Número</label>
+            <input ng-model="endereco.numero">
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>Complemento</label>
+            <input ng-model="endereco.complemento">
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>Bairro</label>
+            <input ng-model="endereco.bairro">
+          </md-input-container>
+        </div>
 
-          <div layout-gt-xs="row" flex-sm>
-            <md-input-container class="md-block" flex=50>
-              <label>Localidade</label>
-              <input >
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>UF</label>
-              <md-select ng-model="ctrl.uf">
-                <md-option value="AC">Acre</md-option>
-                <md-option value="AL">Alagoas</md-option>
-                <md-option value="AP">Amapá</md-option>
-                <md-option value="AM">Amazonas</md-option>
-                <md-option value="BA">Bahia</md-option>
-                <md-option value="CE">Ceará</md-option>
-                <md-option value="DF">Distrito Federal</md-option>
-                <md-option value="ES">Espírito Santo</md-option>
-                <md-option value="GO">Goiás</md-option>
-                <md-option value="MA">Maranhão</md-option>
-                <md-option value="MT">Mato Grosso</md-option>
-                <md-option value="MS">Mato Grosso do Sul</md-option>
-                <md-option value="MG">Minas Gerais</md-option>
-                <md-option value="PA">Pará</md-option>
-                <md-option value="PB">Paraíba</md-option>
-                <md-option value="PR">Paraná</md-option>
-                <md-option value="PE">Pernambuco</md-option>
-                <md-option value="PI">Piauí</md-option>
-                <md-option value="RJ">Rio de Janeiro</md-option>
-                <md-option value="RN">Rio Grande do Norte</md-option>
-                <md-option value="RS">Rio Grande do Sul</md-option>
-                <md-option value="RO">Rondônia</md-option>
-                <md-option value="RR">Roraima</md-option>
-                <md-option value="SC">Santa Catarina</md-option>
-                <md-option value="SP">São Paulo</md-option>
-                <md-option value="SE">Sergipe</md-option>
-                <md-option value="TO">Tocantins</md-option>
-              </md-select>
-              <div class="md-errors-spacer"></div>
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container class="md-block" flex>
-              <label>Cep</label>
-              <input>
-            </md-input-container>
-          </div>
+        <div layout-gt-xs="row" flex-sm>
+          <md-input-container class="md-block" flex=50>
+            <label>Localidade</label>
+            <input ng-model="endereco.localidade">
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>UF</label>
+            <md-select ng-model="endereco.uf">
+              <md-option value="AC">Acre</md-option>
+              <md-option value="AL">Alagoas</md-option>
+              <md-option value="AP">Amapá</md-option>
+              <md-option value="AM">Amazonas</md-option>
+              <md-option value="BA">Bahia</md-option>
+              <md-option value="CE">Ceará</md-option>
+              <md-option value="DF">Distrito Federal</md-option>
+              <md-option value="ES">Espírito Santo</md-option>
+              <md-option value="GO">Goiás</md-option>
+              <md-option value="MA">Maranhão</md-option>
+              <md-option value="MT">Mato Grosso</md-option>
+              <md-option value="MS">Mato Grosso do Sul</md-option>
+              <md-option value="MG">Minas Gerais</md-option>
+              <md-option value="PA">Pará</md-option>
+              <md-option value="PB">Paraíba</md-option>
+              <md-option value="PR">Paraná</md-option>
+              <md-option value="PE">Pernambuco</md-option>
+              <md-option value="PI">Piauí</md-option>
+              <md-option value="RJ">Rio de Janeiro</md-option>
+              <md-option value="RN">Rio Grande do Norte</md-option>
+              <md-option value="RS">Rio Grande do Sul</md-option>
+              <md-option value="RO">Rondônia</md-option>
+              <md-option value="RR">Roraima</md-option>
+              <md-option value="SC">Santa Catarina</md-option>
+              <md-option value="SP">São Paulo</md-option>
+              <md-option value="SE">Sergipe</md-option>
+              <md-option value="TO">Tocantins</md-option>
+            </md-select>
+            <div class="md-errors-spacer"></div>
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex>
+            <label>Cep</label>
+            <input ng-model="endereco.cep">
+          </md-input-container>
+        </div>
 
-          <div layout="row">
-            <md-input-container class="md-block" flex>
-              <label>Observações</label>
-              <textarea ng-model="ctrl.enderecoobservacao" md-maxlength="300" rows="2" md-select-on-focus></textarea>
-            </md-input-container>
-          </div>
+        <div layout="row">
+          <md-input-container class="md-block" flex>
+            <label>Observações</label>
+            <textarea ng-model="endereco.observacao" md-maxlength="300" rows="2" md-select-on-focus></textarea>
+          </md-input-container>
+        </div>
       </md-content>
 
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
+      {{enderecos}}
       <span flex></span>
       <md-button ng-click="limparForm()">
-       Limpar
+        Limpar
       </md-button>
-      <md-button ng-click="AddEndereco()">
+      <md-button ng-click="AddEndereco(endereco)">
         Adicionar
       </md-button>
     </md-dialog-actions>
-
+  </form>
 </md-dialog>
