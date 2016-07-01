@@ -71,97 +71,79 @@
           </md-input-container>
         </div>
 
-        <md-card layout="column" flex style="background-color:#EFEFEF;" class="no-pm-lr">
-          <md-card-contet class="md-padding">
-            <div layout="row">
 
-              <md-input-container class="md-block" flex>
-                <label>Telefone</label>
-                <md-select ng-model="contato.telefone.tipo">
+        <div layout="row">
 
-                  <md-option value="residencial">Residencial</md-option>
-                  <md-option value="comercial">Comercial</md-option>
-                  <md-option value="outro">Outro</md-option>
-                  <md-option value="celular">Celular</md-option>
-                  <md-option value="principal">Principal</md-option>
-                  <md-option value="fax_residencial">Fax residencial</md-option>
-                  <md-option value="fax_comercial">Fax comercial</md-option>
+          <md-input-container class="md-block" flex>
+            <label>Telefone</label>
+            <md-select ng-model="contato.telefone.tipo">
 
-                </md-select>
-              </md-input-container>
-              <span flex="5"></span>
-              <md-input-container class="md-block" flex="10">
-                <label>DDD</label>
-                <input ng-model="contato.telefone.ddd">
-              </md-input-container>
-              <span flex="5"></span>
-              <md-input-container class="md-block" flex>
-                <label>Número</label>
-                <input ng-model="contato.telefone.numero">
-              </md-input-container>
-              <span flex="1"></span>
-              <md-button class="md-icon-button md-primary md-hue-1" aria-label="Inserir Telefone" ng-click="AddTelefone(contato.telefone)">
-                <md-icon >
-                  <i class="material-icons">add_box</i>
-                </md-icon>
-                <md-tooltip>
-                  Inserir Telefone
-                </md-tooltip>
-              </md-button>
+              <md-option value="residencial" selected>Residencial</md-option>
+              <md-option value="comercial">Comercial</md-option>
+              <md-option value="outro">Outro</md-option>
+              <md-option value="celular">Celular</md-option>
+              <md-option value="principal">Principal</md-option>
+              <md-option value="fax_residencial">Fax residencial</md-option>
+              <md-option value="fax_comercial">Fax comercial</md-option>
 
-            </div>
-          </md-card-contet>
-        </md-card>
+            </md-select>
+          </md-input-container>
+          <span flex="5"></span>
+          <md-input-container class="md-block" flex="10">
+            <label>DDD</label>
+            <input ng-model="contato.telefone.ddd">
+          </md-input-container>
+          <span flex="5"></span>
+          <md-input-container class="md-block" flex>
+            <label>Número</label>
+            <input ng-model="contato.telefone.numero">
+          </md-input-container>
+          <span flex="1"></span>
+          <md-button class="md-icon-button md-primary md-hue-1" aria-label="Inserir Telefone" ng-click="AddTelefone(contato.telefone)">
+            <md-icon >
+              <i class="material-icons">add_box</i>
+            </md-icon>
+            <md-tooltip>
+              Inserir Telefone
+            </md-tooltip>
+          </md-button>
 
-        <md-card layout="column" flex style="background-color:#EFEFEF;" class="no-pm-lr" ng-show="telefones">
+        </div>
 
-          <md-card-content>
-
-            <md-list flex>
-              <div layout="row" class="md-padding-lr">
-                <span class="md-headline">Lista de Telefones</span>
-                <span flex></span>
-                <md-button class="md-secondary md-icon-button md-accent md-hue-1" ng-click="removerTelefones()" aria-label="Remover Telefones">
-                  <md-icon><i class="material-icons">remove_circle</i></md-icon>
-                </md-button>
+          <md-list class="veggie-option" flex ng-if="telefones">
+            <md-list-item class="md-2-line md-whiteframe-z1 veggie" style="background-color:#EFEFEF;"  ng-repeat="tel in telefones">
+              <md-icon class="primary">
+                <i class="material-icons">phone</i>
+              </md-icon>
+              <div class="md-list-item-text" layout="column">
+                <h4>
+                  ({{tel.ddd}})
+                  {{tel.numero}}
+                </h4>
+                <p>
+                  {{tel.tipo}}
+                </p>
               </div>
-              <md-divider ></md-divider>
-              <md-list-item class="md-2-line" ng-repeat="tel in telefones">
-                <md-icon >
-                  <i class="material-icons">phone</i>
+              <md-button class="md-secondary md-icon-button md-accent md-hue-1" ng-click="doSecondaryAction($event)" aria-label="call">
+                <md-icon>
+                  <i class="material-icons">remove_circle</i>
                 </md-icon>
-                <div class="md-list-item-text">
-                  <h3>
-                    ({{tel.ddd}})
-                    {{tel.numero}}
-                  </h3>
-                  <p>
-                    {{tel.tipo}}
-                  </p>
-                </div>
-                <md-button class="md-secondary md-icon-button md-accent md-hue-1" ng-click="doSecondaryAction($event)" aria-label="call">
-                  <md-icon>
-                    <i class="material-icons">remove_circle</i>
-                  </md-icon>
-                </md-button>
-              </md-list-item>
+              </md-button>
+            </md-list-item>
+          </md-list>
 
-            </md-list>
+      </md-content>
 
-          </md-card-content>
+    </md-dialog-content>
 
-        </md-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="limparForm()">
+        Limpar
+      </md-button>
+      <md-button ng-click="AddContato()">
+        Adicionar
+      </md-button>
+    </md-dialog-actions>
 
-      </md-dialog-content>
-
-      <md-dialog-actions layout="row">
-        <span flex></span>
-        <md-button ng-click="limparForm()">
-          Limpar
-        </md-button>
-        <md-button ng-click="AddContato()">
-          Adicionar
-        </md-button>
-      </md-dialog-actions>
-
-    </md-dialog>
+  </md-dialog>
