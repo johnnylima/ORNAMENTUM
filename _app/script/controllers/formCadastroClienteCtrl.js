@@ -102,7 +102,12 @@
 
       function ContatoDialogCtrl  ($scope, $mdDialog, items) {
         $scope.items = items;
-        $scope.telefones=[];
+        $scope.telefones=[/*
+          {"tipo":"residencial","ddd":"61","numero":"84478057"},
+          {"tipo":"residencial","ddd":"61","numero":"84478057"},
+          {"tipo":"residencial","ddd":"61","numero":"84478057"},
+          {"tipo":"residencial","ddd":"61","numero":"84478057"}//*/
+        ];
         $scope.closeDialog = function() {
           $scope.limparForm();
           $mdDialog.hide();
