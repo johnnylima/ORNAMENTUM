@@ -3,7 +3,7 @@
   "authors": [
     "JohnnyLima <rickbatera2012@gmail.com>"
   ],
-  "description": "O ORNAMENTUM é um Aplicativo multi-plataforma com liguagem web desenvolvido para gestão de lojas do seguimento de locação de decorações festivas!]",
+  "description": "ORNAMENTUM é um app multi-plataforma desenvolvido para gestão de lojas do seguimento de decorações festivas!]",
   "main": "",
   "moduleType": [],
   "keywords": [
@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "angular": "^1.4.8",
-    "angular-material": "1.0.1",
+    "angular-material": "1.0.9",
     "angular-route": "1.5.0"
   },
   "resolutions": {
