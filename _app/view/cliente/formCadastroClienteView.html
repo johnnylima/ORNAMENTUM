@@ -128,7 +128,7 @@
           <span flex></span>
           <md-button class="md-fab md-mini" aria-label="Inserir Endereço" ng-click="showAddEnderecoDialog($event)">
             <md-icon>
-              <i class="material-icons">add</i>
+              <i class="material-icons">add_location</i>
             </md-icon>
             <md-tooltip>
               Inserir Endereço
@@ -137,8 +137,29 @@
         </div>
       </md-toolbar>
 
-      <md-content class="md-content-form">
-        <onmt-regular-card icon="info_outline" title="Lista de Endereços" message="Adicione pelo menos 1 endereço."></onmt-regular-card>
+      <md-content class="md-padding-tb">
+
+        <onmt-div-info ng-if="!dadoEndereco.length"  title="Lista de Endereço" message="Adicione pelo menos 1 endereço."></onmt-div-info>
+        <!--  -->
+        <md-list ng-cloak ng-if="dadoEndereco.length">
+          <md-list-item ng-click="doPrimaryAction($event)" ng-repeat="endereco in dadoEndereco">
+            <md-icon class="primary md-primary">
+              <i class="material-icons">location_on</i>
+            </md-icon>
+            <p style="text-transform: capitalize">
+              {{ endereco.tipoendereco }}
+            </p>
+            <md-button class="md-secondary md-icon-button md-warn" ng-click="doSecondaryAction($event)" aria-label="call">
+              <md-icon>
+                <i class="material-icons">location_off</i>
+              </md-icon>
+            </md-button>
+            <md-tooltip md-visible="false" md-delay="1000" md-direction="bottom" md-autohide="true">
+              Clique para editar
+            </md-tooltip>
+          </md-list-item>
+        </md-list>
+
       </md-content>
 
       <!--CONTATO -->
@@ -157,8 +178,27 @@
         </div>
       </md-toolbar>
 
-      <md-content class="md-content-form">
-        <onmt-regular-card icon="info_outline" title="Lista de Contato" message="Adicione pelo menos 1 contato."></onmt-regular-card>
+      <md-content class="md-padding-tb">
+        <onmt-div-info ng-if="!dadoContato.length"  title="Lista de Contato" message="Adicione pelo menos 1 contato."></onmt-div-info>
+        <!--  -->
+        <md-list ng-cloak ng-if="dadoContato.length">
+          <md-list-item ng-click="doPrimaryAction($event)" ng-repeat="contato in dadoContato">
+            <md-icon class="primary md-primary">
+              <i class="material-icons">location_on</i>
+            </md-icon>
+            <p style="text-transform: capitalize">
+              {{ contato }}
+            </p>
+            <md-button class="md-secondary md-icon-button md-warn" ng-click="doSecondaryAction($event)" aria-label="call">
+              <md-icon>
+                <i class="material-icons">location_off</i>
+              </md-icon>
+            </md-button>
+            <md-tooltip md-visible="false" md-delay="1000" md-direction="bottom" md-autohide="true">
+              Clique para editar
+            </md-tooltip>
+          </md-list-item>
+        </md-list>
       </md-content>
 
       <div class="md-actions md-padding-lr" layout="row" layout-align="center start">

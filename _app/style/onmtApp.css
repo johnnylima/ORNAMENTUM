@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,700,900);
 html, body, button, input, select, textarea {
   font-family: font-family: 'Roboto', sans-serif;
   color: #333333;
@@ -356,7 +356,13 @@ md-input-container {
 .md-padding-lr {
   padding: 0 16px;
 }
+.md-padding-tb {
+  padding: 16px 0;
+}
 md-content.md-content-form {
+  padding: 32px;
+}
+md-content.md-content-form-dialog {
   padding: 32px 32px 0 32px;
 }
 md-dialog.fullscreen-dialog {
@@ -384,12 +390,19 @@ md-toolbar.topo {
   float: left;
   width: 20%;
   margin: 0 0.8% 16px 0.8%;
-}/*
-.veggie-option .md-item-text {
-  padding: 8px;
-  background: #f0f0f0;
-  border-radius: 3px; }
-.veggie-option .md-item-text h3,
-.veggie-option .md-item-text p {
-  padding: 0;
-  margin: 0; }*/
+}
+div.docs-dark {
+  background-color: #303030;
+}
+button.-letra {
+  pointer-events: none;
+}
+button.-letra span {
+  font-size: 28px;
+  font-weight: 300;
+}
+.md-subhead {
+  color: rgba(0, 0, 0, 0.54);
+  padding-top: 0;
+  font-size: 14px;
+}

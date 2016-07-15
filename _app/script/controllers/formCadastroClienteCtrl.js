@@ -11,9 +11,9 @@
     var alert;
 
     /* ------------------------------------ DADOS ------------------------------------ */
-    $scope.dado=[];
-    $scope.dadoContato=[];
-    $scope.dadoEndereco=[];
+    $scope.dado = [];
+    $scope.dadoContato = [];
+    $scope.dadoEndereco = [];
 
     /* ------------------------------------ DIALOGS ------------------------------------ */
     $scope.showAlert = showAlert;
@@ -75,11 +75,11 @@
           $scope.limparForm();
           $mdDialog.hide();
         };
-        $scope.limparForm = function(){
+        $scope.limparForm = function() {
           delete $scope.endereco;
           $scope.clienteEnderecoForm.$setPristine();
         };
-        $scope.AddEndereco = function(endereco){
+        $scope.AddEndereco = function(endereco) {
           $scope.dadoEndereco.push(angular.copy(endereco));
           $scope.closeDialog();
         };
@@ -100,34 +100,35 @@
         }
       });
 
-      function ContatoDialogCtrl  ($scope, $mdDialog, items) {
+      function ContatoDialogCtrl($scope, $mdDialog, items) {
         $scope.items = items;
-        $scope.telefones=[/*
-          {"tipo":"residencial","ddd":"61","numero":"84478057"},
-          {"tipo":"residencial","ddd":"61","numero":"84478057"},
-          {"tipo":"residencial","ddd":"61","numero":"84478057"},
-          {"tipo":"residencial","ddd":"61","numero":"84478057"}//*/
+        $scope.telefones = [
+          /*
+                    {"tipo":"residencial","ddd":"61","numero":"84478057"},
+                    {"tipo":"residencial","ddd":"61","numero":"84478057"},
+                    {"tipo":"residencial","ddd":"61","numero":"84478057"},
+                    {"tipo":"residencial","ddd":"61","numero":"84478057"}//*/
         ];
         $scope.closeDialog = function() {
           $scope.limparForm();
           $mdDialog.hide();
         };
-        $scope.limparForm = function(){
+        $scope.limparForm = function() {
           delete $scope.contato;
           $scope.clienteContatoForm.$setPristine();
         };
-        $scope.AddContato = function(contato){
+        $scope.AddContato = function(contato) {
           $scope.dadoContato.push(angular.copy(contato));
           $scope.closeDialog();
         };
-        $scope.removerTelefones = function(){
+        $scope.removerTelefones = function() {
           $scope.telefones.pop();
         };
-        $scope.removeTelefone = function(){
+        $scope.removeTelefone = function() {
           delete $scope.contato;
           $scope.clienteContatoForm.$setPristine();
         };
-        $scope.AddTelefone = function(telefone){
+        $scope.AddTelefone = function(telefone) {
           $scope.telefones.push(telefone);
           console.log($scope.telefones);
           delete $scope.contato.telefone;
