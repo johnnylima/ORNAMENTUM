@@ -19,7 +19,9 @@
     $scope.showAlert = showAlert;
     $scope.showDialog = showDialog;
     $scope.showAddEnderecoDialog = showAddEnderecoDialog;
+    $scope.showViewEnderecoDialog = showViewEnderecoDialog;
     $scope.showAddContatoDialog = showAddContatoDialog;
+
     $scope.items = [];
     // Internal method
     function showAlert() {
@@ -55,6 +57,8 @@
       }
     }
 
+    // ENDEREÇOS --------------------------------------------------
+
     function showAddEnderecoDialog(ev) {
       $mdDialog.show({
         controller: EnderecoDialogCtrl,
@@ -71,6 +75,7 @@
 
       function EnderecoDialogCtrl($scope, $mdDialog, items) {
         $scope.items = items;
+        $scope.aLabel = "Novo Endereço";
         $scope.closeDialog = function() {
           $scope.limparForm();
           $mdDialog.hide();
@@ -85,6 +90,56 @@
         };
       }
     }
+
+    // ----------------------------------------------------
+
+    function showViewEnderecoDialog(i) {
+      $mdDialog.show({
+        controller: viewEnderecoDialogCtrl,
+        templateUrl: 'view/cliente/endereco.dialog.tmpl.html',
+        parent: angular.element(document.body),
+        targetEvent: i,
+        clickOutsideToClose: true,
+        scope: $scope,
+        preserveScope: true,
+        locals: {
+          items: $scope.items,
+          endereco: $scope.dadoEndereco
+        }
+      });
+
+      function viewEnderecoDialogCtrl($scope, $mdDialog, items, endereco) {
+        // console.log(endereco[i]);
+        $scope.endereco = endereco[i];
+        $scope.view = true;
+        $scope.viewEditClose= true;
+        $scope.aLabel = "Visualizar Endereço";
+
+        $scope.fabTollbar = {
+          isOpen: false,
+          count: 0,
+          selectedDirection: 'left'
+        };
+
+
+        $scope.items = items;
+        $scope.editDialog = function() {
+          $scope.viewEditClose = false;
+          console.log($scope.viewEditClose);
+
+        };
+        $scope.limparForm = function() {
+          delete $scope.endereco;
+          $scope.clienteEnderecoForm.$setPristine();
+        };
+        $scope.AddEndereco = function(endereco) {
+          $scope.dadoEndereco.push(angular.copy(endereco));
+          $scope.closeDialog();
+        };
+      }
+    }
+
+    // CONTATOS --------------------------------------------------
 
     function showAddContatoDialog(ev) {
       $mdDialog.show({

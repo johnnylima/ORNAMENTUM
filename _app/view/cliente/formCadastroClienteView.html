@@ -141,15 +141,19 @@
 
         <onmt-div-info ng-if="!dadoEndereco.length"  title="Lista de Endereço" message="Adicione pelo menos 1 endereço."></onmt-div-info>
         <!--  -->
-        <md-list ng-cloak ng-if="dadoEndereco.length">
-          <md-list-item ng-click="doPrimaryAction($event)" ng-repeat="endereco in dadoEndereco">
-            <md-icon class="primary md-primary">
+        <md-list ng-cloak ng-if="dadoEndereco.length" md-theme="indigo">
+          <md-list-item class="md-3-line" ng-click="showViewEnderecoDialog($index)" ng-repeat="item in dadoEndereco">
+            <md-icon class="primary md-primary md-hue-3">
               <i class="material-icons">location_on</i>
             </md-icon>
-            <p style="text-transform: capitalize">
-              {{ endereco.tipoendereco }}
-            </p>
-            <md-button class="md-secondary md-icon-button md-warn" ng-click="doSecondaryAction($event)" aria-label="call">
+            <div class="md-list-item-text" layout="column" style="text-transform: capitalize">
+              <h3>{{ item.tipoendereco}}</h3>
+              <h4>
+                {{ item.tipologradouro+' '+item.logradouro+', '+item.complemento+' '+item.numero}}
+              </h4>
+              <p>{{ item.localidade }}</p>
+            </div>
+            <md-button class="md-secondary md-icon-button md-warn md-hue-3" ng-click="doSecondaryAction($event)" aria-label="call">
               <md-icon>
                 <i class="material-icons">location_off</i>
               </md-icon>

@@ -8,5 +8,7 @@
     .config(function($mdThemingProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('blue');
+      $mdThemingProvider.theme('indigo')
+        .primaryPalette('indigo');
     });
 })();
