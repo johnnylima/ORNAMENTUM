@@ -13,7 +13,7 @@
     /* ------------------------------------ DADOS ------------------------------------ */
     $scope.dado = [];
     $scope.dadoContato = [];
-    $scope.dadoEndereco = [];
+    $scope.dadoEndereco = [{"tipoendereco":"residencial"}];
 
     /* ------------------------------------ DIALOGS ------------------------------------ */
     $scope.showAlert = showAlert;
@@ -104,39 +104,42 @@
         preserveScope: true,
         locals: {
           items: $scope.items,
-          endereco: $scope.dadoEndereco
+          enderecoIndex: $scope.dadoEndereco
         }
       });
 
-      function viewEnderecoDialogCtrl($scope, $mdDialog, items, endereco) {
+      function viewEnderecoDialogCtrl($scope, $mdDialog, items, enderecoIndex) {
         // console.log(endereco[i]);
-        $scope.endereco = endereco[i];
+        $scope.endereco=enderecoIndex[i];
+        $scope.originalEndereco= angular.copy(enderecoIndex[i]);
         $scope.view = true;
         $scope.viewEditClose= true;
         $scope.aLabel = "Visualizar Endereço";
-
-        $scope.fabTollbar = {
-          isOpen: false,
-          count: 0,
-          selectedDirection: 'left'
-        };
-
-
         $scope.items = items;
+        console.log($scope.originalEndereco);
+
+
         $scope.editDialog = function() {
           $scope.viewEditClose = false;
-          console.log($scope.viewEditClose);
-
+          $scope.aLabel = "Editar Endereço";
+          $scope.view = false;
+        };
+        $scope.closeDialog = function() {
+          $scope.limparForm();
+          enderecoIndex[i]=$scope.originalEndereco;
+          $mdDialog.hide();
         };
         $scope.limparForm = function() {
           delete $scope.endereco;
           $scope.clienteEnderecoForm.$setPristine();
         };
-        $scope.AddEndereco = function(endereco) {
-          $scope.dadoEndereco.push(angular.copy(endereco));
-          $scope.closeDialog();
+        $scope.AlterEndereco = function(endereco) {
+          $scope.limparForm();
+          $mdDialog.hide();
         };
       }
+
+
     }
 
     // CONTATOS --------------------------------------------------

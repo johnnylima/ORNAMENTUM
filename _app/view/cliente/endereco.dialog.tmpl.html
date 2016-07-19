@@ -3,20 +3,23 @@
     <md-toolbar class="md-padding-lr md-hue-1 topo">
       <div class="md-toolbar-tools">
         <h2>{{aLabel}}</h2>
-        {{' '+ viewEditClose}}
         <span flex></span>
 
-        <md-button class="md-fab md-mini" ng-hide="{{!viewEditClose}}" ng-click="editDialog()">
-          <md-icon><i class="material-icons">edit_location</i></md-icon>
+        <md-button class="md-secondary md-icon-button" ng-show="viewEditClose" ng-click="editDialog()">
+          <md-icon>
+            <i class="material-icons">edit_location</i>
+          </md-icon>
+          <md-tooltip>Editar Endereço</md-tooltip>
         </md-button>
 
-        <md-button class="md-icon-button" ng-click="closeDialog()">
-          <md-icon><i class="material-icons">close</i></md-icon>
+        <md-button class="md-icon-button" ng-hide="viewEditClose" ng-click="closeDialog()">
+          <md-icon>
+            <i class="material-icons">close</i>
+          </md-icon>
         </md-button>
 
       </div>
     </md-toolbar>
-
 
     <md-dialog-content>
 
@@ -92,14 +95,14 @@
         </div>
 
         <div layout-gt-xs="row">
-          <md-input-container class="md-block" flex="20">
-            <label>Número</label>
-            <input ng-model="endereco.numero" ng-disabled="view">
-          </md-input-container>
-          <div flex="5"></div>
           <md-input-container class="md-block" flex>
             <label>Complemento</label>
             <input ng-model="endereco.complemento" ng-disabled="view">
+          </md-input-container>
+          <div flex="5"></div>
+          <md-input-container class="md-block" flex="20">
+            <label>Número</label>
+            <input ng-model="endereco.numero" ng-disabled="view">
           </md-input-container>
           <div flex="5"></div>
           <md-input-container class="md-block" flex>
@@ -165,14 +168,15 @@
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      {{enderecos}}
       <span flex></span>
-      <md-button ng-click="limparForm()">
-        Limpar
-      </md-button>
-      <md-button ng-click="AddEndereco(endereco)">
-        Adicionar
-      </md-button>
+      <div ng-if="viewEditClose">
+        <md-button ng-click="limparForm()">Limpar</md-button>
+        <md-button ng-click="AddEndereco(endereco)">Adicionar</md-button>
+      </div>
+      <div ng-if="!viewEditClose">
+        <md-button ng-click="closeDialog()">Cancelar</md-button>
+        <md-button ng-click="AlterEndereco(endereco)">Alterar</md-button>
+      </div>
     </md-dialog-actions>
   </form>
 </md-dialog>
