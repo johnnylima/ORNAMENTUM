@@ -13,14 +13,18 @@
     /* ------------------------------------ DADOS ------------------------------------ */
     $scope.dado = [];
     $scope.dadoContato = [];
-    $scope.dadoEndereco = [{"tipoendereco":"residencial"}];
+    $scope.dadoEndereco = [{"tipoendereco":"residencial","tipologradouro":"quadra","logradouro":"QNO 16 Conjunto 22","complemento":"Casa","numero":"08","bairro":"Setor \"O\"","localidade":"Ceilândia Norte","uf":"DF","cep":"72260622","observacao":"Casa do Cliente"},{"tipoendereco":"evento","tipologradouro":"quadra","logradouro":"406 Conjunto \"E\"","complemento":"Lote","numero":"22","bairro":"","localidade":"Recanto das Emas","uf":"DF","observacao":"Casa da mãe"},{"tipoendereco":"comercial","tipologradouro":"setor","logradouro":"SRTVSul Quadra 701 Conj E","complemento":"Sala","numero":"701","bairro":"Ed. Palácio do Rádio II","localidade":"Asa Sul","uf":"DF","cep":"70340-902","observacao":"Local de Trabalho"}];
 
     /* ------------------------------------ DIALOGS ------------------------------------ */
     $scope.showAlert = showAlert;
     $scope.showDialog = showDialog;
+    // ENDEREÇO
     $scope.showAddEnderecoDialog = showAddEnderecoDialog;
     $scope.showViewEnderecoDialog = showViewEnderecoDialog;
+    $scope.removeEndereco = removeEndereco;
+    // CONTATO
     $scope.showAddContatoDialog = showAddContatoDialog;
+
 
     $scope.items = [];
     // Internal method
@@ -74,6 +78,7 @@
       });
 
       function EnderecoDialogCtrl($scope, $mdDialog, items) {
+        console.log(ev);
         $scope.items = items;
         $scope.aLabel = "Novo Endereço";
         $scope.closeDialog = function() {
@@ -109,7 +114,7 @@
       });
 
       function viewEnderecoDialogCtrl($scope, $mdDialog, items, enderecoIndex) {
-        // console.log(endereco[i]);
+        console.log(i);
         $scope.endereco=enderecoIndex[i];
         $scope.originalEndereco= angular.copy(enderecoIndex[i]);
         $scope.view = true;
@@ -128,6 +133,7 @@
           $scope.limparForm();
           enderecoIndex[i]=$scope.originalEndereco;
           $mdDialog.hide();
+          $scope.viewEditClose = true;
         };
         $scope.limparForm = function() {
           delete $scope.endereco;
@@ -136,10 +142,13 @@
         $scope.AlterEndereco = function(endereco) {
           $scope.limparForm();
           $mdDialog.hide();
+          $scope.viewEditClose = true;
         };
       }
+    }
 
-
+    function removeEndereco(i){
+      $scope.dadoEndereco.pop(i);
     }
 
     // CONTATOS --------------------------------------------------
@@ -161,34 +170,29 @@
       function ContatoDialogCtrl($scope, $mdDialog, items) {
         $scope.items = items;
         $scope.telefones = [
-          /*
-                    {"tipo":"residencial","ddd":"61","numero":"84478057"},
-                    {"tipo":"residencial","ddd":"61","numero":"84478057"},
-                    {"tipo":"residencial","ddd":"61","numero":"84478057"},
-                    {"tipo":"residencial","ddd":"61","numero":"84478057"}//*/
+          {"tipo":"residencial","ddd":"61","numero":"84478057"},{"tipo":"residencial","ddd":"61","numero":"84478057"},{"tipo":"residencial","ddd":"61","numero":"84478057"},{"tipo":"residencial","ddd":"61","numero":"84478057"}
         ];
+
         $scope.closeDialog = function() {
           $scope.limparForm();
           $mdDialog.hide();
         };
         $scope.limparForm = function() {
-          delete $scope.contato;
+          delete $scope.contato.dado;
           $scope.clienteContatoForm.$setPristine();
         };
         $scope.AddContato = function(contato) {
+          $scope.contato.telefone = $scope.telefones;
           $scope.dadoContato.push(angular.copy(contato));
           $scope.closeDialog();
         };
-        $scope.removerTelefones = function() {
-          $scope.telefones.pop();
-        };
-        $scope.removeTelefone = function() {
-          delete $scope.contato;
-          $scope.clienteContatoForm.$setPristine();
+        $scope.removeTelefone = function(i) {
+          console.log($scope.telefones[i]);
+          // delete $scope.contato.telefones[i];
+          // $scope.clienteContatoForm.$setPristine();
         };
         $scope.AddTelefone = function(telefone) {
           $scope.telefones.push(telefone);
-          console.log($scope.telefones);
           delete $scope.contato.telefone;
         };
       }

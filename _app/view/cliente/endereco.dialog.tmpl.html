@@ -5,14 +5,14 @@
         <h2>{{aLabel}}</h2>
         <span flex></span>
 
-        <md-button class="md-secondary md-icon-button" ng-show="viewEditClose" ng-click="editDialog()">
+        <md-button class="md-secondary md-icon-button" ng-show="aLabel=='Visualizar Endereço'" ng-click="editDialog()">
           <md-icon>
-            <i class="material-icons">edit_location</i>
+            <i class="material-icons">edit</i>
           </md-icon>
           <md-tooltip>Editar Endereço</md-tooltip>
         </md-button>
 
-        <md-button class="md-icon-button" ng-hide="viewEditClose" ng-click="closeDialog()">
+        <md-button class="md-icon-button" ng-click="closeDialog()">
           <md-icon>
             <i class="material-icons">close</i>
           </md-icon>
@@ -169,11 +169,11 @@
 
     <md-dialog-actions layout="row">
       <span flex></span>
-      <div ng-if="viewEditClose">
+      <div ng-if="aLabel=='Novo Endereço'">
         <md-button ng-click="limparForm()">Limpar</md-button>
         <md-button ng-click="AddEndereco(endereco)">Adicionar</md-button>
       </div>
-      <div ng-if="!viewEditClose">
+      <div ng-if="aLabel=='Editar Endereço'">
         <md-button ng-click="closeDialog()">Cancelar</md-button>
         <md-button ng-click="AlterEndereco(endereco)">Alterar</md-button>
       </div>

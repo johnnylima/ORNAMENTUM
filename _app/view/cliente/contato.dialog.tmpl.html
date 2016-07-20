@@ -19,41 +19,41 @@
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Nome Completo</label>
-            <input ng-model="contato.nome">
+            <input ng-model="contato.dado.nome">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
             <label>Chamar por</label>
-            <input ng-model="contato.apelido">
+            <input ng-model="contato.dado.apelido">
           </md-input-container>
         </div>
 
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Empresa</label>
-            <input ng-model="contato.empresa">
+            <input ng-model="contato.dado.empresa">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
             <label>Site</label>
-            <input ng-model="contato.site">
+            <input ng-model="contato.dado.site">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
-            <label>Cargo</label>
-            <input ng-model="contato.cargo">
+            <label>Profissão</label>
+            <input ng-model="contato.dado.profissao">
           </md-input-container>
         </div>
 
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Email</label>
-            <input ng-model="contato.email">
+            <input ng-model="contato.dado.email">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
             <label>De quem é?</label>
-            <md-select ng-model="contato.relacionamento">
+            <md-select ng-model="contato.dado.relacionamento">
 
               <md-option value="eu">Próprio</md-option>
               <md-option value="conjugue">Cônjugue</md-option>
@@ -98,7 +98,7 @@
             <label>Número</label>
             <input ng-model="contato.telefone.numero">
           </md-input-container>
-          <span flex="1"></span>
+
           <md-button class="md-icon-button md-primary md-hue-1" aria-label="Inserir Telefone" ng-click="AddTelefone(contato.telefone)">
             <md-icon >
               <i class="material-icons">add_box</i>
@@ -125,10 +125,8 @@
                 {{tel.tipo}}
               </p>
             </div>
-            <md-button class="md-secondary md-icon-button md-warn md-hue-1" ng-click="doSecondaryAction($event)" aria-label="call">
-              <md-icon>
-                <i class="material-icons">remove_circle</i>
-              </md-icon>
+            <md-button class="md-secondary md-icon-button md-warn md-hue-1" ng-click="removeTelefone($index)" aria-label="call">
+              <md-icon><i class="material-icons">remove_circle</i></md-icon>
             </md-button>
           </md-list-item>
         </md-list>
@@ -142,7 +140,7 @@
       <md-button ng-click="limparForm()">
         Limpar
       </md-button>
-      <md-button ng-click="AddContato()">
+      <md-button ng-click="AddContato(contato)">
         Adicionar
       </md-button>
     </md-dialog-actions>

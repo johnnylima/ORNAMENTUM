@@ -128,7 +128,7 @@
           <span flex></span>
           <md-button class="md-fab md-mini" aria-label="Inserir Endereço" ng-click="showAddEnderecoDialog($event)">
             <md-icon>
-              <i class="material-icons">add_location</i>
+              <i class="material-icons">add</i>
             </md-icon>
             <md-tooltip>
               Inserir Endereço
@@ -153,9 +153,9 @@
               </h4>
               <p>{{ item.localidade }}</p>
             </div>
-            <md-button class="md-secondary md-icon-button md-warn md-hue-3" ng-click="doSecondaryAction($event)" aria-label="call">
+            <md-button class="md-secondary md-icon-button md-warn md-hue-3" ng-click="removeEndereco($index)" aria-label="call">
               <md-icon>
-                <i class="material-icons">location_off</i>
+                <i class="material-icons">remove_circle</i>
               </md-icon>
             </md-button>
             <md-tooltip md-visible="false" md-delay="1000" md-direction="bottom" md-autohide="true">
