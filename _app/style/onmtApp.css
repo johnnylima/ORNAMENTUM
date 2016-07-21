@@ -9,11 +9,14 @@ html, body, button, input, select, textarea {
   height: 100%;
   overflow: auto;
   /*no text select*/
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   cursor: default;
+  -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+
   background-color: #EFEFEF;
 }
 md-content.content-panel {
@@ -27,6 +30,9 @@ md-content.content-panel {
 }
 .content-md-head {
   font-weight: 100;
+}
+.cap{
+  text-transform: capitalize;
 }
 
 /*ICON*/
@@ -408,4 +414,30 @@ button.-letra span {
 }
 md-fab-toolbar.md-right md-fab-trigger.align-with-text {
   left: 7px;
+}
+/*VIEW DA FORM MD-DIALOG*/
+form.onmt-form-view md-content md-input-container md-select-value,
+form.onmt-form-view md-content md-input-container input,
+form.onmt-form-view md-content md-input-container textarea{
+  border-bottom-color: rgba(0,0,0,0.09) !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  background-image: none !important;
+
+  cursor: default;
+  -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+form.onmt-form-view md-content md-input-container md-select-value span div.md-text{
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+form.onmt-form-view md-content md-input-container md-select-value span.md-select-icon{
+  display: none !important;
+}
+form.onmt-form-view md-content md-input-container label,
+form.onmt-form-view md-content md-input-container md-select md-select-value span{
+  color: rgba(33, 150, 243, 0.8) !important;
 }

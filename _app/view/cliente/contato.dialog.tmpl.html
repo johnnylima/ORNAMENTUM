@@ -1,17 +1,26 @@
-<md-dialog aria-label="Novo Edereço" ng-cloak class="fullscreen-dialog">
-  <form name="clienteContatoForm">
-    {{contato}}
+<md-dialog aria-label="{{aLabel}}" ng-cloak class="fullscreen-dialog">
+  <form  ng-class="{'onmt-form-view': view}" name="clienteContatoForm">
     <md-toolbar class="md-padding-lr md-hue-1 topo">
       <div class="md-toolbar-tools">
-        <h2>Novo Contato</h2>
+        <h2>{{aLabel}}</h2>
         <span flex></span>
+
+        <md-button class="md-secondary md-icon-button" ng-show="aLabel=='Visualizar Contato'" ng-click="editDialog()">
+          <md-icon>
+            <i class="material-icons">edit</i>
+          </md-icon>
+          <md-tooltip>Editar Contato</md-tooltip>
+        </md-button>
+
         <md-button class="md-icon-button" ng-click="closeDialog()">
           <md-icon>
             <i class="material-icons">close</i>
           </md-icon>
         </md-button>
+
       </div>
     </md-toolbar>
+
     <md-dialog-content>
 
       <md-content class="md-content-form-dialog">
@@ -19,41 +28,41 @@
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Nome Completo</label>
-            <input ng-model="contato.dado.nome">
+            <input ng-disabled="view" ng-model="contato.dado.nome">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
             <label>Chamar por</label>
-            <input ng-model="contato.dado.apelido">
+            <input ng-disabled="view" ng-model="contato.dado.apelido">
           </md-input-container>
         </div>
 
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Empresa</label>
-            <input ng-model="contato.dado.empresa">
+            <input ng-disabled="view" ng-model="contato.dado.empresa">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
             <label>Site</label>
-            <input ng-model="contato.dado.site">
+            <input ng-disabled="view" ng-model="contato.dado.site">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
             <label>Profissão</label>
-            <input ng-model="contato.dado.profissao">
+            <input ng-disabled="view" ng-model="contato.dado.profissao">
           </md-input-container>
         </div>
 
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Email</label>
-            <input ng-model="contato.dado.email">
+            <input ng-disabled="view" ng-model="contato.dado.email">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
             <label>De quem é?</label>
-            <md-select ng-model="contato.dado.relacionamento">
+            <md-select ng-disabled="view" ng-model="contato.dado.relacionamento">
 
               <md-option value="eu">Próprio</md-option>
               <md-option value="conjugue">Cônjugue</md-option>
@@ -71,17 +80,17 @@
           </md-input-container>
         </div>
 
-        <div layout="row">
+        <div layout="row" ng-if="aLabel!='Visualizar Contato'">
 
           <md-input-container class="md-block" flex>
             <label>Telefone</label>
-            <md-select ng-model="contato.telefone.tipo">
+            <md-select ng-disabled="view" ng-model="contato.telefone.tipo">
 
-              <md-option value="residencial" selected>Residencial</md-option>
+              <md-option value="residencial">Residencial</md-option>
               <md-option value="comercial">Comercial</md-option>
               <md-option value="outro">Outro</md-option>
               <md-option value="celular">Celular</md-option>
-              <md-option value="principal">Principal</md-option>
+              <md-option value="principal" selected>Principal</md-option>
               <md-option value="fax_residencial">Fax residencial</md-option>
               <md-option value="fax_comercial">Fax comercial</md-option>
 
@@ -91,14 +100,13 @@
           <span flex="5"></span>
           <md-input-container class="md-block" flex="10">
             <label>DDD</label>
-            <input ng-model="contato.telefone.ddd">
+            <input ng-disabled="view" ng-model="contato.telefone.ddd">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
             <label>Número</label>
-            <input ng-model="contato.telefone.numero">
+            <input ng-disabled="view" ng-model="contato.telefone.numero">
           </md-input-container>
-
           <md-button class="md-icon-button md-primary md-hue-1" aria-label="Inserir Telefone" ng-click="AddTelefone(contato.telefone)">
             <md-icon >
               <i class="material-icons">add_box</i>
@@ -107,7 +115,6 @@
               Inserir Telefone
             </md-tooltip>
           </md-button>
-
         </div>
 
 
@@ -121,11 +128,11 @@
                 ({{tel.ddd}})
                 {{tel.numero}}
               </h4>
-              <p>
+              <p class="cap">
                 {{tel.tipo}}
               </p>
             </div>
-            <md-button class="md-secondary md-icon-button md-warn md-hue-1" ng-click="removeTelefone($index)" aria-label="call">
+            <md-button ng-if="aLabel!='Visualizar Contato'" class="md-secondary md-icon-button md-warn md-hue-1" ng-click="removeTelefone($index)" aria-label="call">
               <md-icon><i class="material-icons">remove_circle</i></md-icon>
             </md-button>
           </md-list-item>
@@ -137,12 +144,16 @@
 
     <md-dialog-actions layout="row">
       <span flex></span>
-      <md-button ng-click="limparForm()">
-        Limpar
-      </md-button>
-      <md-button ng-click="AddContato(contato)">
-        Adicionar
-      </md-button>
+      <div ng-if="aLabel=='Novo Contato'">
+        <md-button ng-click="limparTelefones()">Limpar Telefones</md-button>
+        <md-button ng-click="limparForm()">Limpar</md-button>
+        <md-button ng-click="AddContato(contato)">Adicionar</md-button>
+      </div>
+      <div ng-if="aLabel=='Editar Contato'">
+        <md-button ng-click="closeDialog()">Cancelar</md-button>
+        <md-button ng-click="AlterContato(contato)">Alterar</md-button>
+      </div>
+
     </md-dialog-actions>
 
   </md-dialog>

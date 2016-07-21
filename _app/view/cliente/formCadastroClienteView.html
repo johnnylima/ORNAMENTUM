@@ -1,7 +1,7 @@
 <form name="clienteForm">
   <md-content class="content-panel md-padding" layout="column">
     <md-card>
-      <p>
+      <!-- <p>
         {{dados}}
       </p>
       <p>
@@ -9,7 +9,7 @@
       </p>
       <p>
         {{dadoContato}}
-      </p>
+      </p>-->
 
       <!-- INFORMAÇÕES PESSOAIS -->
       <md-toolbar class="md-padding-lr md-hue-1 topo">
@@ -142,16 +142,16 @@
         <onmt-div-info ng-if="!dadoEndereco.length"  title="Lista de Endereço" message="Adicione pelo menos 1 endereço."></onmt-div-info>
         <!--  -->
         <md-list ng-cloak ng-if="dadoEndereco.length" md-theme="indigo">
-          <md-list-item class="md-3-line" ng-click="showViewEnderecoDialog($index)" ng-repeat="item in dadoEndereco">
+          <md-list-item class="md-3-line" ng-click="showViewEnderecoDialog($event, $index)" ng-repeat="item in dadoEndereco">
             <md-icon class="primary md-primary md-hue-3">
               <i class="material-icons">location_on</i>
             </md-icon>
-            <div class="md-list-item-text" layout="column" style="text-transform: capitalize">
+            <div class="md-list-item-text cap" layout="column">
               <h3>{{ item.tipoendereco}}</h3>
               <h4>
                 {{ item.tipologradouro+' '+item.logradouro+', '+item.complemento+' '+item.numero}}
               </h4>
-              <p>{{ item.localidade }}</p>
+              <p>{{ item.localidade }} - {{item.uf}}</p>
             </div>
             <md-button class="md-secondary md-icon-button md-warn md-hue-3" ng-click="removeEndereco($index)" aria-label="call">
               <md-icon>
@@ -159,7 +159,7 @@
               </md-icon>
             </md-button>
             <md-tooltip md-visible="false" md-delay="1000" md-direction="bottom" md-autohide="true">
-              Clique para editar
+              Clique para visualizar e/ou editar
             </md-tooltip>
           </md-list-item>
         </md-list>
@@ -183,26 +183,33 @@
       </md-toolbar>
 
       <md-content class="md-padding-tb">
+
         <onmt-div-info ng-if="!dadoContato.length"  title="Lista de Contato" message="Adicione pelo menos 1 contato."></onmt-div-info>
         <!--  -->
-        <md-list ng-cloak ng-if="dadoContato.length">
-          <md-list-item ng-click="doPrimaryAction($event)" ng-repeat="contato in dadoContato">
-            <md-icon class="primary md-primary">
-              <i class="material-icons">location_on</i>
+        <md-list ng-cloak ng-if="dadoContato.length" md-theme="indigo">
+          <md-list-item class="md-3-line" ng-click="showViewContatoDialog($event, $index)" ng-repeat="item in dadoContato">
+            <md-icon class="primary md-primary md-hue-3">
+              <i class="material-icons">contact_phone</i>
             </md-icon>
-            <p style="text-transform: capitalize">
-              {{ contato }}
-            </p>
-            <md-button class="md-secondary md-icon-button md-warn" ng-click="doSecondaryAction($event)" aria-label="call">
+            <div class="md-list-item-text" layout="column">
+              <h3 class="cap">
+                {{ item.dado.apelido==null||item.dado.apelido==""?item.dado.nome:item.dado.apelido}} - <b style="font-size:14px; text-transform: none;">{{item.dado.relacionamento}}</b></h3>
+              <h4 class="cap">
+                ({{item.telefone[0].ddd}}) {{item.telefone[0].numero}} - {{item.telefone[0].tipo}}
+              </h4>
+              <p>{{ item.dado.email }}</p>
+            </div>
+            <md-button class="md-secondary md-icon-button md-warn md-hue-3" ng-click="removeContato($index)" aria-label="call">
               <md-icon>
-                <i class="material-icons">location_off</i>
+                <i class="material-icons">remove_circle</i>
               </md-icon>
             </md-button>
             <md-tooltip md-visible="false" md-delay="1000" md-direction="bottom" md-autohide="true">
-              Clique para editar
+              Clique para visualizar e/ou editar
             </md-tooltip>
           </md-list-item>
         </md-list>
+
       </md-content>
 
       <div class="md-actions md-padding-lr" layout="row" layout-align="center start">

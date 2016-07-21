@@ -1,5 +1,5 @@
 <md-dialog aria-label="{{aLabel}}" ng-cloak class="fullscreen-dialog">
-  <form name="clienteEnderecoForm">
+  <form ng-class="{'onmt-form-view': view}" name="clienteEnderecoForm">
     <md-toolbar class="md-padding-lr md-hue-1 topo">
       <div class="md-toolbar-tools">
         <h2>{{aLabel}}</h2>
@@ -27,7 +27,7 @@
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Endereço</label>
-            <md-select ng-model="endereco.tipoendereco" ng-disabled="view">
+            <md-select ng-disabled="view" ng-model="endereco.tipoendereco">
               <md-option value="residencial">Residencial</md-option>
               <md-option value="comercial">Comercial</md-option>
               <md-option value="faturamento">Faturamento</md-option>
@@ -40,7 +40,7 @@
           <div flex="5"></div>
           <md-input-container class="md-block" flex>
             <label>Tipo de Logradouro</label>
-            <md-select ng-model="endereco.tipologradouro" ng-disabled="view">
+            <md-select ng-disabled="view" ng-model="endereco.tipologradouro">
               <md-option value="aeroporto">Aeroporto</md-option>
               <md-option value="alameda">Alameda</md-option>
               <md-option value="area">Área</md-option>
@@ -90,36 +90,36 @@
           <div flex="5"></div>
           <md-input-container class="md-block" flex=50>
             <label>Logradouro</label>
-            <input ng-model="endereco.logradouro" ng-disabled="view">
+            <input ng-disabled="view" ng-model="endereco.logradouro">
           </md-input-container>
         </div>
 
         <div layout-gt-xs="row">
           <md-input-container class="md-block" flex>
             <label>Complemento</label>
-            <input ng-model="endereco.complemento" ng-disabled="view">
+            <input ng-disabled="view" ng-model="endereco.complemento">
           </md-input-container>
           <div flex="5"></div>
           <md-input-container class="md-block" flex="20">
             <label>Número</label>
-            <input ng-model="endereco.numero" ng-disabled="view">
+            <input ng-disabled="view" ng-model="endereco.numero">
           </md-input-container>
           <div flex="5"></div>
           <md-input-container class="md-block" flex>
             <label>Bairro</label>
-            <input ng-model="endereco.bairro" ng-disabled="view">
+            <input ng-disabled="view" ng-model="endereco.bairro">
           </md-input-container>
         </div>
 
         <div layout-gt-xs="row" flex-sm>
           <md-input-container class="md-block" flex=50>
             <label>Localidade</label>
-            <input ng-model="endereco.localidade" ng-disabled="view">
+            <input ng-disabled="view" ng-model="endereco.localidade">
           </md-input-container>
           <div flex="5"></div>
           <md-input-container class="md-block" flex>
             <label>UF</label>
-            <md-select ng-model="endereco.uf" ng-disabled="view">
+            <md-select ng-disabled="view" ng-model="endereco.uf">
               <md-option value="AC">Acre</md-option>
               <md-option value="AL">Alagoas</md-option>
               <md-option value="AP">Amapá</md-option>
@@ -153,14 +153,14 @@
           <div flex="5"></div>
           <md-input-container class="md-block" flex>
             <label>Cep</label>
-            <input ng-model="endereco.cep" ng-disabled="view">
+            <input ng-disabled="view" ng-model="endereco.cep">
           </md-input-container>
         </div>
 
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Observações</label>
-            <textarea ng-model="endereco.observacao" ng-disabled="view" md-maxlength="300" rows="2" md-select-on-focus></textarea>
+            <textarea ng-disabled="view" ng-model="endereco.observacao" md-maxlength="300" rows="2" md-select-on-focus></textarea>
           </md-input-container>
         </div>
       </md-content>
