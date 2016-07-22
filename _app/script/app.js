@@ -7,6 +7,7 @@
   // Nomeando o Módulo e fazendo carregamento dos módulos dependentes
   angular.module('ornamentumApp', [
     'ngMaterial',
+    'smDateTimeRangePicker',
     'ngMessages',
     'ngAnimate',
     'ngRoute'

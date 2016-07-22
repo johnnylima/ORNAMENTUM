@@ -6,10 +6,10 @@
       </p>
       <p>
         {{dadoEndereco}}
-      </p>
-      <p>
-        {{dadoContato}}
       </p>-->
+      <!-- <p>
+        {{dadoContato}}
+      </p> -->
 
       <!-- INFORMAÇÕES PESSOAIS -->
       <md-toolbar class="md-padding-lr md-hue-1 topo">
@@ -34,7 +34,7 @@
           <div layout="row">
             <md-input-container class="md-block" flex>
               <label>Nome Completo</label>
-              <input ng-model="dados.nome">
+              <input ng-model="dados.nome" autofocus>
             </md-input-container>
             <div flex="5"></div>
             <md-input-container class="md-block" flex>
@@ -55,7 +55,7 @@
             </md-input-container>
           </div>
 
-          <div layout="row" class="md-margin-bottom">
+          <div layout="row">
 
             <md-input-container class="md-block" flex>
               <label>Sexo</label>
@@ -90,7 +90,20 @@
               </md-select>
             </md-input-container>
             <div flex="5"></div>
-            <md-datepicker ng-model="dados.datanascimento" md-placeholder="Nascimento"></md-datepicker>
+
+            <sm-date-time-picker
+                lable="Nascimento"
+                value="dados.nascimento"
+                flex="15"
+                flex-sm="100"
+                flex-xs="100"
+                format="DD/MM/YYYY"
+                mode="date"
+                close-on-select="true">
+            </sm-date-time-picker>
+
+
+            <!-- <md-datepicker ng-model="dados.datanascimento" md-placeholder="Nascimento"></md-datepicker> -->
           </div>
 
           <div layout="row">
@@ -119,6 +132,48 @@
 
         </div>
 
+        <!-- <div>
+
+          <div layout="row">
+            <md-input-container class="md-block" flex>
+              <label>Razão Social</label>
+              <input ng-model="dados.razaosocial" autofocus>
+            </md-input-container>
+            <div flex="5"></div>
+            <md-input-container class="md-block" flex>
+              <label>Nome Fantasia</label>
+              <input ng-model="dados.fantasia">
+            </md-input-container>
+          </div>
+
+          <div layout="row" class="md-margin-bottom">
+            <md-input-container class="md-block" flex>
+              <label>Contato Responsável</label>
+              <input ng-model="dados.contatoresponsavel">
+            </md-input-container>
+            <div flex="5"></div>
+            <md-datepicker ng-model="dados.datafundacao" md-placeholder="Funcação"></md-datepicker>
+          </div>
+
+          <div layout="row">
+            <md-input-container class="md-block" flex>
+              <label>CNPJ</label>
+              <input ng-model="dados.cnpj">
+            </md-input-container>
+            <div flex="5"></div>
+            <md-input-container class="md-block" flex>
+              <label>Inscrição Estadual</label>
+              <input ng-model="dados.inscestadual">
+            </md-input-container>
+            <div flex="5"></div>
+            <md-input-container class="md-block" flex>
+              <label>Inscrição Municipal</label>
+              <input ng-model="dados.inscmunicipal">
+            </md-input-container>
+          </div>
+
+        </div> -->
+
       </md-content>
 
       <!-- ENDEREÇO -->
@@ -126,7 +181,7 @@
         <div class="md-toolbar-tools">
           <h2>Endereços</h2>
           <span flex></span>
-          <md-button class="md-fab md-mini" aria-label="Inserir Endereço" ng-click="showAddEnderecoDialog($event)">
+          <md-button class="md-fab md-mini" aria-label="Inserir Endereço" ng-click="showAddEnderecoDialog($event)" ng-disabled="dados.nome==''||dados.nome==undefined">
             <md-icon>
               <i class="material-icons">add</i>
             </md-icon>
@@ -139,7 +194,7 @@
 
       <md-content class="md-padding-tb">
 
-        <onmt-div-info ng-if="!dadoEndereco.length"  title="Lista de Endereço" message="Adicione pelo menos 1 endereço."></onmt-div-info>
+        <onmt-div-info ng-if="!dadoEndereco.length" title="Lista de Endereço" message="Adicione pelo menos 1 endereço."></onmt-div-info>
         <!--  -->
         <md-list ng-cloak ng-if="dadoEndereco.length" md-theme="indigo">
           <md-list-item class="md-3-line" ng-click="showViewEnderecoDialog($event, $index)" ng-repeat="item in dadoEndereco">
@@ -151,7 +206,9 @@
               <h4>
                 {{ item.tipologradouro+' '+item.logradouro+', '+item.complemento+' '+item.numero}}
               </h4>
-              <p>{{ item.localidade }} - {{item.uf}}</p>
+              <p>{{ item.localidade }}
+                -
+                {{item.uf}}</p>
             </div>
             <md-button class="md-secondary md-icon-button md-warn md-hue-3" ng-click="removeEndereco($index)" aria-label="call">
               <md-icon>
@@ -171,7 +228,7 @@
         <div class="md-toolbar-tools">
           <h2>Contatos</h2>
           <span flex></span>
-          <md-button class="md-fab md-mini" aria-label="Inserir Contato" ng-click="showAddContatoDialog($event)">
+          <md-button class="md-fab md-mini" aria-label="Inserir Contato" ng-click="showAddContatoDialog($event)" ng-disabled="dados.nome==''||dados.nome==undefined">
             <md-icon>
               <i class="material-icons">add</i>
             </md-icon>
@@ -184,7 +241,7 @@
 
       <md-content class="md-padding-tb">
 
-        <onmt-div-info ng-if="!dadoContato.length"  title="Lista de Contato" message="Adicione pelo menos 1 contato."></onmt-div-info>
+        <onmt-div-info ng-if="!dadoContato.length" title="Lista de Contato" message="Adicione pelo menos 1 contato."></onmt-div-info>
         <!--  -->
         <md-list ng-cloak ng-if="dadoContato.length" md-theme="indigo">
           <md-list-item class="md-3-line" ng-click="showViewContatoDialog($event, $index)" ng-repeat="item in dadoContato">
@@ -193,9 +250,15 @@
             </md-icon>
             <div class="md-list-item-text" layout="column">
               <h3 class="cap">
-                {{ item.dado.apelido==null||item.dado.apelido==""?item.dado.nome:item.dado.apelido}} - <b style="font-size:14px; text-transform: none;">{{item.dado.relacionamento}}</b></h3>
+                {{ item.dado.apelido==null||item.dado.apelido==""?item.dado.nome:item.dado.apelido}}
+                -
+                <b style="font-size:14px; text-transform: none;">{{item.dado.relacionamento}}</b>
+              </h3>
               <h4 class="cap">
-                ({{item.telefone[0].ddd}}) {{item.telefone[0].numero}} - {{item.telefone[0].tipo}}
+                ({{item.telefone[0].ddd}})
+                {{item.telefone[0].numero}}
+                -
+                {{item.telefone[0].tipo}}
               </h4>
               <p>{{ item.dado.email }}</p>
             </div>

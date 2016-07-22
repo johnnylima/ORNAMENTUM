@@ -1,0 +1,46 @@
+{
+  "name": "smDateTimeRangePicker",
+  "version": "1.6.1",
+  "homepage": "https://github.com/mominsamir/smDateTimeRangePicker",
+  "authors": [
+    "mominsamir"
+  ],
+  "description": "Material Design date/time/Range pickers built with Angular Material and Moment.js",
+  "main": [
+    "src/picker.js",
+    "src/picker.css"
+  ],
+  "keywords": [
+    "angular",
+    "material",
+    "pickers",
+    "date",
+    "time",
+    "range"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-material": "~1.0.1",
+    "moment": "~2.10.6",
+    "angular-ui-router": "~0.2.15",
+    "angular-aria": "^1.5.2"
+  },
+  "_release": "1.6.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.6.1",
+    "commit": "97f99d252ee60a458a8819c740f8fb3f7f17bc2b"
+  },
+  "_source": "https://github.com/mominsamir/smDateTimeRangePicker.git",
+  "_target": "^1.6.1",
+  "_originalSource": "smDateTimeRangePicker",
+  "_direct": true
+}

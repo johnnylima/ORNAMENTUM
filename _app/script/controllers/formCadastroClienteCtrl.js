@@ -7,12 +7,77 @@
   angular.module("ornamentumApp")
     .controller("formCadastroClienteCtrl", formCadastroCliente);
 
-  function formCadastroCliente($scope, $mdDialog, $mdMedia) {
+  function formCadastroCliente($scope, $mdDialog, $mdMedia, picker) {
+
+    /* ------------------------------------ CALEDÁRIO ------------------------------------ */
+    $scope.showCalandario= function (e) {
+
+
+    }
 
     /* ------------------------------------ DADOS ------------------------------------ */
     $scope.dado = [];
-    $scope.dadoContato = [{"telefone":[{"tipo":"residencial","ddd":"61","numero":"3082.7115"},{"tipo":"principal","ddd":"61","numero":"9 8447.8057"},{"tipo":"celular","ddd":"61","numero":"9 9506.6006"},{"tipo":"comercial","ddd":"61","numero":"3316.9180"}],"dado":{"nome":"Johnny Wesley Henrique Lima","apelido":"Rick","empresa":"CIMCORP","site":"www.grupocimcorp.com","profissao":"Estagiário","email":"rick@grupocimcorp.com","relacionamento":"eu"}}];
-    $scope.dadoEndereco = [{"tipoendereco":"residencial","tipologradouro":"quadra","logradouro":"QNO 16 Conjunto 22","complemento":"Casa","numero":"08","bairro":"Setor \"O\"","localidade":"Ceilândia Norte","uf":"DF","cep":"72260622","observacao":"Casa do Cliente"},{"tipoendereco":"evento","tipologradouro":"quadra","logradouro":"406 Conjunto \"E\"","complemento":"Lote","numero":"22","bairro":"","localidade":"Recanto das Emas","uf":"DF","observacao":"Casa da mãe"},{"tipoendereco":"comercial","tipologradouro":"setor","logradouro":"SRTVSul Quadra 701 Conj E","complemento":"Sala","numero":"701","bairro":"Ed. Palácio do Rádio II","localidade":"Asa Sul","uf":"DF","cep":"70340-902","observacao":"Local de Trabalho"}];
+    $scope.dadoContato = [{
+      "telefone": [{
+        "tipo": "residencial",
+        "ddd": "61",
+        "numero": "3082.7115"
+      }, {
+        "tipo": "principal",
+        "ddd": "61",
+        "numero": "9 8447.8057"
+      }, {
+        "tipo": "celular",
+        "ddd": "61",
+        "numero": "9 9506.6006"
+      }, {
+        "tipo": "comercial",
+        "ddd": "61",
+        "numero": "3316.9180"
+      }],
+      "dado": {
+        "nome": "Johnny Wesley Henrique Lima",
+        "apelido": "Rick",
+        "empresa": "CIMCORP",
+        "site": "www.grupocimcorp.com",
+        "profissao": "Estagiário",
+        "email": "rick@grupocimcorp.com",
+        "relacionamento": "eu"
+      }
+    }];
+    $scope.dadoEndereco = [{
+      "tipoendereco": "residencial",
+      "tipologradouro": "quadra",
+      "logradouro": "QNO 16 Conjunto 22",
+      "complemento": "Casa",
+      "numero": "08",
+      "bairro": "Setor \"O\"",
+      "localidade": "Ceilândia Norte",
+      "uf": "DF",
+      "cep": "72260622",
+      "observacao": "Casa do Cliente"
+    }, {
+      "tipoendereco": "evento",
+      "tipologradouro": "quadra",
+      "logradouro": "406 Conjunto \"E\"",
+      "complemento": "Lote",
+      "numero": "22",
+      "bairro": "",
+      "localidade": "Recanto das Emas",
+      "uf": "DF",
+      "observacao": "Casa da mãe"
+    }, {
+      "tipoendereco": "comercial",
+      "tipologradouro": "setor",
+      "logradouro": "SRTVSul Quadra 701 Conj E",
+      "complemento": "Sala",
+      "numero": "701",
+      "bairro": "Ed. Palácio do Rádio II",
+      "localidade": "Asa Sul",
+      "uf": "DF",
+      "cep": "70340-902",
+      "observacao": "Local de Trabalho"
+    }];
 
 
     /* ------------------------------------ DIALOGS ------------------------------------ */
@@ -27,6 +92,8 @@
     $scope.showViewContatoDialog = showViewContatoDialog;
     $scope.removeContato = removeContato;
 
+    $scope.ct = 0;
+    $scope.primaryContato = true;
 
     $scope.items = [];
     // Internal method
@@ -82,6 +149,7 @@
       function EnderecoDialogCtrl($scope, $mdDialog, items) {
         $scope.items = items;
         $scope.aLabel = "Novo Endereço";
+
         $scope.closeDialog = function() {
           $scope.limparForm();
           $mdDialog.hide();
@@ -117,8 +185,8 @@
 
       function viewEnderecoDialogCtrl($scope, $mdDialog, items, enderecoIndex) {
 
-        $scope.endereco=angular.copy(enderecoIndex[i]);
-        $scope.originalEndereco= angular.copy(enderecoIndex[i]);
+        $scope.endereco = angular.copy(enderecoIndex[i]);
+        $scope.originalEndereco = angular.copy(enderecoIndex[i]);
         $scope.view = true;
         $scope.aLabel = "Visualizar Endereço";
         $scope.items = items;
@@ -130,7 +198,7 @@
         };
         $scope.closeDialog = function() {
           $scope.limparForm();
-          enderecoIndex[i]=$scope.originalEndereco;
+          enderecoIndex[i] = $scope.originalEndereco;
           $mdDialog.hide();
           $scope.view = false;
         };
@@ -139,7 +207,7 @@
           $scope.clienteEnderecoForm.$setPristine();
         };
         $scope.AlterEndereco = function(endereco) {
-          enderecoIndex[i]=angular.copy($scope.endereco);
+          enderecoIndex[i] = angular.copy($scope.endereco);
           $scope.limparForm();
           $mdDialog.hide();
           $scope.view = false;
@@ -147,7 +215,7 @@
       }
     }
 
-    function removeEndereco(i){
+    function removeEndereco(i) {
       $scope.dadoEndereco.pop(i);
     }
 
@@ -167,11 +235,22 @@
         }
       });
 
+
       function ContatoDialogCtrl($scope, $mdDialog, items) {
         $scope.aLabel = "Novo Contato";
-        $scope.contato={};
-        $scope.telefones = [{"tipo":"residencial","ddd":"61","numero":"3082.7115"},{"tipo":"principal","ddd":"61","numero":"9 8447.8057"},{"tipo":"celular","ddd":"61","numero":"9 9506.6006"},{"tipo":"comercial","ddd":"61","numero":"3316.9180"}];
+        $scope.contato = {
+          "dado": {
+            "nome": "",
+            "relacionamento": ""
+          }
+        };
+        $scope.telefones = [ /*{"tipo":"residencial","ddd":"61","numero":"3082.7115"},{"tipo":"principal","ddd":"61","numero":"9 8447.8057"},{"tipo":"celular","ddd":"61","numero":"9 9506.6006"},{"tipo":"comercial","ddd":"61","numero":"3316.9180"}*/ ];
         $scope.items = items;
+
+        if ($scope.ct == 0) {
+          $scope.contato.dado.nome = $scope.dados.nome;
+          $scope.contato.dado.relacionamento = "eu";
+        }
 
         $scope.closeDialog = function() {
           $scope.limparForm();
@@ -181,11 +260,11 @@
           delete $scope.contato;
           $scope.clienteContatoForm.$setPristine();
         };
-        $scope.limparTelefones = function () {
+        $scope.limparTelefones = function() {
           $scope.telefones.splice(0);
         }
         $scope.removeTelefone = function(i) {
-          $scope.telefones.splice(i,1);
+          $scope.telefones.splice(i, 1);
         };
         $scope.AddTelefone = function(tel) {
           $scope.telefones.push(tel);
@@ -195,6 +274,9 @@
           $scope.contato.telefone = $scope.telefones;
           $scope.dadoContato.push(contato);
           $scope.closeDialog();
+
+          $scope.ct = 1;
+          $scope.primaryContato = false;
         };
       }
     }
@@ -219,8 +301,8 @@
 
       function viewContatoDialogCtrl($scope, $mdDialog, items, contatoIndex) {
 
-        $scope.contato=angular.copy(contatoIndex[i]);
-        $scope.originalContato= angular.copy(contatoIndex[i]);
+        $scope.contato = angular.copy(contatoIndex[i]);
+        $scope.originalContato = angular.copy(contatoIndex[i]);
         $scope.telefones = angular.copy(contatoIndex[i].telefone);
         $scope.view = true;
         $scope.aLabel = "Visualizar Contato";
@@ -230,7 +312,7 @@
 
 
         $scope.removeTelefone = function(i) {
-          $scope.telefones.splice(i,1);
+          $scope.telefones.splice(i, 1);
         };
         $scope.AddTelefone = function(tel) {
           $scope.telefones.push(tel);
@@ -239,7 +321,7 @@
 
         $scope.closeDialog = function() {
           $scope.limparForm();
-          contatoIndex[i]=$scope.originalContato;
+          contatoIndex[i] = $scope.originalContato;
           $mdDialog.hide();
           $scope.view = false;
         };
@@ -264,7 +346,7 @@
       }
     }
 
-    function removeContato(i){
+    function removeContato(i) {
       $scope.dadoContato.pop(i);
     }
 

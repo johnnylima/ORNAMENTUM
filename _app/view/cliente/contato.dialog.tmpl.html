@@ -28,7 +28,7 @@
         <div layout="row">
           <md-input-container class="md-block" flex>
             <label>Nome Completo</label>
-            <input ng-disabled="view" ng-model="contato.dado.nome">
+            <input ng-disabled="view" ng-model="contato.dado.nome" md-autofocus="!primaryContato">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
@@ -90,7 +90,7 @@
               <md-option value="comercial">Comercial</md-option>
               <md-option value="outro">Outro</md-option>
               <md-option value="celular">Celular</md-option>
-              <md-option value="principal" selected>Principal</md-option>
+              <md-option value="principal" ng-selected="primaryContato">Principal</md-option>
               <md-option value="fax_residencial">Fax residencial</md-option>
               <md-option value="fax_comercial">Fax comercial</md-option>
 
@@ -100,7 +100,7 @@
           <span flex="5"></span>
           <md-input-container class="md-block" flex="10">
             <label>DDD</label>
-            <input ng-disabled="view" ng-model="contato.telefone.ddd">
+            <input ng-disabled="view" ng-model="contato.telefone.ddd" md-autofocus="primaryContato">
           </md-input-container>
           <span flex="5"></span>
           <md-input-container class="md-block" flex>
