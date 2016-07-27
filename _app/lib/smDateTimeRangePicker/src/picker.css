@@ -50,7 +50,7 @@
             margin: 10px;
             font-size: 16px; }
           .picker-container .container md-toolbar.md-height.landscape .date-time-header {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: bold;
             text-align: left;
             margin: 0px 0 15px 10px; }
@@ -350,8 +350,6 @@
           text-align: center; }
         .date-picker .mtyr-container .mtyr-md-repeat .repeated-item .selected-year {
           font-size: 18px; }
-            .date-picker .mtyr-container .mtyr-md-repeat .md-button {
-              text-transform: capitalize !important; }
 
 .mtyr-picker-picker {
   width: 300px; }
@@ -363,5 +361,5 @@
       margin: 0;
       cursor: default;; }
   .mtyr-picker .mtyr-md-repeat {
-    width: 90px ;
+    width: 90px;
     height: 239px; }

@@ -90,24 +90,7 @@
               </md-select>
             </md-input-container>
             <div flex="5"></div>
-
-
-
-              <sm-date-time-picker
-                  fname="field"
-                  lable="Date of Birth"
-                  form="empForm"
-                  value="vm.employee.dateOfBirth"
-                  flex="15"
-                  flex-sm="100"
-                  flex-xs="100"
-                  is-required="{{true}}"
-                  format="MM-DD-YYYY HH:mm"
-                  mode="date-time"
-                  week-start-day="Monday">
-              </sm-date-time-picker>
-
-            <!-- <sm-date-time-picker
+            <sm-date-time-picker
                 lable="Nascimento"
                 value="dados.nascimento"
                 flex="15"
@@ -115,10 +98,8 @@
                 flex-xs="100"
                 format="DD/MM/YYYY"
                 mode="date"
-                close-on-select="false">
-            </sm-date-time-picker> -->
-
-
+                close-on-select="true">
+            </sm-date-time-picker>
             <!-- <md-datepicker ng-model="dados.datanascimento" md-placeholder="Nascimento"></md-datepicker> -->
           </div>
 

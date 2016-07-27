@@ -15,11 +15,11 @@
 
 
 
-          <md-virtual-repeat-container id="month-container" class="mtyr-md-repeat">
-                <div ng-repeat="mt in vm.monthList"  md-on-demand  class="repeated-item">
-              <md-button class="md-button" aria-label="month" ng-click="vm.changeMonth($index)" ng-class="{'md-accent': $index === vm.currentDate.month(),
-                      'selected-month md-primary':vm.initialDate.month()===$index}">
-                {{mt}}
+          <md-virtual-repeat-container id="month-container" class="mtyr-md-repeat" md-top-index="vm.monthTopIndex">
+                <div md-virtual-repeat="mt in vm.monthItems"  class="repeated-item">
+              <md-button class="md-button" aria-label="month" ng-click="vm.changeMonth(mt.month)" ng-class="{'md-accent': $index === vm.currentDate.month(),
+                      'selected-year md-primary':vm.initialDate.month()===mt.month}">
+                {{mt.texto}}
               </md-button>
                 </div>
           </md-virtual-repeat-container>
