@@ -10,8 +10,8 @@
       pickerProvider.setCancelLabel('FECHAR');
       //  Over ride day names by changing here
       pickerProvider.setCustomHeader({
-          date:'MMM, EEE dd',
-          dateTime:'MMM, EEE dd HH:mm', /*ddd, MMM DD HH:mm'*/
+          date:'EEE, dd \'d\'e MMMM',
+          dateTime:'EEE, dd \'d\'e MMM HH:mm', /*ddd, MMM DD HH:mm'*/
           time:'HH:mm',
       });
       pickerProvider.setDayHeader('single'); //Options 'single','shortName', 'fullName'

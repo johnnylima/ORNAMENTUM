@@ -318,3 +318,50 @@
     -webkit-transform: top;
     /* Safari */
     transform: top; } }
+
+
+/********************** CUSTOMER ********************************/
+
+.date-picker {
+  width: 300px;
+  height: 270px; }
+  .date-picker .mtyr-container {
+    width: 300px;
+    animation: slideInDown 1s cubic-bezier(0.06, 0.61, 0.04, 1.03);
+    margin-top: 0px; }
+    /*.date-picker .mtyr-container .time-md-repeat {
+      height: 245px; }*/
+      .date-picker .mtyr-container .mtyr-md-repeat .md-virtual-repeat-container {
+        text-align: center;
+        width: 20px;
+        height: 239px; }
+      .date-picker .mtyr-container .mtyr-md-repeat .repeated-item {
+        box-sizing: border-box;
+        height: 35px;
+        margin-left: -10px;
+      }
+        .date-picker .mtyr-container .mtyr-md-repeat .repeated-item .md-button {
+          margin-left: 10px;
+          height: 30px !important;
+          width: 20px;
+          outline: none;
+          cursor: pointer;
+          font-size: 14px;
+          text-align: center; }
+        .date-picker .mtyr-container .mtyr-md-repeat .repeated-item .selected-year {
+          font-size: 18px; }
+            .date-picker .mtyr-container .mtyr-md-repeat .md-button {
+              text-transform: capitalize !important; }
+
+.mtyr-picker-picker {
+  width: 300px; }
+  .mtyr-picker .navigation {
+    height: 35px; }
+    .mtyr-picker .navigation .md-button {
+      text-transform: capitalize;
+      font-weight: bold;
+      margin: 0;
+      cursor: default;; }
+  .mtyr-picker .mtyr-md-repeat {
+    width: 90px ;
+    height: 239px; }
